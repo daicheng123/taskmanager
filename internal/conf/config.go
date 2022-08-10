@@ -1,7 +1,6 @@
 package conf
 
 import (
-	"gopkg.in/yaml.v3"
 	"io/ioutil"
 	"os"
 	"path/filepath"
@@ -117,7 +116,13 @@ func GetDbPassword() string {
 	return defaultConfig.DataBase.DbPassword
 }
 
-func GetLogDebugMode() bool {
+func GetDbName() string {
+	if defaultConfig == nil {
+		return ""
+	}
+	return defaultConfig.DataBase.Db
+}
+func IsDebugMode() bool {
 	if defaultConfig == nil {
 		return false
 	}

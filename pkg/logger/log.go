@@ -121,3 +121,15 @@ func SetLevel(logType int, level logrus.Level) {
 	}
 	std.SetLevel(level)
 }
+
+func Info(format string, args ...interface{}) {
+	ManagerLogger.Infof(format, args...)
+}
+
+func Warning(format string, args ...interface{}) {
+	ManagerLogger.Warningf(format, args...)
+}
+
+func Error(format string, args ...interface{}) {
+	ManagerLogger.Errorf(format, args...)
+}
