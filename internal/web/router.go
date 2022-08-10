@@ -14,6 +14,7 @@ type RouterCenter struct {
 func InitRouterCenter() *RouterCenter {
 	gin.SetMode(gin.DebugMode)
 	engine := gin.New()
+
 	// 心跳检测
 	engine.Handle("GET", "/health", func(context *gin.Context) {
 		context.JSON(http.StatusOK, "OK")
