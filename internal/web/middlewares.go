@@ -23,7 +23,7 @@ func (cross *CrossMiddleWare) OnRequest(context *gin.Context) (rsp *Response) {
 		context.Header("Access-Control-Allow-Credentials", "true")
 	} else {
 		rsp.Status = false
-		rsp.Code = http.StatusForbidden
+		rsp.Code = http.StatusMethodNotAllowed
 		rsp.Message = "错误的请求方法"
 		return
 	}
