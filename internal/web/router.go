@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"taskmanager/internal/conf"
 )
 
 type RouterCenter struct {
@@ -12,7 +13,7 @@ type RouterCenter struct {
 }
 
 func InitRouterCenter() *RouterCenter {
-	gin.SetMode(gin.DebugMode)
+	gin.SetMode(conf.GetWebMode())
 	engine := gin.New()
 
 	// 心跳检测
@@ -51,5 +52,5 @@ func (rc *RouterCenter) Mount(group string, controllers ...Controller) *RouterCe
 
 // Launch 启动
 func (rc *RouterCenter) Launch() { // 需要把Index 和 UserIndex 两个控制器传递进来
-	rc.Run(fmt.Sprintf(":%d", 8080))
+	rc.Run(fmt.Sprintf(":%d", conf.GetWebPort()))
 }

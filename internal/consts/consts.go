@@ -4,6 +4,11 @@ import "net/http"
 
 const (
 	UserControllerGroup = "user"
+	AppManagerConfPath  = "APP_MANAGER_CONF_FILE"
+
+	ManagerLog = iota // 服务日志
+	GinLog            // gin框架日志
+	TaskLog           // 任务日志
 )
 
 var StatusMessage = map[int]string{

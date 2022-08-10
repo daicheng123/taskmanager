@@ -1,0 +1,22 @@
+web:
+  mode: debug # debug release test
+  port: 8080
+database:
+  driver: "mysql"
+  address: "127.0.0.1"
+  port: 3306
+  db: "task_manager"
+  dbuser: "root"
+  dbPassword: "Dc@123"
+redis:
+  address: "127.0.0.1"
+  usePassword: true
+  password: "Dc@123"
+log:
+  debugMode: true
+  logLevel: "info"  #"panic", "fatal", "error", "warn", "info", "debug"
+  logPath: "/tmp"
+#  maxSize:
+#  printFile: true
+#  printLine: true
+#  printFunc: true
