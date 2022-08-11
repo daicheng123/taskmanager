@@ -1,6 +1,7 @@
 package conf
 
 import (
+	"gopkg.in/yaml.v3"
 	"io/ioutil"
 	"os"
 	"path/filepath"
@@ -34,15 +35,13 @@ type RedisConfig struct {
 	Address     string `yaml:"address"`
 	UsePassword bool   `yaml:"usePassword"`
 	Password    string `yaml:"password"`
+	DB          int    `yaml:"db"`
 }
 
 type LogConfig struct {
 	DebugMode bool   `yaml:"debugMode"`
 	LogLevel  string `yaml:"logLevel"`
 	LogPath   string `yaml:"logPath"`
-	//PrintFile bool   `yaml:"printFile"`
-	//PrintLine bool   `yaml:"printLine"`
-	//PrintFunc bool   `yaml:"printFunc"`
 }
 
 func LoadConf() {
@@ -61,6 +60,7 @@ func LoadConf() {
 	if err != nil {
 		panic(err)
 	}
+	defaultConfig = new(Config)
 	err = yaml.Unmarshal(config, defaultConfig)
 	if err != nil {
 		panic(err)
@@ -141,4 +141,25 @@ func GetLogPath() string {
 		return ""
 	}
 	return defaultConfig.Log.LogPath
+}
+
+func GetRedisAddr() string {
+	if defaultConfig == nil {
+		return ""
+	}
+	return defaultConfig.Redis.Address
+}
+
+func GetRedisPasswd() string {
+	if defaultConfig == nil {
+		return ""
+	}
+	return defaultConfig.Redis.Password
+}
+
+func GetRedisdb() int {
+	if defaultConfig == nil {
+		return 0
+	}
+	return defaultConfig.Redis.DB
 }

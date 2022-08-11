@@ -20,13 +20,28 @@ var (
 )
 
 func init() {
-	ManagerLogger = new(logrus.Logger)
-	GinLogger = new(logrus.Logger)
-	TaskLogger = new(logrus.Logger)
+	ManagerLogger = logrus.New()
+	GinLogger = logrus.New()
+	TaskLogger = logrus.New()
 
-	ManagerLumberjack = new(lumberjack.Logger)
-	GinLumberjack = new(lumberjack.Logger)
-	TaskLumberjack = new(lumberjack.Logger)
+	ManagerLumberjack = &lumberjack.Logger{
+		Filename:   conf.GetLogPath() + "manager.log",
+		MaxBackups: 5,
+		MaxSize:    500,
+		Compress:   true,
+	}
+	GinLumberjack = &lumberjack.Logger{
+		Filename:   conf.GetLogPath() + "gin.log",
+		MaxBackups: 5,
+		MaxSize:    500,
+		Compress:   true,
+	}
+	TaskLumberjack = &lumberjack.Logger{
+		Filename:   conf.GetLogPath() + "task.log",
+		MaxBackups: 5,
+		MaxSize:    500,
+		Compress:   true,
+	}
 }
 
 func InitLogger() {
@@ -131,5 +146,17 @@ func Warning(format string, args ...interface{}) {
 }
 
 func Error(format string, args ...interface{}) {
+	ManagerLogger.Errorf(format, args...)
+}
+
+func TaskInfo(format string, args ...interface{}) {
+	ManagerLogger.Infof(format, args...)
+}
+
+func TaskWarning(format string, args ...interface{}) {
+	ManagerLogger.Warningf(format, args...)
+}
+
+func TaskError(format string, args ...interface{}) {
 	ManagerLogger.Errorf(format, args...)
 }

@@ -9,9 +9,10 @@ database:
   dbuser: "root"
   dbPassword: "Dc@123"
 redis:
-  address: "127.0.0.1"
+  address: "127.0.0.1:6379"
   usePassword: true
-  password: "Dc@123"
+  password: "Dc!123"
+  db: 1
 log:
   debugMode: true
   logLevel: "info"  #"panic", "fatal", "error", "warn", "info", "debug"

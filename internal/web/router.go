@@ -5,6 +5,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"taskmanager/internal/conf"
+	"taskmanager/pkg/logger"
 )
 
 type RouterCenter struct {
@@ -52,5 +53,15 @@ func (rc *RouterCenter) Mount(group string, controllers ...Controller) *RouterCe
 
 // Launch 启动
 func (rc *RouterCenter) Launch() { // 需要把Index 和 UserIndex 两个控制器传递进来
-	rc.Run(fmt.Sprintf(":%d", conf.GetWebPort()))
+	port := conf.GetWebPort()
+	srv := http.Server{
+		Addr:    fmt.Sprintf(":%d", port),
+		Handler: rc.Engine}
+
+	go func() {
+		logger.Info("init server on %d", port)
+		if err := srv.ListenAndServe(); err != nil {
+			return
+		}
+	}()
 }
