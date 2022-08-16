@@ -2,27 +2,27 @@ package user
 
 import (
 	"github.com/gin-gonic/gin"
-	"net/http"
 	"taskmanager/internal/consts"
 	"taskmanager/internal/service"
 	"taskmanager/internal/web"
+	webUtils "taskmanager/internal/web/utils"
 )
 
 type UserController struct {
-	*web.Response
+	*webUtils.Response
 	userService *service.UserService
 }
 
 func NewUserController() *UserController {
 	return &UserController{
-		Response: new(web.Response),
+		Response: new(webUtils.Response),
 	}
 }
 
 func (uc *UserController) UserLogin(context *gin.Context) {
 	//context.ShouldBindJSON()
-	token := ""
-	uc.Render(context, true, http.StatusOK, token, nil)
+	//token := ""
+	//uc.Render(context, http.StatusOK, true, token, nil)
 }
 
 // UserRegister 用户注册地址

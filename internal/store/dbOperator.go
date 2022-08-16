@@ -18,13 +18,13 @@ var (
 func newDBOperator() (err error) {
 	openOnce.Do(func() {
 		dsn := fmt.Sprintf(
-			"%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local",
+			`%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local`,
 			conf.GetDBUser(),
 			conf.GetDbPassword(),
 			conf.GetDBAddress(),
 			conf.GetDBPort(),
 			conf.GetDbName())
-
+		fmt.Printf("dsn: %s", dsn)
 		logLevel := gormLogger.Warn
 
 		if conf.IsDebugMode() {

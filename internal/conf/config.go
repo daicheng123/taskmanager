@@ -15,6 +15,7 @@ type Config struct {
 	DataBase *DBConfig    `yaml:"database"`
 	Redis    *RedisConfig `yaml:"redis"`
 	Log      *LogConfig   `yaml:"log"`
+	Email    *MailConfig  `yaml:"email"`
 }
 
 type WebConfig struct {
@@ -42,6 +43,13 @@ type LogConfig struct {
 	DebugMode bool   `yaml:"debugMode"`
 	LogLevel  string `yaml:"logLevel"`
 	LogPath   string `yaml:"logPath"`
+}
+
+type MailConfig struct {
+	MailHost string `yaml:"mailHost"`
+	MailPort int    `yaml:"mailPort"`
+	UserName string `yaml:"userName"`
+	Password string `yaml:"password"`
 }
 
 func LoadConf() {
@@ -162,4 +170,32 @@ func GetRedisdb() int {
 		return 0
 	}
 	return defaultConfig.Redis.DB
+}
+
+func GetMailHost() string {
+	if defaultConfig == nil {
+		return ""
+	}
+	return defaultConfig.Email.MailHost
+}
+
+func GetMailPort() int {
+	if defaultConfig == nil {
+		return 0
+	}
+	return defaultConfig.Email.MailPort
+}
+
+func GetMailUserName() string {
+	if defaultConfig == nil {
+		return ""
+	}
+	return defaultConfig.Email.UserName
+}
+
+func GetMailPwd() string {
+	if defaultConfig == nil {
+		return ""
+	}
+	return defaultConfig.Email.Password
 }

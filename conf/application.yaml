@@ -1,12 +1,12 @@
 web:
-  mode: debug # debug release test
-  port: 8080
+  mode: "debug" # debug release test
+  port: 8000
 database:
   driver: "mysql"
   address: "127.0.0.1"
   port: 3306
   db: "task_manager"
-  dbuser: "root"
+  dbUser: "root"
   dbPassword: "Dc@123"
 redis:
   address: "127.0.0.1:6379"
@@ -15,8 +15,14 @@ redis:
   db: 1
 log:
   debugMode: true
-  logLevel: "info"  #"panic", "fatal", "error", "warn", "info", "debug"
+  logLevel: "info"  # "panic", "fatal", "error", "warn", "info", "debug"
   logPath: "/tmp"
+email:
+  mailHost: "smtp.163.com"
+  mailPort: 25
+  userName: "13637235955@163.com"
+  password: "dc19941018"
+
 #  maxSize:
 #  printFile: true
 #  printLine: true
