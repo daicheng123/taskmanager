@@ -12,11 +12,11 @@ import (
 
 var (
 	dbOperator *gorm.DB
-	openOnce   sync.Once
+	dbOnce     sync.Once
 )
 
 func newDBOperator() (err error) {
-	openOnce.Do(func() {
+	dbOnce.Do(func() {
 		dsn := fmt.Sprintf(
 			`%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local`,
 			conf.GetDBUser(),

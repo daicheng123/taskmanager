@@ -186,6 +186,12 @@ func GetMailPort() int {
 	return defaultConfig.Email.MailPort
 }
 
+func GetRedisUsePasswd() bool {
+	if defaultConfig == nil {
+		return false
+	}
+	return defaultConfig.Redis.UsePassword
+}
 func GetMailUserName() string {
 	if defaultConfig == nil {
 		return ""
