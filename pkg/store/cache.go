@@ -16,24 +16,24 @@ func NewCacheOperator() (err error) {
 	once.Do(func() {
 		options := &redis.Options{
 			Network:            "tcp",
-			Addr:               fmt.Sprintf("%s:%d", conf.GetRedisAddr(), conf.GetMailPort()),
+			Addr:               conf.GetRedisAddr(),
 			DB:                 conf.GetRedisdb(),
 			PoolSize:           15,
-			MinIdleConns:       10,
+			MinIdleConns:       20,
 			DialTimeout:        5 * time.Second,
 			ReadTimeout:        3 * time.Second,
 			WriteTimeout:       3 * time.Second,
 			PoolTimeout:        4 * time.Second,
 			IdleCheckFrequency: 60 * time.Second,
 			IdleTimeout:        5 * time.Minute,
-			MaxConnAge:         0 * time.Second,
+			MaxConnAge:         30 * time.Second,
 			MaxRetries:         3,
 			MinRetryBackoff:    8 * time.Millisecond,
 			MaxRetryBackoff:    512 * time.Millisecond,
 		}
 
 		if conf.GetRedisUsePasswd() {
-			options.Password = conf.GetDbPassword()
+			options.Password = conf.GetRedisPasswd()
 		}
 		cacheOperator = redis.NewClient(options)
 

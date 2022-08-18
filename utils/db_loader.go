@@ -3,8 +3,8 @@ package utils
 import (
 	"os"
 	"taskmanager/internal/models"
-	"taskmanager/internal/store"
 	"taskmanager/pkg/logger"
+	"taskmanager/pkg/store"
 )
 
 func InitDBSchema() {

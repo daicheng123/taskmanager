@@ -1,7 +1,5 @@
 package consts
 
-import "net/http"
-
 const (
 	UserControllerGroup = "user"
 	AppManagerConfPath  = "APP_MANAGER_CONF_FILE"
@@ -9,11 +7,14 @@ const (
 	ManagerLog = iota // 服务日志
 	GinLog            // gin框架日志
 	TaskLog           // 任务日志
-)
 
-var StatusMessage = map[int]string{
-	http.StatusOK:                  "请求成功",
-	http.StatusUnauthorized:        "请求未认证",
-	http.StatusBadRequest:          "请求参数错误",
-	http.StatusInternalServerError: "服务内部错误",
-}
+	EmailFlagPrefix = "send"
+
+	AttrExpire = "expire"
+
+	HtmlMail uint8 = 1
+	TextMail uint8 = 2
+
+	MailSubject     = "【运维任务管理平台】"
+	MailCodeContent = "您的注册验证为：<span style='color:red'>%s</span>，请在5分钟内注册。"
+)

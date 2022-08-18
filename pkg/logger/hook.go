@@ -63,11 +63,11 @@ func AddHook(logType int, hook logrus.Hook) {
 	var std *logrus.Logger
 	switch logType {
 	case consts.ManagerLog:
-		std = ManagerLogger
+		std = managerLogger
 	case consts.GinLog:
-		std = GinLogger
+		std = ginLogger
 	case consts.TaskLog:
-		std = TaskLogger
+		std = taskLogger
 	default:
 		panic("logger Type is not support")
 	}

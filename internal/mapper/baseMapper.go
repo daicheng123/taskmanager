@@ -2,7 +2,7 @@ package mapper
 
 import (
 	"gorm.io/gorm"
-	"taskmanager/internal/store"
+	"taskmanager/pkg/store"
 )
 
 type BaseMapper struct {

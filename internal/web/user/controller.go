@@ -20,9 +20,7 @@ func NewUserController() *UserController {
 }
 
 func (uc *UserController) UserLogin(context *gin.Context) {
-	//context.ShouldBindJSON()
-	//token := ""
-	//uc.Render(context, http.StatusOK, true, token, nil)
+
 }
 
 // UserRegister 用户注册地址

@@ -16,6 +16,7 @@ type RouterCenter struct {
 func InitRouterCenter() *RouterCenter {
 	gin.SetMode(conf.GetWebMode())
 	engine := gin.New()
+	engine.Use(gin.Recovery()) // 默认中件件
 
 	// 心跳检测
 	engine.Handle("GET", "/health", func(context *gin.Context) {
@@ -31,12 +32,13 @@ func InitRouterCenter() *RouterCenter {
 func (rc *RouterCenter) Attach(middleWares ...MiddleWare) *RouterCenter {
 	rc.Use(func(context *gin.Context) {
 		for _, middle := range middleWares {
-			res := middle.OnRequest(context)
-			if !res.Status {
-				context.AbortWithStatusJSON(res.Code, res.Message)
-			} else {
-				context.Next()
-			}
+			middle.OnRequest(context)
+			//res := middle.OnRequest(context)
+			//if !res.Status {
+			//	context.AbortWithStatusJSON(res.Code, res.Message)
+			//} else {
+			//	context.Next()
+			//}
 		}
 	})
 	return rc

@@ -9,7 +9,7 @@ database:
   dbUser: "root"
   dbPassword: "Dc@123"
 redis:
-  address: "127.0.0.1:6379"
+  address: "127.0.0.1:6379" # 集群以逗号隔开
   usePassword: true
   password: "Dc!123"
   db: 1
@@ -21,9 +21,4 @@ email:
   mailHost: "smtp.163.com"
   mailPort: 25
   userName: "13637235955@163.com"
-  password: "dc19941018"
-
-#  maxSize:
-#  printFile: true
-#  printLine: true
-#  printFunc: true
+  password: "CKXQRZXRXTKVDMJL"  # 授权码

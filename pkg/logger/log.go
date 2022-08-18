@@ -11,32 +11,32 @@ import (
 )
 
 var (
-	ManagerLogger     *logrus.Logger
-	GinLogger         *logrus.Logger
-	TaskLogger        *logrus.Logger
-	ManagerLumberjack *lumberjack.Logger
-	GinLumberjack     *lumberjack.Logger
-	TaskLumberjack    *lumberjack.Logger
+	managerLogger     *logrus.Logger
+	ginLogger         *logrus.Logger
+	taskLogger        *logrus.Logger
+	managerLumberjack *lumberjack.Logger
+	ginLumberjack     *lumberjack.Logger
+	taskLumberjack    *lumberjack.Logger
 )
 
 func init() {
-	ManagerLogger = logrus.New()
-	GinLogger = logrus.New()
-	TaskLogger = logrus.New()
+	managerLogger = logrus.New()
+	ginLogger = logrus.New()
+	taskLogger = logrus.New()
 
-	ManagerLumberjack = &lumberjack.Logger{
+	managerLumberjack = &lumberjack.Logger{
 		Filename:   conf.GetLogPath() + "manager.log",
 		MaxBackups: 5,
 		MaxSize:    500,
 		Compress:   true,
 	}
-	GinLumberjack = &lumberjack.Logger{
+	ginLumberjack = &lumberjack.Logger{
 		Filename:   conf.GetLogPath() + "gin.log",
 		MaxBackups: 5,
 		MaxSize:    500,
 		Compress:   true,
 	}
-	TaskLumberjack = &lumberjack.Logger{
+	taskLumberjack = &lumberjack.Logger{
 		Filename:   conf.GetLogPath() + "task.log",
 		MaxBackups: 5,
 		MaxSize:    500,
@@ -60,9 +60,9 @@ func InitLogger() {
 	})
 
 	AddHook(consts.GinLog, &ManagerHook{
-		file:     true,
-		line:     true,
-		function: true,
+		file:     false,
+		line:     false,
+		function: false,
 		levels:   logrus.AllLevels,
 	})
 
@@ -86,9 +86,9 @@ func InitLogger() {
 	SetLevel(consts.TaskLog, level)
 	SetLevel(consts.GinLog, level)
 
-	SetOutput(consts.ManagerLog, ManagerLumberjack)
-	SetOutput(consts.TaskLog, GinLumberjack)
-	SetOutput(consts.GinLog, TaskLumberjack)
+	SetOutput(consts.ManagerLog, managerLumberjack)
+	SetOutput(consts.TaskLog, ginLumberjack)
+	SetOutput(consts.GinLog, taskLumberjack)
 }
 
 // SetFormatter sets the standard logger formatter.
@@ -96,11 +96,11 @@ func SetFormatter(logType int, formatter logrus.Formatter) {
 	var std *logrus.Logger
 	switch logType {
 	case consts.ManagerLog:
-		std = ManagerLogger
+		std = managerLogger
 	case consts.TaskLog:
-		std = TaskLogger
+		std = taskLogger
 	case consts.GinLog:
-		std = GinLogger
+		std = ginLogger
 	default:
 		panic("logger Type is not support")
 	}
@@ -111,11 +111,11 @@ func SetOutput(logType int, out io.Writer) {
 	var std *logrus.Logger
 	switch logType {
 	case consts.ManagerLog:
-		std = ManagerLogger
+		std = managerLogger
 	case consts.TaskLog:
-		std = TaskLogger
+		std = taskLogger
 	case consts.GinLog:
-		std = GinLogger
+		std = ginLogger
 	default:
 		panic("logger Type is not support")
 	}
@@ -126,11 +126,11 @@ func SetLevel(logType int, level logrus.Level) {
 	var std *logrus.Logger
 	switch logType {
 	case consts.ManagerLog:
-		std = ManagerLogger
+		std = managerLogger
 	case consts.TaskLog:
-		std = TaskLogger
+		std = taskLogger
 	case consts.GinLog:
-		std = GinLogger
+		std = ginLogger
 	default:
 		panic("logger Type is not support")
 	}
@@ -138,25 +138,33 @@ func SetLevel(logType int, level logrus.Level) {
 }
 
 func Info(format string, args ...interface{}) {
-	ManagerLogger.Infof(format, args...)
+	managerLogger.Infof(format, args...)
 }
 
 func Warning(format string, args ...interface{}) {
-	ManagerLogger.Warningf(format, args...)
+	managerLogger.Warningf(format, args...)
 }
 
 func Error(format string, args ...interface{}) {
-	ManagerLogger.Errorf(format, args...)
+	managerLogger.Errorf(format, args...)
 }
 
 func TaskInfo(format string, args ...interface{}) {
-	ManagerLogger.Infof(format, args...)
+	managerLogger.Infof(format, args...)
 }
 
 func TaskWarning(format string, args ...interface{}) {
-	ManagerLogger.Warningf(format, args...)
+	managerLogger.Warningf(format, args...)
 }
 
 func TaskError(format string, args ...interface{}) {
-	ManagerLogger.Errorf(format, args...)
+	managerLogger.Errorf(format, args...)
+}
+
+func GinInfo(format string, args ...interface{}) {
+	ginLogger.Infof(format, args...)
+}
+
+func GinERROR(format string, args ...interface{}) {
+	ginLogger.Errorf(format, args...)
 }

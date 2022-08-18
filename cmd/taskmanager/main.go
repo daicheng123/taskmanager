@@ -26,8 +26,11 @@ func main() {
 
 	// 初始化路由
 	web.InitRouterCenter().
-		Attach(web.NewCrossMiddleWare()).
-		Mount("/api", common.NewCommonController()).
+		Attach(
+			web.NewCrossMiddleWare(),
+			//web.NewErrorMiddleWare(),
+			web.NewLoggerMiddleWare()).
+		Mount("api/", common.NewCommonController()).
 		Mount("api/v1", user.NewUserController()).
 		Launch()
 
