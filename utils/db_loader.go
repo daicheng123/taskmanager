@@ -22,6 +22,7 @@ func autoMigrate() {
 	err = db.Set("gorm:table_options", "ENGINE=InnoDB").
 		AutoMigrate(
 			&models.UserModel{},
+			&models.SessionModel{},
 		)
 	if err != nil {
 		logger.Error(err.Error())

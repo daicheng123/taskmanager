@@ -5,6 +5,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"taskmanager/internal/conf"
+	"taskmanager/internal/web/middleware"
 	"taskmanager/pkg/logger"
 )
 
@@ -29,18 +30,10 @@ func InitRouterCenter() *RouterCenter {
 }
 
 // Attach 全局加载中间件
-func (rc *RouterCenter) Attach(middleWares ...MiddleWare) *RouterCenter {
-	rc.Use(func(context *gin.Context) {
-		for _, middle := range middleWares {
-			middle.OnRequest(context)
-			//res := middle.OnRequest(context)
-			//if !res.Status {
-			//	context.AbortWithStatusJSON(res.Code, res.Message)
-			//} else {
-			//	context.Next()
-			//}
-		}
-	})
+func (rc *RouterCenter) Attach(middleWares ...middleware.MiddleWare) *RouterCenter {
+	for _, m := range middleWares {
+		rc.Engine.Use(m.OnRequest())
+	}
 	return rc
 }
 

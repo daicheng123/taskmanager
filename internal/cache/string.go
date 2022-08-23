@@ -6,6 +6,7 @@ package cache
 
 import (
 	"context"
+	"sync"
 	"taskmanager/internal/cache/utils"
 	"taskmanager/internal/consts"
 	"taskmanager/pkg/logger"
@@ -14,7 +15,8 @@ import (
 )
 
 type StringOperation struct {
-	ctx context.Context
+	ctx  context.Context
+	lock sync.RWMutex
 }
 
 func NewStringOperation() *StringOperation {
@@ -25,6 +27,9 @@ func NewStringOperation() *StringOperation {
 
 // Exists key是否存在
 func (so StringOperation) Exists(key string) *utils.Result {
+	so.lock.RLock()
+	defer so.lock.RUnlock()
+
 	rc, err := store.GetCacheOperator()
 	if err != nil {
 		logger.Error(err.Error())
@@ -36,6 +41,9 @@ func (so StringOperation) Exists(key string) *utils.Result {
 
 // Get 获取单值
 func (so StringOperation) Get(key string) *utils.Result {
+	so.lock.RLock()
+	defer so.lock.RUnlock()
+
 	rc, err := store.GetCacheOperator()
 	if err != nil {
 		logger.Error(err.Error())
@@ -46,6 +54,9 @@ func (so StringOperation) Get(key string) *utils.Result {
 
 // Set 设置单个值
 func (so StringOperation) Set(key string, value interface{}, attrs ...*utils.Attr) *utils.Result {
+	so.lock.Lock()
+	defer so.lock.Unlock()
+
 	rc, err := store.GetCacheOperator()
 	if err != nil {
 		logger.Error(err.Error())

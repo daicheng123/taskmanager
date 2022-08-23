@@ -2,6 +2,8 @@ package mapper
 
 import (
 	"gorm.io/gorm"
+	"gorm.io/gorm/clause"
+	"taskmanager/internal/models"
 	"taskmanager/pkg/store"
 )
 
@@ -29,4 +31,22 @@ func (bm *BaseMapper) FindOne(filter, result interface{}) (*gorm.DB, error) {
 	return store.Execute(func(db *gorm.DB) *gorm.DB {
 		return db.Session(&gorm.Session{}).Where(filter).Take(result)
 	})
+}
+
+//Save Create Or Update  创建或更新对象
+func (bm *BaseMapper) Save(conflictKeys []clause.Column, value models.UniqKeyGenerator, omitColumns ...string) error {
+	_, err := store.Execute(func(db *gorm.DB) *gorm.DB {
+		tx := db.Session(&gorm.Session{FullSaveAssociations: true}).Clauses(clause.OnConflict{
+			UpdateAll: true,
+			Columns:   conflictKeys,
+		})
+		bm.lock()
+		defer bm.Unlock()
+
+		if len(omitColumns) > 0 {
+			return tx.Omit(omitColumns...).Create(value)
+		}
+		return tx.Create(value)
+	})
+	return err
 }

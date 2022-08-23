@@ -1,15 +1,21 @@
 package models
 
-import "gorm.io/gorm"
+import (
+	"fmt"
+)
 
 type UserModel struct {
-	gorm.Model
-	UserName     string `gorm:"not null;type:varchar(128);uniqueIndex:idx_un_up"`
-	USerPassword string `gorm:"not null;type:varchar(128)"`
-	UserEmail    string `gorm:"not null;type:varchar(128);uniqueIndex:idx_un_up"`
-	//UserMobile   string `gorm:"not null;type:varchar(128)"`
+	BaseModel
+	UserName     string `gorm:"not null;type:varchar(128)" json:"userName"`
+	UserCode     string `gorm:"not null;type:varchar(128);uniqueIndex:idx_un_code" json:"userCode"`
+	UserPassword string `gorm:"not null;type:varchar(128)" json:"-"`
+	UserEmail    string `gorm:"not null;type:varchar(128);uniqueIndex:idx_un_email" json:"email"`
 }
 
-func (UserModel) TableName() string {
+func (um *UserModel) GenerateUniqKey() string {
+	return fmt.Sprintf("%d_%s", um.ID, um.UserCode)
+}
+
+func (um *UserModel) TableName() string {
 	return "users"
 }

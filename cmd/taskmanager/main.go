@@ -4,8 +4,8 @@ import (
 	"taskmanager/internal/conf"
 	"taskmanager/internal/taskManager"
 	"taskmanager/internal/web"
-	"taskmanager/internal/web/common"
-	"taskmanager/internal/web/user"
+	"taskmanager/internal/web/controller"
+	"taskmanager/internal/web/middleware"
 	"taskmanager/pkg/logger"
 	"taskmanager/utils"
 )
@@ -27,11 +27,13 @@ func main() {
 	// 初始化路由
 	web.InitRouterCenter().
 		Attach(
-			web.NewCrossMiddleWare(),
-			//web.NewErrorMiddleWare(),
-			web.NewLoggerMiddleWare()).
-		Mount("api/", common.NewCommonController()).
-		Mount("api/v1", user.NewUserController()).
+			middleware.NewCrossMiddleWare(),
+			middleware.NewSessionMiddleWare(),
+			middleware.NewErrorMiddleWare(),
+			middleware.NewLoggerMiddleWare(),
+		).
+		Mount("api/", controller.NewMailController()).
+		Mount("api/v1", controller.NewUserController()).
 		Launch()
 
 	utils.ServerNotify()
