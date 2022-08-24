@@ -3,8 +3,11 @@ package web
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"github.com/gin-gonic/gin/binding"
+	"github.com/go-playground/validator/v10"
 	"net/http"
 	"taskmanager/internal/conf"
+	modelscommon "taskmanager/internal/models/common"
 	"taskmanager/internal/web/middleware"
 	"taskmanager/pkg/logger"
 )
@@ -17,7 +20,11 @@ type RouterCenter struct {
 func InitRouterCenter() *RouterCenter {
 	gin.SetMode(conf.GetWebMode())
 	engine := gin.New()
-	engine.Use(gin.Recovery()) // 默认中件件
+	if v, ok := binding.Validator.Engine().(*validator.Validate); ok {
+		// 注册 models.CustomTime 类型的自定义校验规则
+		v.RegisterCustomTypeFunc(modelscommon.ValidateJSONDateType, modelscommon.CustomTime{})
+
+	}
 
 	// 心跳检测
 	engine.Handle("GET", "/health", func(context *gin.Context) {
@@ -31,6 +38,7 @@ func InitRouterCenter() *RouterCenter {
 
 // Attach 全局加载中间件
 func (rc *RouterCenter) Attach(middleWares ...middleware.MiddleWare) *RouterCenter {
+	rc.Engine.Use(gin.Recovery())
 	for _, m := range middleWares {
 		rc.Engine.Use(m.OnRequest())
 	}

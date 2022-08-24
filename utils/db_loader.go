@@ -11,7 +11,7 @@ func InitDBSchema() {
 	autoMigrate()
 }
 
-// 自动根据数据模型建表，表名为实体名的蛇形表示
+//autoMigrate 自动根据数据模型建表，表名为实体名的蛇形表示
 func autoMigrate() {
 	db, err := store.GetOrCreateDBOperator()
 	if err != nil {
@@ -23,10 +23,10 @@ func autoMigrate() {
 		AutoMigrate(
 			&models.UserModel{},
 			&models.SessionModel{},
+			&models.TagsModel{},
 		)
 	if err != nil {
 		logger.Error(err.Error())
 		os.Exit(1)
 	}
-
 }

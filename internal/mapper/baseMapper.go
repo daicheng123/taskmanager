@@ -33,6 +33,13 @@ func (bm *BaseMapper) FindOne(filter, result interface{}) (*gorm.DB, error) {
 	})
 }
 
+//FindAll 查询所有满足条件的：不包括软删除的
+func (bm *BaseMapper) FindAll(filter interface{}, results interface{}) (*gorm.DB, error) {
+	return store.Execute(func(db *gorm.DB) *gorm.DB {
+		return db.Session(&gorm.Session{}).Where(filter).Find(results)
+	})
+}
+
 //Save Create Or Update  创建或更新对象
 func (bm *BaseMapper) Save(conflictKeys []clause.Column, value models.UniqKeyGenerator, omitColumns ...string) error {
 	_, err := store.Execute(func(db *gorm.DB) *gorm.DB {

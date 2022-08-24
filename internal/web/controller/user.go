@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"taskmanager/internal/cache"
 	"taskmanager/internal/consts"
-	"taskmanager/internal/service/user"
+	"taskmanager/internal/service/admin"
 	"taskmanager/internal/web"
 	webutils "taskmanager/internal/web/utils"
 	"taskmanager/pkg/logger"
@@ -13,7 +13,7 @@ import (
 )
 
 type UserController struct {
-	userRegisterService *user.UserRegisterService
+	userRegisterService *admin.UserRegisterService
 }
 
 func NewUserController() *UserController {
@@ -21,13 +21,13 @@ func NewUserController() *UserController {
 }
 
 func (uc *UserController) CheckUserExist(ctx *gin.Context) {
-	service := user.NewUserRegisterService()
+	service := admin.NewUserRegisterService()
 	ctx.JSON(http.StatusOK, service.GetUserByUserCode(ctx.Param("userCode")))
 }
 
 // UserRegister 用户注册
 func (uc *UserController) UserRegister(ctx *gin.Context) {
-	service := user.NewUserRegisterService()
+	service := admin.NewUserRegisterService()
 	err := ctx.ShouldBindJSON(service)
 	if err != nil {
 		ctx.JSON(http.StatusOK, webutils.ErrorResponse(err))
@@ -54,7 +54,7 @@ func (uc *UserController) UserLogin(ctx *gin.Context) {
 	//	ctx.JSON(http.StatusOK, serializer.Response{Data: token})
 	//	return
 	//}
-	service := user.NewUserLoginService()
+	service := admin.NewUserLoginService()
 	err := ctx.ShouldBindJSON(service)
 	if err != nil {
 		ctx.JSON(http.StatusOK, webutils.ErrorResponse(err))
@@ -66,7 +66,7 @@ func (uc *UserController) UserLogin(ctx *gin.Context) {
 
 // UserInfo 用户信息
 func (uc *UserController) UserInfo(ctx *gin.Context) {
-	service := user.NewUserLoginService()
+	service := admin.NewUserLoginService()
 	ctx.JSON(http.StatusOK, service.UserInfo(ctx))
 	return
 }
@@ -78,7 +78,7 @@ func (uc *UserController) UserLogOut(ctx *gin.Context) {
 		ctx.JSON(http.StatusOK, serializer.ParamErr("无效的请求", nil))
 		return
 	}
-	service := user.NewUserLoginService()
+	service := admin.NewUserLoginService()
 	ctx.JSON(http.StatusOK, service.UserLogOut(token))
 }
 

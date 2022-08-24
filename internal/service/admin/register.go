@@ -1,4 +1,4 @@
-package user
+package admin
 
 import (
 	"gopkg.in/errgo.v2/errors"

@@ -25,6 +25,7 @@ func main() {
 	}()
 
 	// 初始化路由
+	// 初始化路由
 	web.InitRouterCenter().
 		Attach(
 			middleware.NewCrossMiddleWare(),
@@ -34,7 +35,7 @@ func main() {
 		).
 		Mount("api/", controller.NewMailController()).
 		Mount("api/v1", controller.NewUserController()).
+		Mount("api/v1", controller.NewTagsController()).
 		Launch()
-
 	utils.ServerNotify()
 }
