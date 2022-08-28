@@ -5,6 +5,7 @@ import (
 	"taskmanager/internal/consts"
 	"taskmanager/internal/mapper"
 	"taskmanager/internal/models"
+	"taskmanager/internal/service"
 	"taskmanager/pkg/logger"
 	"taskmanager/utils"
 	"taskmanager/utils/serializer"
@@ -20,7 +21,7 @@ func NewUserLoginService() *UserLoginService {
 	return &UserLoginService{}
 }
 
-func (ul *UserLoginService) Login() serializer.Response {
+func (ul *UserLoginService) Login() *serializer.Response {
 	user, err := mapper.GetUserMapper().FindByEmail(ul.Email)
 	if err != nil {
 		return serializer.DBErr("查询用户失败", err)
@@ -45,12 +46,12 @@ func (ul *UserLoginService) Login() serializer.Response {
 		logger.Error("创建会话失败,err:[%s]", err.Error())
 		return serializer.DBErr("创建会话失败", err)
 	}
-	return serializer.Response{Data: sv}
+	return &serializer.Response{Data: sv}
 }
 
-func (ul *UserLoginService) UserInfo(ctx *gin.Context) serializer.Response {
+func (ul *UserLoginService) UserInfo(ctx *gin.Context) *serializer.Response {
 	token, exist := ctx.Get(consts.UserTokenStr)
-	if !exist || !utils.SessionJudge(token.(string)) {
+	if !exist || !service.SessionJudge(token.(string)) {
 		return serializer.Err(serializer.CodeCheckLogin, "用户未登录", nil)
 	}
 	session, err := mapper.NewSessionMapper().FindByToken(token.(string))
@@ -63,18 +64,17 @@ func (ul *UserLoginService) UserInfo(ctx *gin.Context) serializer.Response {
 		logger.Error("用户信息查询失败, err:[%s]", err.Error())
 		return serializer.DBErr("用户信息查询失败", err)
 	}
-	return serializer.Response{Data: user}
+	return &serializer.Response{Data: user}
 }
 
-func (ul *UserLoginService) UserLogOut(token string) serializer.Response {
+func (ul *UserLoginService) UserLogOut(token string) *serializer.Response {
 	session := &models.SessionModel{
 		SessionValue: token,
 	}
-
 	err := mapper.GetSessionMapper().Delete(session)
 	if err != nil {
 		logger.Error("用户session删除失败, err:[%s]", err.Error())
 		return serializer.DBErr("用户session清理失败", err)
 	}
-	return serializer.Response{}
+	return &serializer.Response{}
 }

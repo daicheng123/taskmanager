@@ -20,13 +20,13 @@ func NewUserController() *UserController {
 	return &UserController{}
 }
 
-func (uc *UserController) CheckUserExist(ctx *gin.Context) {
+func (uc *UserController) checkUserExist(ctx *gin.Context) {
 	service := admin.NewUserRegisterService()
 	ctx.JSON(http.StatusOK, service.GetUserByUserCode(ctx.Param("userCode")))
 }
 
 // UserRegister 用户注册
-func (uc *UserController) UserRegister(ctx *gin.Context) {
+func (uc *UserController) userRegister(ctx *gin.Context) {
 	service := admin.NewUserRegisterService()
 	err := ctx.ShouldBindJSON(service)
 	if err != nil {
@@ -48,12 +48,7 @@ func (uc *UserController) UserRegister(ctx *gin.Context) {
 }
 
 // UserLogin 用户登录
-func (uc *UserController) UserLogin(ctx *gin.Context) {
-	//token := ctx.Request.Header.Get("X-Token")
-	//if token != "" && utils.SessionJudge(token) {
-	//	ctx.JSON(http.StatusOK, serializer.Response{Data: token})
-	//	return
-	//}
+func (uc *UserController) userLogin(ctx *gin.Context) {
 	service := admin.NewUserLoginService()
 	err := ctx.ShouldBindJSON(service)
 	if err != nil {
@@ -65,14 +60,14 @@ func (uc *UserController) UserLogin(ctx *gin.Context) {
 }
 
 // UserInfo 用户信息
-func (uc *UserController) UserInfo(ctx *gin.Context) {
+func (uc *UserController) userInfo(ctx *gin.Context) {
 	service := admin.NewUserLoginService()
 	ctx.JSON(http.StatusOK, service.UserInfo(ctx))
 	return
 }
 
 // UserLogOut 用户登出
-func (uc *UserController) UserLogOut(ctx *gin.Context) {
+func (uc *UserController) userLogOut(ctx *gin.Context) {
 	token := ctx.Request.Header.Get("X-Token")
 	if token == "" {
 		ctx.JSON(http.StatusOK, serializer.ParamErr("无效的请求", nil))
@@ -84,9 +79,9 @@ func (uc *UserController) UserLogOut(ctx *gin.Context) {
 
 func (uc *UserController) Build(rc *web.RouterCenter) {
 	userGroup := rc.RG.Group(consts.UserControllerGroup)
-	userGroup.Handle("POST", "/login", uc.UserLogin)
-	userGroup.Handle("POST", "/register", uc.UserRegister)
-	userGroup.Handle("GET", "/user_code/:user_code", uc.CheckUserExist)
-	userGroup.Handle("GET", "/user_info", uc.UserInfo)
-	userGroup.Handle("POST", "/logout", uc.UserLogOut)
+	userGroup.Handle("POST", "/login", uc.userLogin)
+	userGroup.Handle("POST", "/register", uc.userRegister)
+	userGroup.Handle("GET", "/user_code/:user_code", uc.checkUserExist)
+	userGroup.Handle("GET", "/user_info", uc.userInfo)
+	userGroup.Handle("POST", "/logout", uc.userLogOut)
 }

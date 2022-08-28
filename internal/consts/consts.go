@@ -1,9 +1,10 @@
 package consts
 
 const (
-	UserControllerGroup = "user"
-	TagControllerGroup  = "tags"
-	AppManagerConfPath  = "APP_MANAGER_CONF_FILE"
+	UserControllerGroup     = "user"
+	TagControllerGroup      = "tags"
+	ExecutorControllerGroup = "executor"
+	AppManagerConfPath      = "APP_MANAGER_CONF_FILE"
 
 	ManagerLog = iota // 服务日志
 	GinLog            // gin框架日志

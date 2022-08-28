@@ -16,15 +16,15 @@ type MailService struct {
 	Email string `json:"email" binding:"required,email"`
 }
 
-func (ms *MailService) CheckMailExists(mail string) serializer.Response {
+func (ms *MailService) CheckMailExists(mail string) *serializer.Response {
 	user, err := mapper.GetUserMapper().FindByEmail(mail)
 	if err != nil {
 		return serializer.DBErr("查询用户信息失败", err)
 	}
-	return serializer.Response{Data: user}
+	return &serializer.Response{Data: user}
 }
 
-func (ms *MailService) GenMailCode() serializer.Response {
+func (ms *MailService) GenMailCode() *serializer.Response {
 	so := cache.NewStringOperation()
 	flagKey := ms.Email + "_" + consts.EmailFlagPrefix
 
@@ -62,5 +62,5 @@ func (ms *MailService) GenMailCode() serializer.Response {
 		logger.Error("验证码邮件发送失败,error:[%s]", err.Error())
 		return serializer.Err(serializer.CodeMailSendErr, "验证码邮件发送失败", err)
 	}
-	return serializer.Response{Message: "验证码推送成功！"}
+	return &serializer.Response{Message: "验证码推送成功！"}
 }

@@ -1,15 +1,13 @@
 package models
 
 import (
-	"gorm.io/gorm"
 	"taskmanager/internal/models/common"
 )
 
 type BaseModel struct {
 	ID        uint              `gorm:"primarykey" json:"id"`
-	CreatedAt common.CustomTime `json:"createdAt"`
-	UpdatedAt common.CustomTime `json:"updateAt"`
-	DeletedAt gorm.DeletedAt    `gorm:"index" json:"-"`
+	CreatedAt common.CustomTime `gorm:"column:createdAt" json:"createdAt"`
+	UpdatedAt common.CustomTime `gorm:"column:updatedAt" json:"updatedAt"`
 }
 
 type UniqKeyGenerator interface {

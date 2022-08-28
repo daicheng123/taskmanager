@@ -19,15 +19,15 @@ func NewUserRegisterService() *UserRegisterService {
 	return &UserRegisterService{}
 }
 
-func (us *UserRegisterService) GetUserByUserCode(code string) serializer.Response {
+func (us *UserRegisterService) GetUserByUserCode(code string) *serializer.Response {
 	user, err := mapper.GetUserMapper().FindByEmail(code)
 	if err != nil {
 		return serializer.DBErr("查询用户失败", err)
 	}
-	return serializer.Response{Data: user}
+	return &serializer.Response{Data: user}
 }
 
-func (us *UserRegisterService) AddUser() serializer.Response {
+func (us *UserRegisterService) AddUser() *serializer.Response {
 	var (
 		err = errors.New("")
 	)
@@ -42,5 +42,5 @@ func (us *UserRegisterService) AddUser() serializer.Response {
 		logger.Error("创建用户失败,error:[%s]", err.Error())
 		return serializer.DBErr("创建用户失败", err)
 	}
-	return serializer.Response{}
+	return &serializer.Response{}
 }

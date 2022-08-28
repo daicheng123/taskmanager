@@ -1,9 +1,10 @@
-package utils
+package service
 
 import (
 	"taskmanager/internal/consts"
 	"taskmanager/internal/mapper"
 	"taskmanager/pkg/logger"
+	"taskmanager/utils"
 	"time"
 )
 
@@ -20,7 +21,7 @@ func SessionJudge(token string) bool {
 	if session.ExpireTime.After(a) && dur < consts.SessionCookieAge {
 		// token 续期
 		if dur < 300 {
-			go RunSafeWithMsg(func() {
+			go utils.RunSafeWithMsg(func() {
 				session.ExpireTime = session.ExpireTime.Add(consts.SessionCookieAge * time.Second)
 				sm.Save(session)
 			}, "token 续期失败")

@@ -15,7 +15,7 @@ func NewMailController() *MailController {
 	return &MailController{}
 }
 
-func (mc *MailController) CheckEmailExist(ctx *gin.Context) {
+func (mc *MailController) checkEmailExist(ctx *gin.Context) {
 	email := ctx.Query("email")
 	service := admin.MailService{}
 	res := service.CheckMailExists(email)
@@ -23,7 +23,7 @@ func (mc *MailController) CheckEmailExist(ctx *gin.Context) {
 
 }
 
-func (mc *MailController) GenEmailCode(ctx *gin.Context) {
+func (mc *MailController) genEmailCode(ctx *gin.Context) {
 	mailService := new(admin.MailService)
 	if err := ctx.ShouldBindJSON(mailService); err == nil {
 		res := mailService.GenMailCode()
@@ -35,6 +35,6 @@ func (mc *MailController) GenEmailCode(ctx *gin.Context) {
 
 func (mc *MailController) Build(rc *web.RouterCenter) {
 	commonGroup := rc.RG.Group("")
-	commonGroup.Handle("GET", "/check_email_exists", mc.CheckEmailExist)
-	commonGroup.Handle("POST", "/email_code", mc.GenEmailCode)
+	commonGroup.Handle("GET", "/check_email_exists", mc.checkEmailExist)
+	commonGroup.Handle("POST", "/email_code", mc.genEmailCode)
 }

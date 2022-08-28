@@ -44,12 +44,12 @@ func (err *AppError) WithError(raw error) AppError {
 }
 
 // Error 返回业务代码确定的可读错误信息
-func (err AppError) Error() string {
+func (err *AppError) Error() string {
 	return err.Message
 }
 
 // ParamErr 各种参数错误
-func ParamErr(msg string, err error) Response {
+func ParamErr(msg string, err error) *Response {
 	if msg == "" {
 		msg = "参数错误"
 	}
@@ -57,19 +57,19 @@ func ParamErr(msg string, err error) Response {
 }
 
 // Err 通用错误处理
-func Err(errCode int, msg string, err error) Response {
+func Err(errCode int, msg string, err error) *Response {
 	// 底层错误是AppError，则尝试从AppError中获取详细信息
-	if appError, ok := err.(AppError); ok {
+	if appError, ok := err.(*AppError); ok {
 		errCode = appError.Code
 		err = appError.RawError
 		msg = appError.Message
 	}
-
-	res := Response{
+	res := &Response{
 		Code:    errCode,
 		Message: msg,
 	}
 	// 生产环境隐藏底层报错
+
 	if err != nil && gin.Mode() != gin.ReleaseMode {
 		res.Error = err.Error()
 	}
@@ -77,10 +77,11 @@ func Err(errCode int, msg string, err error) Response {
 }
 
 // DBErr 数据库操作失败
-func DBErr(msg string, err error) Response {
+func DBErr(msg string, err error) *Response {
 	if msg == "" {
 		msg = "数据库操作失败"
 	}
+
 	return Err(CodeDBError, msg, err)
 }
 

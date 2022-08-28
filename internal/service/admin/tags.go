@@ -6,39 +6,66 @@ import (
 	"taskmanager/internal/web/utils"
 	"taskmanager/pkg/logger"
 	"taskmanager/utils/serializer"
+	//validator "github.com/go-playground/validator/v10"
 )
 
 type TagsService struct {
+	ID           uint   `json:"id" binding:"omitempty,gte=1"`
 	TagName      string `json:"tagName"      binding:"required"`
 	LastOperator string `json:"lastOperator" binding:"required"`
-	*ListService `form:", inline"`
 }
 
-func (ts *TagsService) TagSave() serializer.Response {
+func (ts *TagsService) TagSave() *serializer.Response {
 	tag := &models.TagsModel{
 		TagName:      ts.TagName,
 		LastOperator: ts.LastOperator,
 	}
 
-	if err := mapper.GetTagsMapper().Save(tag); err != nil {
+	if err := mapper.GetTagsMapper().Upsert(tag); err != nil {
 		logger.Error("新增标签失败: [%s]", err.Error())
 		return serializer.DBErr("新增标签失败", err)
 	}
-	return serializer.Response{}
+	return &serializer.Response{}
 }
 
-func (ts *TagsService) ListByPager() serializer.Response {
-	ts.ValidDate()
+func (ts *TagsService) TagDelete(id uint) *serializer.Response {
+	filter := &models.TagsModel{
+		BaseModel: models.BaseModel{ID: id},
+	}
+	_, err := mapper.GetTagsMapper().Delete(filter)
+	if err != nil {
+		logger.Error("删除分类标签失败: [%s]", err.Error())
+		return serializer.DBErr("删除分类标签失败", err)
+	}
+	return &serializer.Response{}
+}
+
+func (ts *TagsService) TagEdit() *serializer.Response {
+	tag := &models.TagsModel{
+		BaseModel: models.BaseModel{
+			ID: ts.ID,
+		},
+		TagName:      ts.TagName,
+		LastOperator: ts.LastOperator,
+	}
+	if err := mapper.GetTagsMapper().Upsert(tag); err != nil {
+		logger.Error("更新标签出错, err:[%s]", err.Error())
+		return serializer.DBErr("更新标签出错", err)
+	}
+	return &serializer.Response{Data: tag}
+}
+func (ls *ListService) TagsList() *serializer.Response {
+	ls.ValidDate()
 	filter := &models.TagsModel{}
 	tags := &[]*models.TagsModel{}
 
-	count, err := mapper.GetTagsMapper().Count(filter, ts.SortBy, ts.Conditions, ts.Searches)
+	count, err := mapper.GetTagsMapper().Count(filter, ls.Sort, ls.Conditions, ls.Searches)
 	if err != nil {
 		logger.Error("查询标签总数失败: [%s]", err.Error())
 		return serializer.DBErr("查询标签列表失败", err)
 	}
-	_, err = mapper.GetTagsMapper().FindAllWithPager(filter, tags, ts.PageSize, ts.PageNo,
-		ts.SortBy, ts.Conditions, ts.Searches)
+	_, err = mapper.GetTagsMapper().FindAllWithPager(filter, tags, ls.PageSize, ls.PageNo,
+		ls.Sort, ls.Conditions, ls.Searches)
 
 	if err != nil {
 		logger.Error("查询标签列表失败: [%s]", err.Error())
@@ -46,12 +73,11 @@ func (ts *TagsService) ListByPager() serializer.Response {
 	}
 
 	result := &utils.PagerResult{
-		PageSize: ts.PageSize,
-		PageNo:   ts.PageNo,
+		PageSize: ls.PageSize,
+		PageNo:   ls.PageNo,
 		Count:    count,
 	}
-
 	result.CompletePageInfo()
 	result.Rows = tags
-	return serializer.Response{Data: result}
+	return &serializer.Response{Data: result}
 }

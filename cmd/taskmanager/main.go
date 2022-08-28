@@ -2,6 +2,7 @@ package main
 
 import (
 	"taskmanager/internal/conf"
+	modelutils "taskmanager/internal/models/utils"
 	"taskmanager/internal/taskManager"
 	"taskmanager/internal/web"
 	"taskmanager/internal/web/controller"
@@ -13,7 +14,7 @@ import (
 func init() {
 	conf.LoadConf()
 	logger.InitLogger()
-	utils.InitDBSchema()
+	modelutils.InitDBSchema()
 }
 
 func main() {
@@ -24,7 +25,6 @@ func main() {
 		tc.StartWorker(10)
 	}()
 
-	// 初始化路由
 	// 初始化路由
 	web.InitRouterCenter().
 		Attach(

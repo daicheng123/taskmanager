@@ -43,14 +43,15 @@ func GetTagsMapper() *TagsMapper {
 	return defaultTagsMapper
 }
 
-func (tm *TagsMapper) Save(tag *models.TagsModel) error {
+func (tm *TagsMapper) Upsert(tag *models.TagsModel) error {
 	if tag == nil {
 		return errors.New("标签对象不能为空")
 	}
 	conflictKey := []clause.Column{
+		{Name: "id"},
 		{Name: "tag_name"},
 	}
-	return tm.BaseMapper.Save(conflictKey, tag)
+	return tm.BaseMapper.Upsert(conflictKey, tag)
 }
 
 func (tm *TagsMapper) FindAllWithPager(filter, result interface{}, pageSize, pageNo int,
@@ -60,9 +61,9 @@ func (tm *TagsMapper) FindAllWithPager(filter, result interface{}, pageSize, pag
 		return db.Session(&gorm.Session{}).
 			Model(filter).
 			Scopes(
-				orderBy(sortBy),
 				conditionBy(conditions),
 				searchBy(searches),
+				orderBy(sortBy),
 				paginate(pageSize, pageNo)).
 			Find(result)
 	})
@@ -79,4 +80,14 @@ func (tm *TagsMapper) Count(filter interface{}, sortBy string, conditions, searc
 			Count(&count)
 	})
 	return int(count), err
+}
+
+// Delete 软删除
+func (tm *TagsMapper) Delete(filter *models.TagsModel) (*[]models.TagsModel, error) {
+	deletedItems := &[]models.TagsModel{}
+	if filter == nil {
+		return deletedItems, nil
+	}
+	err := tm.BaseMapper.SoftDeleteByFilter(filter, deletedItems)
+	return deletedItems, err
 }

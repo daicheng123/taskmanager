@@ -5,6 +5,7 @@ import (
 	"gorm.io/gorm/clause"
 	"taskmanager/internal/models"
 	"taskmanager/pkg/store"
+	"taskmanager/utils"
 )
 
 type BaseMapper struct {
@@ -40,8 +41,8 @@ func (bm *BaseMapper) FindAll(filter interface{}, results interface{}) (*gorm.DB
 	})
 }
 
-//Save Create Or Update  创建或更新对象
-func (bm *BaseMapper) Save(conflictKeys []clause.Column, value models.UniqKeyGenerator, omitColumns ...string) error {
+//Upsert  创建或更新对象
+func (bm *BaseMapper) Upsert(conflictKeys []clause.Column, value models.UniqKeyGenerator, omitColumns ...string) error {
 	_, err := store.Execute(func(db *gorm.DB) *gorm.DB {
 		tx := db.Session(&gorm.Session{FullSaveAssociations: true}).Clauses(clause.OnConflict{
 			UpdateAll: true,
@@ -56,4 +57,19 @@ func (bm *BaseMapper) Save(conflictKeys []clause.Column, value models.UniqKeyGen
 		return tx.Create(value)
 	})
 	return err
+}
+
+//SoftDeleteByFilter  软删除
+func (bm *BaseMapper) SoftDeleteByFilter(filter interface{}, deletedItems interface{}) (err error) {
+	_, err = store.Execute(func(db *gorm.DB) *gorm.DB {
+		// 级联删除只能按ID关联，所以这里需要先查询完整的实体
+		queryDB, _ := bm.FindAll(filter, deletedItems)
+		if utils.Size(queryDB) > 0 {
+			return db
+		}
+		bm.lock()
+		defer bm.unlock()
+		return db.Session(&gorm.Session{}).Select(clause.Associations).Delete(deletedItems)
+	})
+	return
 }

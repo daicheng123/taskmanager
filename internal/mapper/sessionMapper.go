@@ -68,7 +68,7 @@ func (sm *SessionMapper) Save(session *models.SessionModel) error {
 		{Name: "expire_time"},
 	}
 
-	return sm.BaseMapper.Save(conflictKey, session)
+	return sm.BaseMapper.Upsert(conflictKey, session)
 }
 
 // Delete 删除session

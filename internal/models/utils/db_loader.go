@@ -24,6 +24,8 @@ func autoMigrate() {
 			&models.UserModel{},
 			&models.SessionModel{},
 			&models.TagsModel{},
+			&models.Executor{},
+			&models.ExecutorAccount{},
 		)
 	if err != nil {
 		logger.Error(err.Error())

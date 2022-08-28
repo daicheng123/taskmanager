@@ -2,7 +2,6 @@ package middleware
 
 import (
 	"github.com/gin-gonic/gin"
-	"reflect"
 	"regexp"
 	"strings"
 )
@@ -17,7 +16,8 @@ var NoAuthUri = []string{
 	"/email_code",
 	"/user/login",
 	"/user/register",
-	"/user/code",
+	"/user/user_code",
+	"/sonarqube/hook",
 }
 
 func AllowUri(uri string) bool {
@@ -31,7 +31,7 @@ func AllowUri(uri string) bool {
 	}
 	uriStr := reg.ReplaceAllString(uri, "$1")
 	for _, u := range NoAuthUri {
-		if reflect.DeepEqual(u, uriStr) {
+		if strings.Contains(uriStr, u) {
 			return true
 		}
 	}

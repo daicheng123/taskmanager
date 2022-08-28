@@ -37,7 +37,7 @@ func ValidatorErrorMsg(filed string, tag string) string {
 }
 
 // ErrorResponse 返回错误消息
-func ErrorResponse(err error) serializer.Response {
+func ErrorResponse(err error) *serializer.Response {
 	// 处理 Validator 产生的错误
 	if ve, ok := err.(validator.ValidationErrors); ok {
 		for _, e := range ve {
