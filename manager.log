@@ -1002,3 +1002,441 @@
 {"file":"db_loader.go","function":"taskmanager/internal/models/utils.autoMigrate","level":"error","line":31,"msg":"failed to parse 0；commit:密钥分发状态, 0未分发 1已分发 3分发中 4不包含root账号 5密码错误 6主机类型错误 as default value for bool, got error: strconv.ParseBool: parsing \"0；commit:密钥分发状态, 0未分发 1已分发 3分发中 4不包含root账号 5密码错误 6主机类型错误\": invalid syntax","time":"2022-08-28T15:43:44+08:00"}
 {"file":"db_loader.go","function":"taskmanager/internal/models/utils.autoMigrate","level":"error","line":31,"msg":"failed to parse 0；commit:密钥分发状态, 0未分发 1已分发 3分发中 4不包含root账号 5密码错误 6主机类型错误 as default value for uint, got error: strconv.ParseUint: parsing \"0；commit:密钥分发状态, 0未分发 1已分发 3分发中 4不包含root账号 5密码错误 6主机类型错误\": invalid syntax","time":"2022-08-28T15:44:29+08:00"}
 {"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-08-28T15:45:17+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-02T14:44:40+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-04T17:18:20+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T17:18:32+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-04T18:02:29+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:03:14+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:03:58+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:06:50+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-04T18:07:01+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:07:04+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-04T18:08:32+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:08:38+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:10:07+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-04T18:13:00+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:13:05+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-04T18:21:15+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:21:20+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-04T18:22:13+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:22:17+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-04T18:27:32+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:27:37+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-04T18:29:12+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:29:18+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-04T18:29:23+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:29:26+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-04T18:31:41+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:31:47+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-04T18:37:21+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:37:26+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-04T18:38:48+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:38:57+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-04T18:39:42+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:39:49+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:41:53+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-04T18:42:30+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:42:34+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:42:56+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:43:57+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:44:04+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:45:15+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:47:13+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-04T18:47:39+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:47:43+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:50:10+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-04T18:50:23+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:50:26+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-04T18:50:56+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:51:03+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:52:34+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:53:14+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-04T18:53:58+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:54:01+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-04T18:54:54+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:54:57+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-04T18:55:17+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:55:23+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-04T18:59:24+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T18:59:29+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-04T20:55:11+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T20:56:23+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-04T21:05:41+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T21:05:45+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-04T21:15:05+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T21:15:12+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-04T21:35:21+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-04T21:35:27+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-05T10:27:07+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-05T10:32:58+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-05T10:33:06+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-05T10:43:03+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-05T10:43:08+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExecutorService).ExecutorAdd","level":"error","line":52,"msg":"执行器保存失败, err:[Error 1062: Duplicate entry 'test-0' for key 'idx_hn']","time":"2022-09-05T10:43:11+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExecutorService).ExecutorAdd","level":"error","line":52,"msg":"执行器保存失败, err:[Error 1062: Duplicate entry 'test-0' for key 'idx_hn']","time":"2022-09-05T10:46:08+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExecutorService).ExecutorAdd","level":"error","line":52,"msg":"执行器保存失败, err:[Error 1062: Duplicate entry 'test-0' for key 'idx_hn']","time":"2022-09-05T10:46:14+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExecutorService).ExecutorAdd","level":"error","line":52,"msg":"执行器保存失败, err:[Error 1062: Duplicate entry 'test-0' for key 'idx_hn']","time":"2022-09-05T10:46:15+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-05T11:04:31+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-05T11:04:39+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExecutorService).ExecutorAdd","level":"error","line":52,"msg":"执行器保存失败, err:[Error 1062: Duplicate entry 'test-0' for key 'idx_hn']","time":"2022-09-05T11:04:44+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExecutorService).ExecutorAdd","level":"error","line":52,"msg":"执行器保存失败, err:[Error 1062: Duplicate entry 'test-0' for key 'idx_hn']","time":"2022-09-05T11:05:20+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-05T11:10:38+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-05T11:10:44+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExecutorService).ExecutorAdd","level":"error","line":52,"msg":"执行器新增失败, err:[Error 1062: Duplicate entry 'test-0' for key 'idx_hn']","time":"2022-09-05T11:53:49+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExecutorService).ExecutorAdd","level":"error","line":52,"msg":"执行器新增失败, err:[Error 1062: Duplicate entry 'test-0' for key 'idx_hn']","time":"2022-09-05T11:53:49+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExecutorService).ExecutorAdd","level":"error","line":52,"msg":"执行器新增失败, err:[Error 1062: Duplicate entry 'test-0' for key 'idx_hn']","time":"2022-09-05T11:53:50+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExecutorService).ExecutorAdd","level":"error","line":52,"msg":"执行器新增失败, err:[Error 1062: Duplicate entry 'test-0' for key 'idx_hn']","time":"2022-09-05T11:53:51+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExecutorService).ExecutorAdd","level":"error","line":52,"msg":"执行器新增失败, err:[Error 1062: Duplicate entry 'test-0' for key 'idx_hn']","time":"2022-09-05T11:53:52+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExecutorService).ExecutorAdd","level":"error","line":52,"msg":"执行器新增失败, err:[Error 1062: Duplicate entry 'test-0' for key 'idx_hn']","time":"2022-09-05T11:54:34+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExecutorService).ExecutorAdd","level":"error","line":52,"msg":"执行器新增失败, err:[Error 1062: Duplicate entry 'test3-0' for key 'idx_hn']","time":"2022-09-05T13:32:00+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExecutorService).ExecutorAdd","level":"error","line":52,"msg":"执行器新增失败, err:[Error 1062: Duplicate entry 'test3-0' for key 'idx_hn']","time":"2022-09-05T13:32:04+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-05T17:21:12+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-05T17:21:26+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-05T17:27:35+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-05T17:27:41+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-05T17:32:47+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-05T17:32:53+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-05T20:12:08+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-05T20:12:23+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-05T21:33:06+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-05T21:33:41+08:00"}
+{"file":"login.go","function":"taskmanager/internal/service/admin.(*UserLoginService).Login","level":"error","line":38,"msg":"解析密码错误, err:[illegal base64 data at input byte 0]","time":"2022-09-05T21:35:29+08:00"}
+{"file":"login.go","function":"taskmanager/internal/service/admin.(*UserLoginService).Login","level":"error","line":38,"msg":"解析密码错误, err:[illegal base64 data at input byte 0]","time":"2022-09-05T21:35:33+08:00"}
+{"file":"login.go","function":"taskmanager/internal/service/admin.(*UserLoginService).Login","level":"error","line":38,"msg":"解析密码错误, err:[illegal base64 data at input byte 0]","time":"2022-09-05T21:35:37+08:00"}
+{"file":"login.go","function":"taskmanager/internal/service/admin.(*UserLoginService).Login","level":"error","line":38,"msg":"解析密码错误, err:[illegal base64 data at input byte 0]","time":"2022-09-05T21:35:41+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-05T21:38:16+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-05T21:38:22+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.ExecutorTransServices","level":"error","line":168,"msg":"执行器:test01 密码解析错误,err:[illegal base64 data at input byte 0]","time":"2022-09-05T21:38:29+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.ExecutorTransServices","level":"error","line":168,"msg":"执行器:test01 密码解析错误,err:[illegal base64 data at input byte 0]","time":"2022-09-05T21:38:34+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-05T21:46:40+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-05T21:46:46+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-05T21:48:10+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-05T21:48:15+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-05T21:50:02+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-05T21:50:09+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-05T22:13:15+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-05T22:13:32+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-05T22:20:06+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-05T22:20:15+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T09:29:18+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T09:46:55+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T09:47:01+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T09:47:44+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T09:47:52+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T09:49:19+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T12:35:46+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T12:37:59+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T12:38:04+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T12:38:57+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T12:39:02+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T12:40:07+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T12:40:10+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T12:43:08+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T12:43:13+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T13:45:03+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T13:45:09+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T13:49:59+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T13:50:05+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T14:11:21+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T14:11:28+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExecutorDelService).ExecutorBatchDelete","level":"error","line":134,"msg":"执行器批量删除失败,err:[WHERE conditions required]","time":"2022-09-06T14:11:41+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T14:16:43+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T14:16:49+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExecutorService).ExecutorAdd","level":"error","line":61,"msg":"执行器新增失败, err:[Error 1062: Duplicate entry 'test-0' for key 'idx_hn']","time":"2022-09-06T14:30:59+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExecutorService).ExecutorAdd","level":"error","line":61,"msg":"执行器新增失败, err:[Error 1062: Duplicate entry 'test-0' for key 'idx_hn']","time":"2022-09-06T14:32:01+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T15:02:23+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T15:02:32+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T15:15:43+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T15:53:44+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T15:53:55+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T16:02:22+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T16:02:28+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T17:32:11+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T17:35:49+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T17:36:07+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T17:36:11+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T17:38:54+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T17:39:00+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T17:48:46+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T17:48:51+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExeTestService).RefreshNode.func2","level":"error","line":68,"msg":"更新执行器状态失败, err:[WHERE conditions required]","time":"2022-09-06T17:53:02+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExeTestService).RefreshNode.func2","level":"error","line":68,"msg":"更新执行器状态失败, err:[WHERE conditions required]","time":"2022-09-06T17:54:43+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExeTestService).RefreshNode.func2","level":"error","line":68,"msg":"更新执行器状态失败, err:[WHERE conditions required]","time":"2022-09-06T17:54:52+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExeTestService).RefreshNode.func2","level":"error","line":68,"msg":"更新执行器状态失败, err:[WHERE conditions required]","time":"2022-09-06T17:54:58+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExeTestService).RefreshNode.func2","level":"error","line":68,"msg":"更新执行器状态失败, err:[WHERE conditions required]","time":"2022-09-06T17:55:02+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExeTestService).RefreshNode.func2","level":"error","line":68,"msg":"更新执行器状态失败, err:[WHERE conditions required]","time":"2022-09-06T18:32:37+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExeTestService).RefreshNode.func2","level":"error","line":68,"msg":"更新执行器状态失败, err:[WHERE conditions required]","time":"2022-09-06T18:32:40+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExeTestService).RefreshNode.func2","level":"error","line":68,"msg":"更新执行器状态失败, err:[WHERE conditions required]","time":"2022-09-06T18:36:49+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T18:59:56+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T19:00:03+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T19:02:13+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T19:02:22+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T19:03:07+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T19:03:49+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T19:05:57+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T19:13:01+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T19:13:07+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T19:16:17+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T19:21:30+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T19:21:39+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExeTestService).RefreshNode.func2","level":"error","line":68,"msg":"更新执行器状态失败, err:[WHERE conditions required]","time":"2022-09-06T19:35:06+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExeTestService).RefreshNode.func2","level":"error","line":68,"msg":"更新执行器状态失败, err:[WHERE conditions required]","time":"2022-09-06T20:26:35+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExeTestService).RefreshNode.func2","level":"error","line":68,"msg":"更新执行器状态失败, err:[WHERE conditions required]","time":"2022-09-06T20:26:37+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExeTestService).RefreshNode.func2","level":"error","line":68,"msg":"更新执行器状态失败, err:[WHERE conditions required]","time":"2022-09-06T20:26:58+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExeTestService).RefreshNode.func2","level":"error","line":68,"msg":"更新执行器状态失败, err:[WHERE conditions required]","time":"2022-09-06T20:27:06+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExeTestService).RefreshNode.func2","level":"error","line":68,"msg":"更新执行器状态失败, err:[WHERE conditions required]","time":"2022-09-06T20:27:30+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T20:32:14+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T20:32:37+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T21:01:05+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T21:01:11+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T21:02:55+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T21:03:00+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T21:15:50+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T21:15:56+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T21:18:22+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T21:18:26+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T21:24:59+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T21:25:05+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T21:25:41+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T21:25:50+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T21:27:57+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T21:30:58+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T21:31:03+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T21:35:56+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T21:36:01+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T21:36:29+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T21:36:33+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExeTestService).RefreshNode.func2","level":"error","line":68,"msg":"更新执行器状态失败, err:[WHERE conditions required]","time":"2022-09-06T21:40:31+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T21:44:44+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T21:49:43+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ListService).ExecutorList","level":"error","line":170,"msg":"查询执行器总数失败: [Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '\\%v\\%!A(string=haha)ND  AND `executors`.`deletedAt` = ? ORDER BY updatedAt DESC' at line 1]","time":"2022-09-06T21:50:33+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T21:53:42+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T21:53:47+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ListService).ExecutorList","level":"error","line":170,"msg":"查询执行器总数失败: [Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '\\%v\\%!\\(string=172.31.176.42)AND  AND `executors`.`deletedAt` = ? ORDER BY updat' at line 1]","time":"2022-09-06T21:54:09+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T22:00:32+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T22:00:37+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ListService).ExecutorList","level":"error","line":170,"msg":"查询执行器总数失败: [Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '\\'%!\\(string=172.31.176.42)'%!v(MISSING)'%!\\(MISSING)' \\AND  AND `executors`.`de' at line 1]","time":"2022-09-06T22:00:51+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T22:04:21+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T22:04:25+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T22:04:39+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T22:04:42+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T22:05:28+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T22:05:31+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExeTestService).RefreshNode.func2","level":"error","line":68,"msg":"更新执行器状态失败, err:[WHERE conditions required]","time":"2022-09-06T22:06:27+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExeTestService).RefreshNode.func2","level":"error","line":68,"msg":"更新执行器状态失败, err:[WHERE conditions required]","time":"2022-09-06T22:07:13+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-06T22:15:28+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T22:15:34+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-06T22:22:51+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExecutorService).ExecutorAdd","level":"error","line":83,"msg":"执行器新增失败, err:[Error 1062: Duplicate entry 'test-02-0' for key 'idx_hn']","time":"2022-09-06T22:27:02+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-07T09:24:51+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-07T09:24:58+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-07T09:27:38+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-07T09:27:44+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.ExecutorTransServices","level":"error","line":241,"msg":"执行器:test-03 密码解析错误,err:[密码解码失败]","time":"2022-09-07T09:38:48+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.ExecutorTransServices","level":"error","line":241,"msg":"执行器:test-03 密码解析错误,err:[密码解码失败]","time":"2022-09-07T09:50:37+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.ExecutorTransServices","level":"error","line":241,"msg":"执行器:test-03 密码解析错误,err:[密码解码失败]","time":"2022-09-07T09:50:46+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.ExecutorTransToModel","level":"error","line":217,"msg":"主机密码解析错误, err:[密码编码失败]","time":"2022-09-07T09:51:25+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.ExecutorTransServices","level":"error","line":241,"msg":"执行器:test-03 密码解析错误,err:[密码解码失败]","time":"2022-09-07T09:51:35+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.ExecutorTransToModel","level":"error","line":217,"msg":"主机密码解析错误, err:[密码编码失败]","time":"2022-09-07T09:51:47+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-07T09:55:46+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-07T09:55:54+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-07T10:00:57+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-07T10:01:09+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-07T10:03:17+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-07T10:04:15+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-07T10:09:47+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-07T15:58:09+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-07T16:07:20+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-07T16:07:28+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-07T16:10:15+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-07T16:10:23+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-07T16:12:12+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-07T16:13:42+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-07T16:19:57+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-07T16:20:02+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-07T16:26:37+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-07T16:51:38+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-07T16:51:44+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-07T16:59:20+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-07T16:59:26+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-07T17:07:32+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-07T17:07:40+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExecutorService).ExecutorUpdate","level":"error","line":102,"msg":"查询执行器失败,ID: 73, err:[record not found]","time":"2022-09-07T17:11:13+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExecutorService).ExecutorUpdate","level":"error","line":102,"msg":"查询执行器失败,ID: 74, err:[record not found]","time":"2022-09-07T17:11:20+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExecutorService).ExecutorUpdate","level":"error","line":102,"msg":"查询执行器失败,ID: 74, err:[record not found]","time":"2022-09-07T17:11:23+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-07T17:15:47+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-07T17:15:56+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-07T17:19:30+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-07T17:19:35+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-07T17:26:30+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-07T17:26:36+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-07T17:29:58+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-07T17:30:03+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-07T17:37:02+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-07T17:37:10+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-07T17:39:42+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-07T17:44:24+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-07T17:44:30+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-07T21:40:02+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-07T21:40:09+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-07T21:52:49+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-07T21:52:55+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-07T21:54:32+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-07T21:54:37+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-07T22:31:46+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-07T22:31:51+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-07T22:34:11+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-07T22:34:17+08:00"}
+{"file":"db_loader.go","function":"taskmanager/internal/models/utils.autoMigrate","level":"error","line":32,"msg":"Error 1170: BLOB/TEXT column 'scriptContent' used in key specification without a key length","time":"2022-09-08T16:14:45+08:00"}
+{"file":"db_loader.go","function":"taskmanager/internal/models/utils.autoMigrate","level":"error","line":32,"msg":"Error 1170: BLOB/TEXT column 'scriptContent' used in key specification without a key length","time":"2022-09-08T16:22:17+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-08T16:22:37+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-08T16:47:12+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-08T16:47:19+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-08T17:28:02+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-08T17:28:08+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-09T09:04:21+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-09T09:04:35+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":65,"msg":"init server on 8000","time":"2022-09-09T12:35:24+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-13T08:49:41+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-19T19:12:05+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-20T16:18:59+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-20T19:51:33+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-20T19:52:19+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-20T19:53:29+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-20T19:55:24+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-20T19:55:28+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-20T20:18:38+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-20T20:18:43+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-20T20:22:40+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-20T20:22:46+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-20T20:27:57+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-20T20:28:02+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-20T20:29:24+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-20T20:29:29+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-20T20:31:16+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-20T20:31:22+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-20T20:35:40+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-20T20:35:45+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-20T20:36:35+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-20T20:36:41+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-20T20:37:23+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-20T20:37:26+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-20T20:40:05+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-20T20:40:11+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-20T21:18:51+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-20T21:18:58+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-20T21:22:40+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-20T21:22:45+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-20T21:26:33+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-20T21:26:38+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T10:12:09+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T10:12:55+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T10:13:41+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T10:13:46+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T10:18:46+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T10:18:51+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T10:22:23+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T10:22:28+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T10:23:06+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T10:23:12+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T10:25:34+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T10:33:21+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T10:33:29+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T10:38:45+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T10:41:09+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T10:41:28+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T10:41:31+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T10:42:21+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T10:42:25+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T10:45:39+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T10:54:33+08:00"}
+{"file":"script.go","function":"taskmanager/internal/service/admin.(*ScriptService).CheckShellScript","level":"error","line":35,"msg":"执行脚本 /tmp/0f328e9a-3959-11ed-83d0-a45e60beaea1.sh 出错, err:exit status 1","time":"2022-09-21T10:56:58+08:00"}
+{"file":"script.go","function":"taskmanager/internal/service/admin.(*ScriptService).CheckShellScript","level":"error","line":35,"msg":"执行脚本 /tmp/0fc2f610-3959-11ed-83d0-a45e60beaea1.sh 出错, err:exit status 1","time":"2022-09-21T10:56:59+08:00"}
+{"file":"script.go","function":"taskmanager/internal/service/admin.(*ScriptService).CheckShellScript","level":"error","line":35,"msg":"执行脚本 /tmp/100fbae0-3959-11ed-83d0-a45e60beaea1.sh 出错, err:exit status 1","time":"2022-09-21T10:57:00+08:00"}
+{"file":"script.go","function":"taskmanager/internal/service/admin.(*ScriptService).CheckShellScript","level":"error","line":35,"msg":"执行脚本 /tmp/1037035c-3959-11ed-83d0-a45e60beaea1.sh 出错, err:exit status 1","time":"2022-09-21T10:57:00+08:00"}
+{"file":"script.go","function":"taskmanager/internal/service/admin.(*ScriptService).CheckShellScript","level":"error","line":35,"msg":"执行脚本 /tmp/1054e566-3959-11ed-83d0-a45e60beaea1.sh 出错, err:exit status 1","time":"2022-09-21T10:57:00+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T15:33:14+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T15:33:23+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T15:51:53+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T15:51:59+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T16:08:27+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T16:08:35+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T16:19:11+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T16:19:20+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T16:20:01+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T16:20:08+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T16:22:20+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T16:22:26+08:00"}
+{"file":"dangerouscmd.go","function":"taskmanager/internal/service/admin.(*DangerousCommandDelService).DangerousCmdDelete","level":"error","line":41,"msg":"删除危险命令失败, err:[WHERE conditions required]","time":"2022-09-21T16:22:43+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T16:24:15+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T16:24:21+08:00"}
+{"file":"dangerouscmd.go","function":"taskmanager/internal/service/admin.(*DangerousCommandDelService).DangerousCmdDelete","level":"error","line":41,"msg":"删除危险命令失败, err:[WHERE conditions required]","time":"2022-09-21T16:24:29+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T16:32:34+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T16:32:41+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T16:33:50+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T16:33:55+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T16:34:40+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T16:34:47+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T16:35:49+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T16:44:27+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T17:28:53+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T17:29:00+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T17:29:48+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T17:31:04+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T17:33:29+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T17:34:41+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T17:34:46+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T17:37:34+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T17:39:02+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T17:40:38+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T17:40:46+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T17:43:06+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T17:45:42+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T17:45:51+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T17:46:59+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T17:47:03+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T17:47:39+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T17:47:43+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T17:48:36+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T17:48:40+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T17:49:41+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T17:49:44+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T17:49:47+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T17:49:52+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T17:51:53+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T17:51:59+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T17:52:07+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T17:52:10+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T17:53:17+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T17:53:23+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T17:54:13+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T17:54:18+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T17:54:37+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T17:54:40+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T19:04:34+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T19:04:41+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T19:05:30+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T19:05:37+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T19:07:38+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T19:07:43+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T19:11:27+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T19:11:32+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T19:12:11+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T19:12:15+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T19:12:50+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T19:12:54+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T19:14:59+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T19:15:09+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T19:16:40+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T19:17:48+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T19:19:09+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T19:19:13+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T19:37:01+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T19:37:07+08:00"}
+{"file":"script.go","function":"taskmanager/internal/service/admin.(*ScriptService).CheckShellScript","level":"error","line":35,"msg":"执行脚本 /tmp/46cf01de-39a5-11ed-af05-a45e60beaea1.sh 出错, err:exit status 1","time":"2022-09-21T20:02:34+08:00"}
+{"file":"script.go","function":"taskmanager/internal/service/admin.(*ScriptService).CheckShellScript","level":"error","line":35,"msg":"执行脚本 /tmp/4b69f230-39a5-11ed-af05-a45e60beaea1.sh 出错, err:exit status 1","time":"2022-09-21T20:02:41+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T20:56:48+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T20:57:00+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-09-21T21:18:52+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T21:18:59+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-09-21T21:19:42+08:00"}

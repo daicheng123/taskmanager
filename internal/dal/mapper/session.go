@@ -1,6 +1,7 @@
 package mapper
 
 import (
+	"errors"
 	"gorm.io/gorm"
 	"gorm.io/gorm/clause"
 	"sync"
@@ -60,7 +61,7 @@ func (sm *SessionMapper) FindByToken(token string) (*models.SessionModel, error)
 
 func (sm *SessionMapper) Save(session *models.SessionModel) error {
 	if session == nil {
-		return nil
+		return errors.New("session对象不能为空")
 	}
 	conflictKey := []clause.Column{
 		//{Name: "user_id"},

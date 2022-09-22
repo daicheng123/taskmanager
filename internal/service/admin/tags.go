@@ -1,11 +1,11 @@
 package admin
 
 import (
-	"taskmanager/internal/mapper"
+	"taskmanager/internal/dal/mapper"
 	"taskmanager/internal/models"
 	"taskmanager/internal/web/utils"
 	"taskmanager/pkg/logger"
-	"taskmanager/utils/serializer"
+	"taskmanager/pkg/serializer"
 	//validator "github.com/go-playground/validator/v10"
 )
 
@@ -16,7 +16,7 @@ type TagsService struct {
 }
 
 func (ts *TagsService) TagSave() *serializer.Response {
-	tag := &models.TagsModel{
+	tag := &models.Tag{
 		TagName:      ts.TagName,
 		LastOperator: ts.LastOperator,
 	}
@@ -29,7 +29,7 @@ func (ts *TagsService) TagSave() *serializer.Response {
 }
 
 func (ts *TagsService) TagDelete(id uint) *serializer.Response {
-	filter := &models.TagsModel{
+	filter := &models.Tag{
 		BaseModel: models.BaseModel{ID: id},
 	}
 	_, err := mapper.GetTagsMapper().Delete(filter)
@@ -41,7 +41,7 @@ func (ts *TagsService) TagDelete(id uint) *serializer.Response {
 }
 
 func (ts *TagsService) TagEdit() *serializer.Response {
-	tag := &models.TagsModel{
+	tag := &models.Tag{
 		BaseModel: models.BaseModel{
 			ID: ts.ID,
 		},
@@ -54,10 +54,20 @@ func (ts *TagsService) TagEdit() *serializer.Response {
 	}
 	return &serializer.Response{Data: tag}
 }
+
+func (ts *TagsService) GetOptions() *serializer.Response {
+	filter := &models.Tag{}
+	tags, err := mapper.GetTagsMapper().ListAllTags(filter)
+	if err != nil {
+		logger.Error("查询分类标签失败, err:[%s]", err.Error())
+		return serializer.DBErr("查询分类标签失败", err)
+	}
+	return &serializer.Response{Data: tags}
+}
 func (ls *ListService) TagsList() *serializer.Response {
 	ls.ValidDate()
-	filter := &models.TagsModel{}
-	tags := &[]*models.TagsModel{}
+	filter := &models.Tag{}
+	tags := &[]*models.Tag{}
 
 	count, err := mapper.GetTagsMapper().Count(filter, ls.Sort, ls.Conditions, ls.Searches)
 	if err != nil {

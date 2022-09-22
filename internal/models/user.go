@@ -13,7 +13,7 @@ type UserModel struct {
 }
 
 func (um *UserModel) GenerateUniqKey() string {
-	return fmt.Sprintf("%d_%s", um.ID, um.UserCode)
+	return fmt.Sprintf("%s_%d", um.UserCode, um.ID)
 }
 
 func (um *UserModel) TableName() string {

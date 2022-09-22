@@ -6,8 +6,13 @@ import (
 	"io"
 	"os"
 	"taskmanager/internal/conf"
-	"taskmanager/internal/consts"
 	"time"
+)
+
+const (
+	ManagerLog = iota // 服务日志
+	GinLog            // gin框架日志
+	TaskLog           // 任务日志
 )
 
 var (
@@ -45,21 +50,21 @@ func init() {
 }
 
 func InitLogger() {
-	AddHook(consts.ManagerLog, &ManagerHook{
+	AddHook(ManagerLog, &ManagerHook{
 		file:     true,
 		line:     true,
 		function: true,
 		levels:   logrus.AllLevels,
 	})
 
-	AddHook(consts.TaskLog, &ManagerHook{
+	AddHook(TaskLog, &ManagerHook{
 		file:     true,
 		line:     true,
 		function: true,
 		levels:   logrus.AllLevels,
 	})
 
-	AddHook(consts.GinLog, &ManagerHook{
+	AddHook(GinLog, &ManagerHook{
 		file:     false,
 		line:     false,
 		function: false,
@@ -67,13 +72,13 @@ func InitLogger() {
 	})
 
 	//设置日志格式化
-	SetFormatter(consts.ManagerLog, &logrus.JSONFormatter{
+	SetFormatter(ManagerLog, &logrus.JSONFormatter{
 		TimestampFormat: time.RFC3339,
 	})
-	SetFormatter(consts.TaskLog, &logrus.JSONFormatter{
+	SetFormatter(TaskLog, &logrus.JSONFormatter{
 		TimestampFormat: time.RFC3339,
 	})
-	SetFormatter(consts.GinLog, &logrus.JSONFormatter{
+	SetFormatter(GinLog, &logrus.JSONFormatter{
 		TimestampFormat: time.RFC3339,
 	})
 
@@ -82,24 +87,24 @@ func InitLogger() {
 		panic(err)
 	}
 	//设置日志打印级别
-	SetLevel(consts.ManagerLog, level)
-	SetLevel(consts.TaskLog, level)
-	SetLevel(consts.GinLog, level)
+	SetLevel(ManagerLog, level)
+	SetLevel(TaskLog, level)
+	SetLevel(GinLog, level)
 
-	SetOutput(consts.ManagerLog, managerLumberjack)
-	SetOutput(consts.TaskLog, ginLumberjack)
-	SetOutput(consts.GinLog, taskLumberjack)
+	SetOutput(ManagerLog, managerLumberjack)
+	SetOutput(TaskLog, ginLumberjack)
+	SetOutput(GinLog, taskLumberjack)
 }
 
 // SetFormatter sets the standard logger formatter.
 func SetFormatter(logType int, formatter logrus.Formatter) {
 	var std *logrus.Logger
 	switch logType {
-	case consts.ManagerLog:
+	case ManagerLog:
 		std = managerLogger
-	case consts.TaskLog:
+	case TaskLog:
 		std = taskLogger
-	case consts.GinLog:
+	case GinLog:
 		std = ginLogger
 	default:
 		panic("logger Type is not support")
@@ -110,11 +115,11 @@ func SetFormatter(logType int, formatter logrus.Formatter) {
 func SetOutput(logType int, out io.Writer) {
 	var std *logrus.Logger
 	switch logType {
-	case consts.ManagerLog:
+	case ManagerLog:
 		std = managerLogger
-	case consts.TaskLog:
+	case TaskLog:
 		std = taskLogger
-	case consts.GinLog:
+	case GinLog:
 		std = ginLogger
 	default:
 		panic("logger Type is not support")
@@ -125,16 +130,20 @@ func SetOutput(logType int, out io.Writer) {
 func SetLevel(logType int, level logrus.Level) {
 	var std *logrus.Logger
 	switch logType {
-	case consts.ManagerLog:
+	case ManagerLog:
 		std = managerLogger
-	case consts.TaskLog:
+	case TaskLog:
 		std = taskLogger
-	case consts.GinLog:
+	case GinLog:
 		std = ginLogger
 	default:
 		panic("logger Type is not support")
 	}
 	std.SetLevel(level)
+}
+
+func Debug(format string, args ...interface{}) {
+	managerLogger.Debugf(format, args...)
 }
 
 func Info(format string, args ...interface{}) {

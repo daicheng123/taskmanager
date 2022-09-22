@@ -5,7 +5,10 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
-	"taskmanager/internal/consts"
+)
+
+const (
+	AppManagerConfPath = "APP_MANAGER_CONF_FILE"
 )
 
 var defaultConfig *Config
@@ -37,6 +40,7 @@ type RedisConfig struct {
 	UsePassword bool   `yaml:"usePassword"`
 	Password    string `yaml:"password"`
 	DB          int    `yaml:"db"`
+	TaskDB      int    `yaml:"taskDB"`
 }
 
 type LogConfig struct {
@@ -53,7 +57,7 @@ type MailConfig struct {
 }
 
 func LoadConf() {
-	configFile := os.Getenv(consts.AppManagerConfPath)
+	configFile := os.Getenv(AppManagerConfPath)
 	if len(configFile) == 0 {
 		panic("配置文件路径未设置")
 		return
@@ -168,6 +172,16 @@ func GetRedisPasswd() string {
 func GetRedisdb() int {
 	if defaultConfig == nil {
 		return 0
+	}
+	return defaultConfig.Redis.DB
+}
+
+func GetTaskRedisDB() int {
+	if defaultConfig == nil {
+		return 0
+	}
+	if defaultConfig.Redis.DB != 0 {
+		return defaultConfig.Redis.TaskDB
 	}
 	return defaultConfig.Redis.DB
 }

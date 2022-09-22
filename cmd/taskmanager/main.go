@@ -3,7 +3,6 @@ package main
 import (
 	"taskmanager/internal/conf"
 	modelutils "taskmanager/internal/models/utils"
-	"taskmanager/internal/taskManager"
 	"taskmanager/internal/web"
 	"taskmanager/internal/web/controller"
 	"taskmanager/internal/web/middleware"
@@ -20,10 +19,10 @@ func init() {
 func main() {
 
 	// 初始化任务
-	go func() {
-		tc := taskManager.GetDefaultTaskCenter()
-		tc.StartWorker(10)
-	}()
+	//go func() {
+	//	tc := taskManager.GetDefaultTaskCenter()
+	//	tc.StartWorker(10)
+	//}()
 
 	// 初始化路由
 	web.InitRouterCenter().
@@ -33,9 +32,19 @@ func main() {
 			middleware.NewErrorMiddleWare(),
 			middleware.NewLoggerMiddleWare(),
 		).
+		// 邮件相关接口
 		Mount("api/", controller.NewMailController()).
+		// 用户相关接口
 		Mount("api/v1", controller.NewUserController()).
+		// 标签相关接口
 		Mount("api/v1", controller.NewTagsController()).
+		// 执行器相关接口
+		Mount("api/v1", controller.NewExecutorController()).
+		// 操作脚本相关接口
+		Mount("api/v1", controller.NewScriptController()).
+		// 危险命令相关接口
+		Mount("api/v1", controller.NewDangerCmdController()).
 		Launch()
 	utils.ServerNotify()
+
 }

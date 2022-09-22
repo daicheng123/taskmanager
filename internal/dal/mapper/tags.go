@@ -43,7 +43,20 @@ func GetTagsMapper() *TagsMapper {
 	return defaultTagsMapper
 }
 
-func (tm *TagsMapper) Upsert(tag *models.TagsModel) error {
+// ListAllTags 查询全部
+func (tm *TagsMapper) ListAllTags(filter *models.Tag) ([]*models.Tag, error) {
+	var tags []*models.Tag
+	_, err := tm.BaseMapper.FindAll(filter, &tags)
+	if err != nil {
+		if errors.Is(err, gorm.ErrRecordNotFound) {
+			return tags, nil
+		}
+		return nil, err
+	}
+	return tags, err
+}
+
+func (tm *TagsMapper) Upsert(tag *models.Tag) error {
 	if tag == nil {
 		return errors.New("标签对象不能为空")
 	}
@@ -55,8 +68,7 @@ func (tm *TagsMapper) Upsert(tag *models.TagsModel) error {
 }
 
 func (tm *TagsMapper) FindAllWithPager(filter, result interface{}, pageSize, pageNo int,
-	sortBy string, conditions, searches map[string]string) (*gorm.DB, error) {
-
+	sortBy string, conditions, searches map[string]interface{}) (*gorm.DB, error) {
 	return store.Execute(func(db *gorm.DB) *gorm.DB {
 		return db.Session(&gorm.Session{}).
 			Model(filter).
@@ -69,7 +81,7 @@ func (tm *TagsMapper) FindAllWithPager(filter, result interface{}, pageSize, pag
 	})
 }
 
-func (tm *TagsMapper) Count(filter interface{}, sortBy string, conditions, searches map[string]string) (int, error) {
+func (tm *TagsMapper) Count(filter interface{}, sortBy string, conditions, searches map[string]interface{}) (int, error) {
 	var count int64
 	_, err := store.Execute(func(db *gorm.DB) *gorm.DB {
 		return db.Session(&gorm.Session{}).Model(filter).
@@ -83,8 +95,8 @@ func (tm *TagsMapper) Count(filter interface{}, sortBy string, conditions, searc
 }
 
 // Delete 软删除
-func (tm *TagsMapper) Delete(filter *models.TagsModel) (*[]models.TagsModel, error) {
-	deletedItems := &[]models.TagsModel{}
+func (tm *TagsMapper) Delete(filter *models.Tag) (*[]models.Tag, error) {
+	deletedItems := &[]models.Tag{}
 	if filter == nil {
 		return deletedItems, nil
 	}

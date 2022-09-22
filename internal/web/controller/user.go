@@ -4,20 +4,25 @@ import (
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"taskmanager/internal/cache"
-	"taskmanager/internal/consts"
 	"taskmanager/internal/service/admin"
 	"taskmanager/internal/web"
 	webutils "taskmanager/internal/web/utils"
 	"taskmanager/pkg/logger"
-	"taskmanager/utils/serializer"
+	"taskmanager/pkg/serializer"
+)
+
+const (
+	UserControllerGroup = "users"
 )
 
 type UserController struct {
-	userRegisterService *admin.UserRegisterService
+	service *admin.UserRegisterService
 }
 
 func NewUserController() *UserController {
-	return &UserController{}
+	return &UserController{
+		service: new(admin.UserRegisterService),
+	}
 }
 
 func (uc *UserController) checkUserExist(ctx *gin.Context) {
@@ -78,7 +83,7 @@ func (uc *UserController) userLogOut(ctx *gin.Context) {
 }
 
 func (uc *UserController) Build(rc *web.RouterCenter) {
-	userGroup := rc.RG.Group(consts.UserControllerGroup)
+	userGroup := rc.RG.Group(UserControllerGroup)
 	userGroup.Handle("POST", "/login", uc.userLogin)
 	userGroup.Handle("POST", "/register", uc.userRegister)
 	userGroup.Handle("GET", "/user_code/:user_code", uc.checkUserExist)

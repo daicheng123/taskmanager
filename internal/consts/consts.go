@@ -6,9 +6,9 @@ const (
 	ExecutorControllerGroup = "executor"
 	AppManagerConfPath      = "APP_MANAGER_CONF_FILE"
 
-	ManagerLog = iota // 服务日志
-	GinLog            // gin框架日志
-	TaskLog           // 任务日志
+	//ManagerLog = iota // 服务日志
+	//GinLog            // gin框架日志
+	//TaskLog           // 任务日志
 
 	EmailFlagPrefix = "send"
 

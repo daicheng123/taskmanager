@@ -1,8 +1,10 @@
 package mapper
 
 import (
+	"fmt"
 	"gorm.io/gorm"
 	"strings"
+	"taskmanager/utils"
 )
 
 // 处理分页条件
@@ -16,22 +18,30 @@ func paginate(pageSize int, pageNo int) func(db *gorm.DB) *gorm.DB {
 	}
 }
 
-func conditionBy(conditions map[string]string) func(db *gorm.DB) *gorm.DB {
+// conditionBy 精准匹配
+func conditionBy(conditions map[string]interface{}) func(db *gorm.DB) *gorm.DB {
 	return func(db *gorm.DB) *gorm.DB {
 		for k, v := range conditions {
-			db = db.Where(k+" = ?", v)
+			if !utils.IsZero(v) {
+				db = db.Where(k+" = ?", v)
+			}
 		}
 		return db
 	}
 }
 
-func searchBy(searches map[string]string) func(db *gorm.DB) *gorm.DB {
+// searchBy 模糊匹配
+func searchBy(searches map[string]interface{}) func(db *gorm.DB) *gorm.DB {
 	return func(db *gorm.DB) *gorm.DB {
 		search := ""
 		for k, v := range searches {
-			search += k + " like '%" + v + "%' OR "
+			if !utils.IsZero(v) {
+				search += fmt.Sprintf("%s like '%%%v%%' AND ", k, v)
+			}
+			//search += k + " like '%" + v + "%' AND "
+			//k + " like '%" + v + "%' AND "
 		}
-		search = strings.TrimSuffix(search, " OR ")
+		search = strings.TrimSuffix(search, " AND ")
 		return db.Where(search)
 	}
 }

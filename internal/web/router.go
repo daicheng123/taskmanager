@@ -23,7 +23,6 @@ func InitRouterCenter() *RouterCenter {
 	if v, ok := binding.Validator.Engine().(*validator.Validate); ok {
 		// 注册 models.CustomTime 类型的自定义校验规则
 		v.RegisterCustomTypeFunc(modelscommon.ValidateJSONDateType, modelscommon.CustomTime{})
-
 	}
 
 	// 心跳检测

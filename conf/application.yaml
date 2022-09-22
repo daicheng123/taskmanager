@@ -12,7 +12,8 @@ redis:
   address: "127.0.0.1:6379" # 集群以逗号隔开
   usePassword: true
   password: "Dc!123"
-  db: 1
+  db: 1 # 默认DB
+  taskDB: 2 # 任务队列DB,不填默认为 db
 log:
   debugMode: true
   logLevel: "info"  # "panic", "fatal", "error", "warn", "info", "debug"

@@ -8,6 +8,7 @@ import (
 func RunSafe(fn func(), errFunc func(err interface{})) {
 	defer Recovery(errFunc)
 	fn()
+
 }
 
 func Recovery(errFunc func(err interface{})) {

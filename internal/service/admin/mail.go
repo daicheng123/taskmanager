@@ -4,12 +4,17 @@ import (
 	"fmt"
 	"taskmanager/internal/cache"
 	cacheutils "taskmanager/internal/cache/utils"
-	"taskmanager/internal/consts"
-	"taskmanager/internal/mapper"
+	"taskmanager/internal/dal/mapper"
+	"taskmanager/pkg/email"
 	"taskmanager/pkg/logger"
+	"taskmanager/pkg/serializer"
 	"taskmanager/utils"
-	"taskmanager/utils/serializer"
 	"time"
+)
+
+const (
+	EmailFlagPrefix = "send"
+	MailCodeContent = "您的注册验证为：<span style='color:red'>%s</span>，请在5分钟内注册。"
 )
 
 type MailService struct {
@@ -26,7 +31,7 @@ func (ms *MailService) CheckMailExists(mail string) *serializer.Response {
 
 func (ms *MailService) GenMailCode() *serializer.Response {
 	so := cache.NewStringOperation()
-	flagKey := ms.Email + "_" + consts.EmailFlagPrefix
+	flagKey := ms.Email + "_" + EmailFlagPrefix
 
 	flagValue := so.Exists(flagKey).UnwrapOrElse(func(err error) {
 		logger.Error("获取 key: %s 是否存在失败, err:[%s]", flagKey, err)
@@ -52,12 +57,12 @@ func (ms *MailService) GenMailCode() *serializer.Response {
 		return serializer.Err(serializer.CodeMailSendErr, "设置验证码失败", nil)
 	}
 
-	err := new(utils.MailService).
-		Builder([]string{ms.Email}, consts.MailSubject).
-		SetMsgBody(consts.HtmlMail, fmt.Sprintf(consts.MailCodeContent, code)).
-		Build().
-		Sender()
-
+	//err := new(email.MailService).
+	//	Builder([]string{ms.Email}, email.MailSubject).
+	//	SetMsgBody(email.HtmlMail, fmt.Sprintf(MailCodeContent, code)).
+	//	Build().
+	//	Sender()
+	err := email.Send([]string{ms.Email}, "", fmt.Sprintf(MailCodeContent, code))
 	if err != nil {
 		logger.Error("验证码邮件发送失败,error:[%s]", err.Error())
 		return serializer.Err(serializer.CodeMailSendErr, "验证码邮件发送失败", err)

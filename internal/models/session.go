@@ -16,7 +16,7 @@ type SessionModel struct {
 }
 
 func (sm *SessionModel) GenerateUniqKey() string {
-	return fmt.Sprintf("%d_%s", sm.ID, sm.SessionValue)
+	return fmt.Sprintf("%s_%d", sm.SessionValue, sm.ID)
 }
 
 func (sm *SessionModel) TableName() string {

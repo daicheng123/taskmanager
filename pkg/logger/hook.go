@@ -6,7 +6,6 @@ import (
 	"runtime"
 	"strings"
 	"sync"
-	"taskmanager/internal/consts"
 )
 
 const (
@@ -62,11 +61,11 @@ func (ths *ManagerHook) Fire(entry *logrus.Entry) error {
 func AddHook(logType int, hook logrus.Hook) {
 	var std *logrus.Logger
 	switch logType {
-	case consts.ManagerLog:
+	case ManagerLog:
 		std = managerLogger
-	case consts.GinLog:
+	case GinLog:
 		std = ginLogger
-	case consts.TaskLog:
+	case TaskLog:
 		std = taskLogger
 	default:
 		panic("logger Type is not support")

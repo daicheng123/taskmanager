@@ -3,9 +3,9 @@ package middleware
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"taskmanager/internal/consts"
 	"taskmanager/internal/service"
-	"taskmanager/utils/serializer"
+	"taskmanager/internal/service/admin"
+	"taskmanager/pkg/serializer"
 )
 
 /*
@@ -28,7 +28,7 @@ func (sm *SessionMiddleWare) OnRequest() gin.HandlerFunc {
 				return
 			}
 			if service.SessionJudge(token) {
-				context.Set(consts.UserTokenStr, token)
+				context.Set(admin.UserTokenStr, token)
 				context.Next()
 			} else {
 				context.AbortWithStatusJSON(http.StatusUnauthorized, serializer.Err(serializer.CodeCheckLogin, "请求未认证", nil))

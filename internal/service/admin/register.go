@@ -2,11 +2,11 @@ package admin
 
 import (
 	"gopkg.in/errgo.v2/errors"
-	"taskmanager/internal/mapper"
+	"taskmanager/internal/dal/mapper"
 	"taskmanager/internal/models"
 	"taskmanager/pkg/logger"
+	"taskmanager/pkg/serializer"
 	"taskmanager/utils"
-	"taskmanager/utils/serializer"
 )
 
 type UserRegisterService struct {
@@ -33,7 +33,7 @@ func (us *UserRegisterService) AddUser() *serializer.Response {
 	)
 
 	if us.Password != "" {
-		us.UserModel.UserPassword, err = utils.EncodePassword(us.Password)
+		us.UserModel.UserPassword, err = utils.Encrypt(us.Password)
 		if err != nil {
 			return serializer.Err(serializer.CodeServerInternalError, "用户密码设置失败", err)
 		}

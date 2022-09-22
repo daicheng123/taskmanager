@@ -8,10 +8,13 @@ import (
 	"context"
 	"sync"
 	"taskmanager/internal/cache/utils"
-	"taskmanager/internal/consts"
 	"taskmanager/pkg/logger"
 	"taskmanager/pkg/store"
 	"time"
+)
+
+const (
+	AttrExpire = "expire"
 )
 
 type StringOperation struct {
@@ -63,7 +66,7 @@ func (so StringOperation) Set(key string, value interface{}, attrs ...*utils.Att
 		return utils.NewResult(nil, err)
 	}
 
-	expire := utils.Attrs(attrs).Find(consts.AttrExpire)
+	expire := utils.Attrs(attrs).Find(AttrExpire)
 	if expire == nil {
 		expire = 0
 	}

@@ -14,10 +14,10 @@ var NoAuthUri = []string{
 	"/health",
 	"/check_email_exists",
 	"/email_code",
-	"/user/login",
-	"/user/register",
-	"/user/user_code",
-	"/sonarqube/hook",
+	"/users/login",
+	"/users/register",
+	"/users/user_code",
+	//"/users/user_info",
 }
 
 func AllowUri(uri string) bool {

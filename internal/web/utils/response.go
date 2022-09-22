@@ -3,7 +3,7 @@ package utils
 import (
 	"encoding/json"
 	"github.com/go-playground/validator/v10"
-	"taskmanager/utils/serializer"
+	"taskmanager/pkg/serializer"
 )
 
 // ValidatorErrorMsg 根据Validator返回的错误信息给出错误提示
@@ -49,8 +49,8 @@ func ErrorResponse(err error) *serializer.Response {
 	}
 
 	if _, ok := err.(*json.UnmarshalTypeError); ok {
-		return serializer.ParamErr("JSON marshall error", err)
+		return serializer.ParamErr("json 序列化错误", err)
 	}
 
-	return serializer.ParamErr("Parameter error", err)
+	return serializer.ParamErr("参数错误", err)
 }

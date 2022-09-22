@@ -74,3 +74,17 @@ func Execute(dbOperate func(*gorm.DB) *gorm.DB) (*gorm.DB, error) {
 	result := dbOperate(dbSession)
 	return result, result.Error
 }
+
+func Transaction(dbOperate func(tx *gorm.DB) error) (err error) {
+	dbSession, err := GetOrCreateDBOperator()
+	if err != nil {
+		return err
+	}
+	if dbSession == nil {
+		return fmt.Errorf("创建数据库连接失败")
+	}
+	err = dbSession.Transaction(func(tx *gorm.DB) error {
+		return dbOperate(tx)
+	})
+	return err
+}
