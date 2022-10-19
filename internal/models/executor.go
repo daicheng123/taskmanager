@@ -3,14 +3,15 @@ package models
 import (
 	"fmt"
 	"gorm.io/plugin/soft_delete"
+	"taskmanager/utils"
 )
 
 type Executor struct {
-	*BaseModel
+	BaseModel
 	HostName     string                `json:"hostName"     gorm:"column:hostName;string;size:128;not null;uniqueIndex:idx_hn;commit:执行器主机名"`
 	IPAddr       string                `json:"ipAddr"       gorm:"column:ipAddr;string;size:15; not null;commit:执行器ip地址"`
 	SHHPort      uint                  `json:"sshPort"      gorm:"column:shhPort;uint;size:5; not null;commit:ssh端口"`
-	Status       uint                  `json:"status"       gorm:"column:status;uint;size:1;not null;default:1;commit:执行器状态,1未知 2正常 3不可达"`
+	Status       utils.ExecutorStatus  `json:"status"       gorm:"column:status;uint;size:1;not null;default:1;commit:执行器状态,1未知 2正常 3不可达"`
 	SecretStatus uint                  `json:"secretStatus" gorm:"column:secretStatus;uint;size:1;not null;default:1;commit:密钥分发状态, 1未分发  2分发中 3已分发 4分发失败"`
 	Accounts     *ExecutorAccount      `json:",inline"      gorm:"foreignKey:ExecutorRef;references:ID"`
 	ExecutePath  string                `json:"executePath"  gorm:"column:executePath;string;size:128;default:/opt/taskmanager;not null;commit:任务执行路径"`

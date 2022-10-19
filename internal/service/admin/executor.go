@@ -2,6 +2,7 @@ package admin
 
 import (
 	"errors"
+	"fmt"
 	"net/http"
 	"strings"
 	"taskmanager/internal/dal/mapper"
@@ -51,7 +52,7 @@ func (ets *ExeTestService) RefreshNode(flag string) *serializer.Response {
 	)
 	fn := func(status uint) error {
 		value := &models.Executor{
-			BaseModel: &models.BaseModel{
+			BaseModel: models.BaseModel{
 				ID: ets.ID,
 			},
 			Status: status,
@@ -60,10 +61,12 @@ func (ets *ExeTestService) RefreshNode(flag string) *serializer.Response {
 	}
 
 	if err := testNode(ets.AccountName, ets.AccountPassword, ets.IPAddr, ets.SSHPort); err != nil {
-		status = 3
+		//status = 3
+		status = utils.HostUnreachable
 		resp = serializer.Err(serializer.CodeServerInternalError, err.Error(), err)
 	} else {
-		status = 2
+		//status = 2
+		status = utils.HostAvail
 		resp = &serializer.Response{}
 	}
 	if flag == "update" {
@@ -75,6 +78,23 @@ func (ets *ExeTestService) RefreshNode(flag string) *serializer.Response {
 		}, "更新执行器状态失败")
 	}
 	return resp
+}
+
+func (es *ExecutorService) ExecutorOptions() *serializer.Response {
+	filter := &models.Executor{
+		Status:       utils.HostAvail,
+		SecretStatus: utils.KeyDistributed,
+	}
+	executors := make([]models.Executor, 0)
+	_, err := mapper.GetExecutorMapper().FindAll(filter, &executors)
+	if err != nil {
+		return serializer.DBErr("获取执行器失败", err)
+	}
+
+	for _, executor := range executors {
+		fmt.Printf("id:%dhahahahahaha\n", executor.ID)
+	}
+	return &serializer.Response{Data: executors}
 }
 
 // ExecutorAdd 创建执行器
@@ -98,7 +118,7 @@ func (es *ExecutorService) ExecutorAdd() *serializer.Response {
 // ExecutorUpdate 更新执行器
 func (es *ExecutorService) ExecutorUpdate() *serializer.Response {
 	filter := &models.Executor{
-		BaseModel: &models.BaseModel{
+		BaseModel: models.BaseModel{
 			ID: es.ID,
 		},
 	}
@@ -120,7 +140,8 @@ func (es *ExecutorService) ExecutorUpdate() *serializer.Response {
 	exeObj.LastOperator = es.LastOperator
 	// 用户名/端口号变化后则主机密钥分发重置
 	if exeObj.Accounts.AccountName != es.AccountName || exeObj.SHHPort != es.SSHPort {
-		exeObj.SecretStatus = 1
+		//exeObj.SecretStatus = 1
+		exeObj.SecretStatus = utils.KeyUndistributed
 	}
 	exeObj.Accounts.AccountName = es.AccountName
 	exeObj.SHHPort = es.SSHPort
@@ -136,14 +157,16 @@ func (es *ExecutorService) ExecutorUpdate() *serializer.Response {
 // DistributeKey 分发主机密钥
 func (es *ExecutorService) DistributeKey(executor *models.Executor) *serializer.Response {
 	executorMapper := mapper.GetExecutorMapper()
-	executor.SecretStatus = 2
+	//executor.SecretStatus = 2
+	executor.SecretStatus = utils.KeyDistributing
 	if err := executorMapper.Updates(executor); err != nil {
 		return serializer.DBErr("更新执行器密钥状态失败", err)
 	}
 
-	sshCli := utils.NewSSHClient(es.AccountName, es.AccountPassword, es.IPAddr, es.SSHPort)
+	sshCli := utils.NewSsh(es.AccountName, es.AccountPassword, es.IPAddr, es.SSHPort)
 	if _, err := sshCli.DistributeKey(); err != nil {
-		executor.SecretStatus = 4
+		//executor.SecretStatus = 4
+		executor.SecretStatus = utils.KeyDistributeFailed
 		go utils.RunSafeWithMsg(func() {
 			err = executorMapper.Updates(executor)
 			if err != nil {
@@ -153,7 +176,8 @@ func (es *ExecutorService) DistributeKey(executor *models.Executor) *serializer.
 		return serializer.Err(serializer.CodeServerInternalError, "", err)
 	}
 
-	executor.SecretStatus = 3
+	//executor.SecretStatus = 3
+	executor.SecretStatus = utils.KeyDistributed
 	if err := executorMapper.Updates(executor); err != nil {
 		go utils.RunSafeWithMsg(func() {
 			err = executorMapper.Updates(executor)
@@ -167,7 +191,7 @@ func (es *ExecutorService) DistributeKey(executor *models.Executor) *serializer.
 
 func (ed *ExecutorDelService) ExecutorDelete() *serializer.Response {
 	filter := &models.Executor{
-		BaseModel: &models.BaseModel{
+		BaseModel: models.BaseModel{
 			ID: ed.ID,
 		},
 	}
@@ -218,7 +242,7 @@ func (ls *ListService) ExecutorList() *serializer.Response {
 }
 
 func testNode(name, password, ip string, port uint) error {
-	sshCli := utils.NewSSHClient(name, password, ip, port)
+	sshCli := utils.NewSsh(name, password, ip, port)
 	stdOut, err := sshCli.RemoteCommand("echo success")
 	if err != nil {
 		return err

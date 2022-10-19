@@ -67,9 +67,7 @@ func (em *ExecutorMapper) PreLoadFindOne(filter *models.Executor) (executor *mod
 	}
 	executor = &models.Executor{}
 	_, err = em.BaseMapper.PreLoadFindOne(filter, executor)
-	//if errors.Is(err, gorm.ErrRecordNotFound) {
-	//	return nil, nil
-	//}
+
 	return
 }
 
@@ -105,7 +103,7 @@ func (em *ExecutorMapper) BatchDeleteById(ids ...uint) error {
 	err := store.Transaction(func(tx *gorm.DB) error {
 		for _, id := range ids {
 			filter := &models.Executor{
-				BaseModel: &models.BaseModel{ID: id}}
+				BaseModel: models.BaseModel{ID: id}}
 			if _, err := em.Delete(filter); err != nil {
 				return err
 			}

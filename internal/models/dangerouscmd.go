@@ -7,7 +7,7 @@ import (
 )
 
 type DangerousCmd struct {
-	*BaseModel
+	BaseModel
 	Command   string                `gorm:"column:command;string;size:100;not null;uniqueIndex:idx_cmd;commit:危险命令" json:"dangerousCmd"`
 	Remarks   string                `gorm:"column:remarks;text;not null;commit:备注" json:"remarks"`
 	DeletedAt soft_delete.DeletedAt `gorm:"index;column:deletedAt;uniqueIndex:idx_cmd" json:"-"`

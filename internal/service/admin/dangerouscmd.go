@@ -25,7 +25,7 @@ func (dcs *DangerousCommandService) DangerousCmdSave() *serializer.Response {
 	}
 	// 更新
 	if dcs.ID != 0 {
-		dangerCmd.BaseModel = &models.BaseModel{
+		dangerCmd.BaseModel = models.BaseModel{
 			ID: dcs.ID,
 		}
 	}
@@ -38,7 +38,7 @@ func (dcs *DangerousCommandService) DangerousCmdSave() *serializer.Response {
 
 func (dcd *DangerousCommandDelService) DangerousCmdDelete() *serializer.Response {
 	filter := &models.DangerousCmd{
-		BaseModel: &models.BaseModel{
+		BaseModel: models.BaseModel{
 			ID: dcd.ID,
 		},
 	}

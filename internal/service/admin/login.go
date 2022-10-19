@@ -1,7 +1,6 @@
 package admin
 
 import (
-	"fmt"
 	"github.com/gin-gonic/gin"
 	mapper2 "taskmanager/internal/dal/mapper"
 	"taskmanager/internal/models"
@@ -60,7 +59,6 @@ func (ul *UserLoginService) Login() *serializer.Response {
 
 func (ul *UserLoginService) UserInfo(ctx *gin.Context) *serializer.Response {
 	token, exist := ctx.Get(UserTokenStr)
-	fmt.Println(token, exist, "hahahahahaha")
 	if !exist || !service.SessionJudge(token.(string)) {
 		return serializer.Err(serializer.CodeCheckLogin, "用户未登录", nil)
 	}

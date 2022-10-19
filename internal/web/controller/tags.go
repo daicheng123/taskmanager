@@ -43,7 +43,7 @@ func (tc *TagsController) tagList(ctx *gin.Context) {
 		ctx.JSON(http.StatusOK, utils.ErrorResponse(err))
 		return
 	}
-	ctx.JSON(http.StatusOK, service.TagsList())
+	ctx.JSON(http.StatusOK, service.Lister(service.TagsList))
 }
 
 func (tc *TagsController) tagDel(ctx *gin.Context) {

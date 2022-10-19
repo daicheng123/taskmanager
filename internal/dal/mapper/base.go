@@ -76,7 +76,7 @@ func (bm *BaseMapper) Save(value models.UniqKeyGenerator) error {
 	return err
 }
 
-//SoftDeleteByFilter  软删除
+//SoftDeleteByFilter  级联删除
 func (bm *BaseMapper) SoftDeleteByFilter(filter interface{}, deletedItems interface{}) (err error) {
 	_, err = store.Execute(func(db *gorm.DB) *gorm.DB {
 		// 级联删除只能按ID关联，所以这里需要先查询完整的实体

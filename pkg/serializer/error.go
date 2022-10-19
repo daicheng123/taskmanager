@@ -100,6 +100,9 @@ const (
 	// CodeMailSendErr 邮件发送错误
 	CodeMailSendErr = 4002
 
+	// CodeScriptAlreadyExist 脚本已存在
+	CodeScriptAlreadyExist = 4011
+
 	// CodeServerInternalError 服务器内部错误
 	CodeServerInternalError = 50001
 
@@ -126,4 +129,16 @@ const (
 
 	// CodeTestShellError  shell脚本校验失败
 	CodeTestShellError = 50009
+
+	// CodeDangerCmdQueryError 查询危险命令出错
+	CodeDangerCmdQueryError = 50012
+
+	// CodeDangerCmdDebugError 危险命令调试错误
+	CodeDangerCmdDebugError = 50013
+
+	// CodeTransferFileError 传输调试文件错误
+	CodeTransferFileError = 50014
+
+	//CodeWriteFileError 写文件错误
+	CodeWriteFileError = 50015
 )

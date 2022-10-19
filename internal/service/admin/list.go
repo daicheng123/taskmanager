@@ -1,5 +1,12 @@
 package admin
 
+import (
+	"taskmanager/internal/web/utils"
+	"taskmanager/pkg/serializer"
+)
+
+type ListerFunc func() (count int, rows interface{}, err error)
+
 type ListService struct {
 	PageSize   int    `form:"pageSize"`
 	PageNo     int    `form:"pageNo"`
@@ -27,4 +34,20 @@ func (ls *ListService) ValidDate() {
 		ls.OrderBy = "updatedAt"
 	}
 	ls.Sort = ls.OrderBy + " " + ls.Order
+}
+
+func (ls *ListService) Lister(listFunc ListerFunc) *serializer.Response {
+	ls.ValidDate()
+	count, rows, err := listFunc()
+	if err != nil {
+		return serializer.DBErr("获取标签数据失败", err)
+	}
+	result := &utils.PagerResult{
+		PageSize: ls.PageSize,
+		PageNo:   ls.PageNo,
+		Count:    count,
+	}
+	result.CompletePageInfo()
+	result.Rows = rows
+	return &serializer.Response{Data: result}
 }

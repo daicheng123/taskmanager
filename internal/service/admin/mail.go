@@ -31,8 +31,7 @@ func (ms *MailService) CheckMailExists(mail string) *serializer.Response {
 
 func (ms *MailService) GenMailCode() *serializer.Response {
 	so := cache.NewStringOperation()
-	flagKey := ms.Email + "_" + EmailFlagPrefix
-
+	flagKey := utils.BuilderStr(ms.Email, "_", EmailFlagPrefix)
 	flagValue := so.Exists(flagKey).UnwrapOrElse(func(err error) {
 		logger.Error("获取 key: %s 是否存在失败, err:[%s]", flagKey, err)
 	})

@@ -4,7 +4,9 @@ import (
 	"bytes"
 	"errors"
 	"fmt"
+	"github.com/pkg/sftp"
 	"golang.org/x/crypto/ssh"
+	"io/ioutil"
 	"taskmanager/pkg/serializer"
 	"time"
 )
@@ -17,6 +19,8 @@ var (
 	ErrGetSecretFileFailed = serializer.NewError(serializer.CodeHostSecretFileNotFound, "密钥文件不存在", nil)
 	ErrCreateSessionFailed = serializer.NewError(serializer.CodeHostUnreachable, "创建主机会话失败", nil)
 	ErrCommandExecFailed   = serializer.NewError(serializer.CodeHostCommandErr, "执行命令行错误", nil)
+	// ErrTransferFileFailed  = serializer.NewError(serializer.CodeHostCommandErr, "执行命令行错误", nil)
+
 )
 
 type SSHClient struct {
@@ -26,7 +30,7 @@ type SSHClient struct {
 	HostPort     uint
 }
 
-func NewSSHClient(name, pwd, addr string, port uint) *SSHClient {
+func NewSsh(name, pwd, addr string, port uint) *SSHClient {
 	return &SSHClient{
 		UserName:     name,
 		UserPassword: pwd,
@@ -34,14 +38,14 @@ func NewSSHClient(name, pwd, addr string, port uint) *SSHClient {
 		HostPort:     port,
 	}
 }
-func (sc *SSHClient) NewSSHSession() (*ssh.Session, error) {
+func (sc *SSHClient) NewSSHClient() (*ssh.Client, error) {
 	var (
 		auth         []ssh.AuthMethod
 		addr         string
 		clientConfig *ssh.ClientConfig
 		client       *ssh.Client
-		session      *ssh.Session
-		err          error
+		//session      *ssh.Session
+		err error
 	)
 	auth = make([]ssh.AuthMethod, 0)
 	auth = append(auth, ssh.Password(sc.UserPassword))
@@ -52,16 +56,12 @@ func (sc *SSHClient) NewSSHSession() (*ssh.Session, error) {
 		Timeout:         30 * time.Second,
 		HostKeyCallback: ssh.InsecureIgnoreHostKey(),
 	}
-
 	addr = fmt.Sprintf("%s:%d", sc.HostAddr, sc.HostPort)
 	if client, err = ssh.Dial("tcp", addr, clientConfig); err != nil {
+		fmt.Printf("error: [%s]\n", err)
 		return nil, ErrCreateSessionFailed.WithError(err)
 	}
-
-	if session, err = client.NewSession(); err != nil {
-		return nil, ErrCreateSessionFailed.WithError(err)
-	}
-	return session, nil
+	return client, nil
 }
 
 func (sc *SSHClient) DistributeKey() (outStr string, err error) {
@@ -74,7 +74,7 @@ func (sc *SSHClient) DistributeKey() (outStr string, err error) {
 }
 
 func (sc *SSHClient) RemoteCommand(cmd string) (outStr string, err error) {
-	session, err := sc.NewSSHSession()
+	client, err := sc.NewSSHClient()
 	if err != nil {
 		return "", err
 	}
@@ -82,6 +82,10 @@ func (sc *SSHClient) RemoteCommand(cmd string) (outStr string, err error) {
 		stdOut = &bytes.Buffer{}
 		stdErr = &bytes.Buffer{}
 	)
+	session, err := client.NewSession()
+	if err != nil {
+		return "", err
+	}
 	session.Stdout = stdOut
 	session.Stderr = stdErr
 	err = session.Run(cmd)
@@ -90,12 +94,43 @@ func (sc *SSHClient) RemoteCommand(cmd string) (outStr string, err error) {
 	}
 
 	errStr := ""
-	if stdErr != nil {
+	if err != nil {
 		errStr = fmt.Sprintf("error: %s", err.Error())
 	}
 	if stdErr != nil {
-		errStr = fmt.Sprintf("%s, stdError: %s", stdErr.String())
+		errStr = fmt.Sprintf("%s, stdError: %s", errStr, stdErr.String())
 	}
 	err = errors.New(errStr)
 	return "", ErrCommandExecFailed.WithError(err)
+}
+
+func (sc *SSHClient) GetSftpClient() (*sftp.Client, error) {
+	client, err := sc.NewSSHClient()
+	if err != nil {
+		return nil, err
+	}
+
+	sftpClient, err := sftp.NewClient(
+		client,
+		sftp.MaxConcurrentRequestsPerFile(20),
+		sftp.MaxPacket(1000))
+
+	return sftpClient, err
+}
+
+func (sc *SSHClient) TransferFile(src, dest string) error {
+	client, err := sc.GetSftpClient()
+	if err != nil {
+		return err
+	}
+	defer client.Close()
+	file, err := client.Create(dest)
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+
+	bytes, err := ioutil.ReadFile(src)
+	file.Write(bytes)
+	return nil
 }

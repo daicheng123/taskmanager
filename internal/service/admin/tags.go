@@ -3,7 +3,6 @@ package admin
 import (
 	"taskmanager/internal/dal/mapper"
 	"taskmanager/internal/models"
-	"taskmanager/internal/web/utils"
 	"taskmanager/pkg/logger"
 	"taskmanager/pkg/serializer"
 	//validator "github.com/go-playground/validator/v10"
@@ -64,30 +63,59 @@ func (ts *TagsService) GetOptions() *serializer.Response {
 	}
 	return &serializer.Response{Data: tags}
 }
-func (ls *ListService) TagsList() *serializer.Response {
-	ls.ValidDate()
-	filter := &models.Tag{}
-	tags := &[]*models.Tag{}
 
-	count, err := mapper.GetTagsMapper().Count(filter, ls.Sort, ls.Conditions, ls.Searches)
+func (ls *ListService) TagsList() (count int, rows interface{}, err error) {
+	var (
+		tagMapper = mapper.GetTagsMapper()
+		filter    = &models.Tag{}
+		tags      = &[]*models.Tag{}
+	)
+
+	count, err = tagMapper.Count(filter, ls.Sort, ls.Conditions, ls.Searches)
 	if err != nil {
 		logger.Error("查询标签总数失败: [%s]", err.Error())
-		return serializer.DBErr("查询标签列表失败", err)
+		return count, tags, err
 	}
-	_, err = mapper.GetTagsMapper().FindAllWithPager(filter, tags, ls.PageSize, ls.PageNo,
-		ls.Sort, ls.Conditions, ls.Searches)
 
+	_, err = tagMapper.FindAllWithPager(filter, tags, ls.PageSize, ls.PageNo, ls.Sort, ls.Conditions, ls.Searches)
 	if err != nil {
 		logger.Error("查询标签列表失败: [%s]", err.Error())
-		return serializer.DBErr("查询标签列表失败", err)
+		return count, tags, err
 	}
 
-	result := &utils.PagerResult{
-		PageSize: ls.PageSize,
-		PageNo:   ls.PageNo,
-		Count:    count,
-	}
-	result.CompletePageInfo()
-	result.Rows = tags
-	return &serializer.Response{Data: result}
+	return count, tags, err
 }
+
+//func (ls *ListService) TagsList() *serializer.Response {
+//	ls.ValidDate()
+//	filter := &models.Tag{}
+//	tags := &[]*models.Tag{}
+//	testFunc := func() (count int, rows []models.UniqKeyGenerator, err error) {
+//		count, err = mapper.GetTagsMapper().Count(filter, ls.Sort, ls.Conditions, ls.Searches)
+//		if err != nil {
+//			logger.Error("查询标签总数失败: [%s]", err.Error())
+//			return count, rows,  err
+//		}
+//		_, err = mapper.GetTagsMapper().FindAllWithPager(filter, tags, ls.PageSize, ls.PageNo,
+//			ls.Sort, ls.Conditions, ls.Searches)
+//
+//		if err != nil {
+//			logger.Error("查询标签列表失败: [%s]", err.Error())
+//			return count, rows,  err
+//		}
+//		return
+//	}
+//
+//	count, rows, err := testFunc()
+//	if err != nil {
+//		return serializer.DBErr("获取标签数据失败", err)
+//	}
+//	result := &utils.PagerResult{
+//		PageSize: ls.PageSize,
+//		PageNo:   ls.PageNo,
+//		Count:    count,
+//	}
+//	result.CompletePageInfo()
+//	result.Rows = rows
+//	return &serializer.Response{Data: result}
+//}

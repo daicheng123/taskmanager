@@ -43,7 +43,7 @@ func (ec *ExecutorController) distributeKey(ctx *gin.Context) {
 		return
 	}
 	filter := &models.Executor{
-		BaseModel: &models.BaseModel{ID: srv.ID},
+		BaseModel: models.BaseModel{ID: srv.ID},
 	}
 	result, err := mapper.GetExecutorMapper().FindOne(filter)
 	if err != nil {
@@ -111,6 +111,11 @@ func (ec *ExecutorController) executorUpdate(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, srv.ExecutorUpdate())
 }
 
+func (ec *ExecutorController) executorOption(ctx *gin.Context) {
+	srv := &admin.ExecutorService{}
+	ctx.JSON(http.StatusOK, srv.ExecutorOptions())
+}
+
 func (ec *ExecutorController) Build(rc *web.RouterCenter) {
 	execGroup := rc.RG.Group(ExecutorControllerGroup)
 	execGroup.Handle(http.MethodPost, "/add_executor", ec.executorAdd)
@@ -120,4 +125,6 @@ func (ec *ExecutorController) Build(rc *web.RouterCenter) {
 	execGroup.Handle(http.MethodDelete, "/batch_delete", ec.executorsBatchDelete)
 	execGroup.Handle(http.MethodPatch, "/refresh_status", ec.executorsRefresh)
 	execGroup.Handle(http.MethodPut, "/update_executor", ec.executorUpdate)
+	execGroup.Handle(http.MethodGet, "/option_executor", ec.executorOption)
+
 }
