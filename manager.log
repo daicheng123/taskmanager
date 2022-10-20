@@ -1797,3 +1797,6 @@
 {"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-10-19T12:47:32+08:00"}
 {"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-10-19T12:49:36+08:00"}
 {"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-10-19T12:49:40+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-10-20T16:01:26+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-10-20T16:08:27+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-10-20T16:08:33+08:00"}

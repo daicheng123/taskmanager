@@ -31,6 +31,7 @@ func main() {
 			middleware.NewSessionMiddleWare(),
 			middleware.NewErrorMiddleWare(),
 			middleware.NewLoggerMiddleWare(),
+
 		).
 		// 邮件相关接口
 		Mount("api/", controller.NewMailController()).
@@ -44,6 +45,8 @@ func main() {
 		Mount("api/v1", controller.NewScriptController()).
 		// 危险命令相关接口
 		Mount("api/v1", controller.NewDangerCmdController()).
+		// websocket接口
+		Mount("api/v1", controller.NewWebSocketController()).
 		Launch()
 	utils.ServerNotify()
 
