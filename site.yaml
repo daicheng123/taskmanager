@@ -1,8 +1,19 @@
 ---
-
 - hosts: all
-
+  gather_facts: false
+  pre_tasks:
+    - name: "transfer scripts"
+      copy:
+        src: /tmp/test2-1667560750000.sh
+        dest: /tmp/test2-1667560750000.sh
+        owner: root
+        group: root
+        mode: 775
   tasks:
-    - name: ansibleplaybook-myexecutor
-      debug:
-        msg: Your are running 'ansibleplaybook-myexecutor' example
+    - name: "execute scripts"
+      shell: bash /tmp/test2-1667560750000.sh
+  post_tasks:
+    - name: "delete scripts"
+      file:
+        path: /tmp/test2-1667560750000.sh
+        state: absent

@@ -11,6 +11,7 @@ func RunSafe(fn func(), errFunc func(err interface{})) {
 
 }
 
+// Recovery 捕获底层panic
 func Recovery(errFunc func(err interface{})) {
 	if p := recover(); p != nil {
 		errFunc(p)

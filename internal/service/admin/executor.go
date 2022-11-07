@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"net/http"
 	"strings"
-	"taskmanager/internal/dal/mapper"
+	"taskmanager/internal/consts"
 	"taskmanager/internal/models"
 	"taskmanager/internal/models/common"
-	webutils "taskmanager/internal/web/utils"
+	"taskmanager/internal/repo/mapper"
 	"taskmanager/pkg/logger"
 	"taskmanager/pkg/serializer"
 	"taskmanager/utils"
@@ -62,11 +62,11 @@ func (ets *ExeTestService) RefreshNode(flag string) *serializer.Response {
 
 	if err := testNode(ets.AccountName, ets.AccountPassword, ets.IPAddr, ets.SSHPort); err != nil {
 		//status = 3
-		status = utils.HostUnreachable
+		status = consts.HostUnreachable
 		resp = serializer.Err(serializer.CodeServerInternalError, err.Error(), err)
 	} else {
 		//status = 2
-		status = utils.HostAvail
+		status = consts.HostAvail
 		resp = &serializer.Response{}
 	}
 	if flag == "update" {
@@ -82,8 +82,8 @@ func (ets *ExeTestService) RefreshNode(flag string) *serializer.Response {
 
 func (es *ExecutorService) ExecutorOptions() *serializer.Response {
 	filter := &models.Executor{
-		Status:       utils.HostAvail,
-		SecretStatus: utils.KeyDistributed,
+		Status:       consts.HostAvail,
+		SecretStatus: consts.KeyDistributed,
 	}
 	executors := make([]models.Executor, 0)
 	_, err := mapper.GetExecutorMapper().FindAll(filter, &executors)
@@ -141,7 +141,7 @@ func (es *ExecutorService) ExecutorUpdate() *serializer.Response {
 	// 用户名/端口号变化后则主机密钥分发重置
 	if exeObj.Accounts.AccountName != es.AccountName || exeObj.SHHPort != es.SSHPort {
 		//exeObj.SecretStatus = 1
-		exeObj.SecretStatus = utils.KeyUndistributed
+		exeObj.SecretStatus = consts.KeyUndistributed
 	}
 	exeObj.Accounts.AccountName = es.AccountName
 	exeObj.SHHPort = es.SSHPort
@@ -158,7 +158,7 @@ func (es *ExecutorService) ExecutorUpdate() *serializer.Response {
 func (es *ExecutorService) DistributeKey(executor *models.Executor) *serializer.Response {
 	executorMapper := mapper.GetExecutorMapper()
 	//executor.SecretStatus = 2
-	executor.SecretStatus = utils.KeyDistributing
+	executor.SecretStatus = consts.KeyDistributing
 	if err := executorMapper.Updates(executor); err != nil {
 		return serializer.DBErr("更新执行器密钥状态失败", err)
 	}
@@ -166,7 +166,7 @@ func (es *ExecutorService) DistributeKey(executor *models.Executor) *serializer.
 	sshCli := utils.NewSsh(es.AccountName, es.AccountPassword, es.IPAddr, es.SSHPort)
 	if _, err := sshCli.DistributeKey(); err != nil {
 		//executor.SecretStatus = 4
-		executor.SecretStatus = utils.KeyDistributeFailed
+		executor.SecretStatus = consts.KeyDistributeFailed
 		go utils.RunSafeWithMsg(func() {
 			err = executorMapper.Updates(executor)
 			if err != nil {
@@ -177,7 +177,7 @@ func (es *ExecutorService) DistributeKey(executor *models.Executor) *serializer.
 	}
 
 	//executor.SecretStatus = 3
-	executor.SecretStatus = utils.KeyDistributed
+	executor.SecretStatus = consts.KeyDistributed
 	if err := executorMapper.Updates(executor); err != nil {
 		go utils.RunSafeWithMsg(func() {
 			err = executorMapper.Updates(executor)
@@ -213,32 +213,60 @@ func (ed *ExecutorDelService) ExecutorBatchDelete(ids []uint) *serializer.Respon
 }
 
 // ExecutorList list 执行器
-func (ls *ListService) ExecutorList() *serializer.Response {
+//func (ls *ListService) ExecutorList() *serializer.Response {
+//	ls.ValidDate()
+//	filter := &models.Executor{}
+//	executors := &[]*models.Executor{}
+//	count, err := mapper.GetExecutorMapper().Count(filter, ls.Sort, ls.Conditions, ls.Searches)
+//	if err != nil {
+//		logger.Error("查询执行器总数失败: [%s]", err.Error())
+//		return serializer.DBErr("查询执行器总数失败", err)
+//	}
+//	err = mapper.GetExecutorMapper().FindAllWithPager(filter, executors, ls.PageSize, ls.PageNo,
+//		ls.Sort, ls.Conditions, ls.Searches)
+//	if err != nil {
+//		logger.Error("查询执行器列表失败: [%s]", err.Error())
+//		return serializer.DBErr("查询执行器列表失败", err)
+//	}
+//	result := webutils.PagerResult{
+//		PageSize: ls.PageSize,
+//		PageNo:   ls.PageNo,
+//		Count:    count,
+//	}
+//	result.CompletePageInfo()
+//	result.Rows, err = ExecutorTransServices(*executors)
+//	if err != nil {
+//		return serializer.Err(http.StatusInternalServerError, "解析executors列表失败", err)
+//	}
+//	return &serializer.Response{Data: result}
+//}
+
+func (ls *ListService) ExecutorList() (count int, rows interface{}, err error) {
+	var (
+		executorMapper = mapper.GetExecutorMapper()
+		filter         = &models.Executor{}
+		executors      = &[]*models.Executor{}
+	)
+
+	if ls.IsNotPage {
+		err = executorMapper.FindAllWithPager(filter, executors, 0, 0, "", nil, ls.Searches)
+		return 0, executors, err
+	}
+
 	ls.ValidDate()
-	filter := &models.Executor{}
-	executors := &[]*models.Executor{}
-	count, err := mapper.GetExecutorMapper().Count(filter, ls.Sort, ls.Conditions, ls.Searches)
+	count, err = executorMapper.Count(filter, ls.Sort, ls.Conditions, ls.Searches)
 	if err != nil {
 		logger.Error("查询执行器总数失败: [%s]", err.Error())
-		return serializer.DBErr("查询执行器总数失败", err)
+		return count, executors, err
 	}
-	err = mapper.GetExecutorMapper().FindAllWithPager(filter, executors, ls.PageSize, ls.PageNo,
+	err = executorMapper.FindAllWithPager(filter, executors, ls.PageSize, ls.PageNo,
 		ls.Sort, ls.Conditions, ls.Searches)
+
 	if err != nil {
 		logger.Error("查询执行器列表失败: [%s]", err.Error())
-		return serializer.DBErr("查询执行器列表失败", err)
+		return count, executors, err
 	}
-	result := webutils.PagerResult{
-		PageSize: ls.PageSize,
-		PageNo:   ls.PageNo,
-		Count:    count,
-	}
-	result.CompletePageInfo()
-	result.Rows, err = ExecutorTransServices(*executors)
-	if err != nil {
-		return serializer.Err(http.StatusInternalServerError, "解析executors列表失败", err)
-	}
-	return &serializer.Response{Data: result}
+	return count, executors, err
 }
 
 func testNode(name, password, ip string, port uint) error {

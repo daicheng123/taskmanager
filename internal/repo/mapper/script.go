@@ -1,12 +1,13 @@
 package mapper
 
 import (
+	"context"
 	"errors"
 	"gorm.io/gorm"
 	"sync"
+	"taskmanager/internal/consts"
 	"taskmanager/internal/models"
 	"taskmanager/pkg/store"
-	"taskmanager/utils"
 )
 
 var (
@@ -75,7 +76,7 @@ func (sm *ScriptMapper) UpdateScript(value *models.Script, auditor uint) (err er
 		return err
 	}
 	switch value.Status {
-	case utils.NoAudit:
+	case consts.NoAudit:
 		if audit != nil {
 			audit.UserRef = auditor
 			value.ScriptAudit = audit
@@ -86,7 +87,7 @@ func (sm *ScriptMapper) UpdateScript(value *models.Script, auditor uint) (err er
 				Reviewer:  value.LastOperator,
 			}
 		}
-	case utils.PassAudit:
+	case consts.PassAudit:
 		if audit != nil {
 			err = sm.DeleteAuditByFilter(audit)
 			if err != nil {
@@ -101,6 +102,18 @@ func (sm *ScriptMapper) UpdateScript(value *models.Script, auditor uint) (err er
 }
 
 func (sm *ScriptMapper) FindOne(filter *models.Script) (script *models.Script, err error) {
+	if filter == nil {
+		filter = &models.Script{}
+	}
+	script = &models.Script{}
+	_, err = sm.BaseMapper.PreLoadFindOne(filter, script)
+	if errors.Is(err, gorm.ErrRecordNotFound) {
+		return nil, nil
+	}
+	return
+}
+
+func (sm *ScriptMapper) FindScriptOne(ctx context.Context, filter *models.Script) (script *models.Script, err error) {
 	if filter == nil {
 		filter = &models.Script{}
 	}

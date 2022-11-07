@@ -67,6 +67,8 @@ func AddHook(logType int, hook logrus.Hook) {
 		std = ginLogger
 	case TaskLog:
 		std = taskLogger
+	case AsynqLog:
+		std = asynqLogger
 	default:
 		panic("logger Type is not support")
 	}

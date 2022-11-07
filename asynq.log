@@ -1,0 +1,289 @@
+{"level":"info","msg":"Starting processing","time":"2022-11-04T12:37:10+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T12:37:10+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T12:37:10+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T12:41:50+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T12:41:50+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T12:41:50+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-04T12:43:18+08:00"}
+{"level":"info","msg":"Waiting for all workers to finish...","time":"2022-11-04T12:43:18+08:00"}
+{"level":"info","msg":"All workers have finished","time":"2022-11-04T12:43:18+08:00"}
+{"level":"info","msg":"Exiting","time":"2022-11-04T12:43:18+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T12:43:36+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T12:43:36+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T12:43:36+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-04T12:45:20+08:00"}
+{"level":"info","msg":"Waiting for all workers to finish...","time":"2022-11-04T12:45:21+08:00"}
+{"level":"info","msg":"All workers have finished","time":"2022-11-04T12:45:21+08:00"}
+{"level":"info","msg":"Exiting","time":"2022-11-04T12:45:21+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T13:00:33+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T13:00:33+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T13:00:33+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-04T14:02:12+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T14:02:20+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T14:02:20+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T14:02:20+08:00"}
+{"level":"warning","msg":"Retry exhausted for task id=test2-1667541769000","time":"2022-11-04T14:04:51+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-04T14:05:05+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T14:05:12+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T14:05:12+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T14:05:12+08:00"}
+{"level":"warning","msg":"Retry exhausted for task id=test2-1667541919000","time":"2022-11-04T14:07:22+08:00"}
+{"level":"warning","msg":"Retry exhausted for task id=test2-1667541919000","time":"2022-11-04T14:13:07+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-04T14:37:38+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T14:37:46+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T14:37:46+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T14:37:46+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-04T14:38:35+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T14:38:39+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T14:38:39+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T14:38:39+08:00"}
+{"level":"warning","msg":"Retry exhausted for task id=test2-166738787000020","time":"2022-11-04T14:40:00+08:00"}
+{"level":"warning","msg":"Retry exhausted for task id=test2-1667387870000200","time":"2022-11-04T14:40:00+08:00"}
+{"level":"warning","msg":"Retry exhausted for task id=test2-16673878700002010","time":"2022-11-04T14:40:00+08:00"}
+{"level":"warning","msg":"Retry exhausted for task id=test2-1667387870000201210","time":"2022-11-04T14:40:00+08:00"}
+{"level":"warning","msg":"Retry exhausted for task id=test2-166738787011000201210","time":"2022-11-04T14:40:00+08:00"}
+{"level":"warning","msg":"Retry exhausted for task id=test2-1667396781000","time":"2022-11-04T14:40:00+08:00"}
+{"level":"warning","msg":"Retry exhausted for task id=test2-1667399937000","time":"2022-11-04T14:40:00+08:00"}
+{"level":"warning","msg":"Retry exhausted for task id=test2-1667438012000","time":"2022-11-04T14:40:00+08:00"}
+{"level":"warning","msg":"Retry exhausted for task id=test2-1667474909000","time":"2022-11-04T14:40:00+08:00"}
+{"level":"warning","msg":"Retry exhausted for task id=test2-1667475130000","time":"2022-11-04T14:40:00+08:00"}
+{"level":"warning","msg":"Retry exhausted for task id=test2-1667475190000","time":"2022-11-04T14:40:00+08:00"}
+{"level":"warning","msg":"Retry exhausted for task id=test2-1667476974000","time":"2022-11-04T14:40:00+08:00"}
+{"level":"warning","msg":"Retry exhausted for task id=test2-1667541682000","time":"2022-11-04T14:40:00+08:00"}
+{"level":"warning","msg":"Retry exhausted for task id=test2-1667387870111000201210","time":"2022-11-04T14:41:45+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-04T14:52:24+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T14:52:33+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T14:52:33+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T14:52:33+08:00"}
+{"level":"warning","msg":"Retry exhausted for task id=test2-1667387870111000201210","time":"2022-11-04T14:52:38+08:00"}
+{"level":"warning","msg":"Retry exhausted for task id=test2-16673878701111000201210","time":"2022-11-04T14:53:43+08:00"}
+{"level":"warning","msg":"Retry exhausted for task id=test3-16673878701111000201210","time":"2022-11-04T14:55:54+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-04T14:56:11+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T14:56:19+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T14:56:19+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T14:56:19+08:00"}
+{"level":"warning","msg":"Retry exhausted for task id=hahahaha3-16673878701111000201210","time":"2022-11-04T14:56:38+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-04T14:58:42+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T14:58:50+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T14:58:50+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T14:58:50+08:00"}
+{"level":"warning","msg":"Retry exhausted for task id=hahahaha3-166738787011191000201210","time":"2022-11-04T14:58:55+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-04T16:58:37+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T16:58:47+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T16:58:47+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T16:58:47+08:00"}
+{"level":"warning","msg":"Retry exhausted for task id=hahahaha3-16673871187011191000201210","time":"2022-11-04T17:00:35+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-04T17:08:11+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T17:08:19+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T17:08:19+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T17:08:19+08:00"}
+{"level":"warning","msg":"Retry exhausted for task id=hahahaha3-1667387118711011191000201210","time":"2022-11-04T17:08:25+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-04T17:14:52+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T17:15:01+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T17:15:01+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T17:15:01+08:00"}
+{"level":"warning","msg":"Retry exhausted for task id=hahahaha3-1667387118711011191000201222210","time":"2022-11-04T17:15:15+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-04T17:20:04+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T17:20:10+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T17:20:10+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T17:20:10+08:00"}
+{"level":"warning","msg":"Retry exhausted for task id=hahahaha3-16673871187110111191000201222210","time":"2022-11-04T17:20:18+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-04T17:25:48+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T17:25:53+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T17:25:53+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T17:25:53+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-04T17:36:19+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T17:36:26+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T17:36:26+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T17:36:26+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-04T17:39:22+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T17:39:30+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T17:39:30+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T17:39:30+08:00"}
+{"level":"warning","msg":"Retry exhausted for task id=hahahaha3-1667387118711011119101002011222210","time":"2022-11-04T17:39:35+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-04T17:42:16+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T17:42:23+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T17:42:23+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T17:42:23+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-04T17:45:20+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T17:45:26+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T17:45:26+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T17:45:26+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-04T18:57:12+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T18:57:22+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T18:57:22+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T18:57:22+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-04T19:13:02+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T19:13:11+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T19:13:11+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T19:13:11+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-04T19:16:22+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T19:16:29+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T19:16:29+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T19:16:29+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T19:17:44+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T19:17:44+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T19:17:44+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-04T19:18:52+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T19:19:00+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T19:19:00+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T19:19:00+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-04T20:56:55+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T20:57:04+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T20:57:04+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T20:57:04+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-04T20:58:35+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T20:58:42+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T20:58:42+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T20:58:42+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-04T21:02:12+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T21:02:19+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T21:02:19+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T21:02:19+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-04T21:03:45+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T21:03:50+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T21:03:50+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T21:03:50+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-04T21:05:59+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T21:06:07+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T21:06:07+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T21:06:07+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-04T21:06:24+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T21:06:29+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T21:06:29+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T21:06:29+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T21:10:46+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T21:10:46+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T21:10:46+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T21:16:05+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T21:16:05+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T21:16:05+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T21:18:39+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T21:18:39+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T21:18:39+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T21:20:19+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T21:20:19+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T21:20:19+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T21:23:25+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T21:23:25+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T21:23:25+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T21:24:20+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T21:24:20+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T21:24:20+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T21:25:27+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T21:25:27+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T21:25:27+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T21:25:50+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T21:25:50+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T21:25:50+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T21:27:04+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T21:27:04+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T21:27:04+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T21:28:17+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T21:28:17+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T21:28:17+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-04T21:29:39+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-04T21:29:47+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-04T21:29:47+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-04T21:29:47+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-05T15:51:58+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-05T15:51:58+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-05T15:51:58+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-05T16:05:33+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-05T16:05:33+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-05T16:05:33+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-05T16:12:53+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-05T16:12:53+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-05T16:12:53+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-05T16:14:15+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-05T16:14:26+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-05T16:14:26+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-05T16:14:26+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-05T16:17:27+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-05T16:17:27+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-05T16:17:27+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-05T16:24:51+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-05T16:24:51+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-05T16:24:51+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-05T16:40:18+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-05T16:40:27+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-05T16:40:27+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-05T16:40:27+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-05T16:42:23+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-05T16:42:29+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-05T16:42:29+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-05T16:42:29+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-05T16:44:27+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-05T16:44:31+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-05T16:44:31+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-05T16:44:31+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-05T16:47:16+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-05T16:50:53+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-05T16:50:53+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-05T16:50:53+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-05T16:55:15+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-05T16:55:23+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-05T16:55:23+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-05T16:55:23+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-05T16:58:29+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-05T16:58:35+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-05T16:58:35+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-05T16:58:35+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-05T17:00:47+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-05T17:00:58+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-05T17:00:58+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-05T17:00:58+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-05T17:01:35+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-05T17:01:41+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-05T17:01:41+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-05T17:01:41+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-05T17:23:48+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-05T17:23:57+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-05T17:23:57+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-05T17:23:57+08:00"}
+{"level":"warning","msg":"Retry exhausted for task id=test2-1667640242000","time":"2022-11-05T17:24:27+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-05T17:25:46+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-05T17:25:54+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-05T17:25:54+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-05T17:25:54+08:00"}
+{"level":"warning","msg":"Retry exhausted for task id=test2-1667640360000","time":"2022-11-05T17:26:23+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-05T17:27:47+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-05T17:27:54+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-05T17:27:54+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-05T17:27:54+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-05T17:30:23+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-05T17:30:33+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-05T17:30:33+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-05T17:30:33+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-05T17:32:39+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-05T17:32:43+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-05T17:32:43+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-05T17:32:43+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-05T17:34:56+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-05T17:35:00+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-05T17:35:00+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-05T17:35:00+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-05T18:03:30+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-05T18:03:38+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-05T18:03:38+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-05T18:03:38+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-05T18:11:22+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-05T18:11:42+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-05T18:11:42+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-05T18:11:42+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-05T18:14:28+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-05T18:14:38+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-05T18:14:38+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-05T18:14:38+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-05T18:15:00+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-05T18:15:05+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-05T18:15:05+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-05T18:15:05+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-05T18:17:44+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-05T18:17:51+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-05T18:17:51+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-05T18:17:51+08:00"}
+{"level":"info","msg":"Starting graceful shutdown","time":"2022-11-05T18:20:01+08:00"}
+{"level":"info","msg":"Starting processing","time":"2022-11-05T18:20:22+08:00"}
+{"level":"info","msg":"Send signal TSTP to stop processing new tasks","time":"2022-11-05T18:20:22+08:00"}
+{"level":"info","msg":"Send signal TERM or INT to terminate the process","time":"2022-11-05T18:20:22+08:00"}

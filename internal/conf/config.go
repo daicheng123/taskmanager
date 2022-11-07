@@ -38,6 +38,7 @@ type DBConfig struct {
 type RedisConfig struct {
 	Address     string `yaml:"address"`
 	UsePassword bool   `yaml:"usePassword"`
+	IsCluster   bool   `yaml:"isCluster"`
 	Password    string `yaml:"password"`
 	DB          int    `yaml:"db"`
 	TaskDB      int    `yaml:"taskDB"`
@@ -153,6 +154,13 @@ func GetLogPath() string {
 		return ""
 	}
 	return defaultConfig.Log.LogPath
+}
+
+func GetRedisIsCluster() bool {
+	if defaultConfig == nil {
+		return false
+	}
+	return defaultConfig.Redis.IsCluster
 }
 
 func GetRedisAddr() string {

@@ -38,7 +38,7 @@ func (err *AppError) WithError(raw error) AppError {
 
 // Error 返回业务代码确定的可读错误信息
 func (err AppError) Error() string {
-	return err.Message
+	return err.RawError.Error()
 }
 
 // ParamErr 各种参数错误
@@ -141,4 +141,10 @@ const (
 
 	//CodeWriteFileError 写文件错误
 	CodeWriteFileError = 50015
+
+	// CodeWriteCreateAsyncTaskError 创建异步任务失败
+	CodeWriteCreateAsyncTaskError = 51001
+
+	// CodeGetStepStdoutError 获取异步任务stdout失败
+	CodeGetStepStdoutError = 51002
 )

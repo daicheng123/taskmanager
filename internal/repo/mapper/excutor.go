@@ -3,6 +3,7 @@ package mapper
 import (
 	"errors"
 	"gorm.io/gorm"
+	"gorm.io/gorm/clause"
 	"sync"
 	"taskmanager/internal/models"
 	"taskmanager/pkg/store"
@@ -111,4 +112,16 @@ func (em *ExecutorMapper) BatchDeleteById(ids ...uint) error {
 		return nil
 	})
 	return err
+}
+
+func (em *ExecutorMapper) FindWithRangeID(ids ...uint) (*[]models.Executor, error) {
+	if len(ids) <= 0 {
+		return nil, errors.New("id列表不能唯空")
+	}
+	executors := &[]models.Executor{}
+	_, err := store.Execute(func(db *gorm.DB) *gorm.DB {
+		return db.Model(&models.Executor{}).Preload(clause.Associations).Where(map[string]interface{}{"id": ids}).Find(executors)
+	})
+	return executors, err
+	//models.
 }

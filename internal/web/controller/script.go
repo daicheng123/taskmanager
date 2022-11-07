@@ -113,4 +113,5 @@ func (sc *ScriptController) Build(rc *web.RouterCenter) {
 	ScriptGroup.Handle(http.MethodDelete, "/delete_script/:id", sc.scriptDelete)
 	ScriptGroup.Handle(http.MethodPut, "/update_script", sc.scriptUpdate)
 	ScriptGroup.Handle(http.MethodPost, "/debug_script", sc.scriptDebug)
+
 }

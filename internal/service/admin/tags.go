@@ -1,8 +1,8 @@
 package admin
 
 import (
-	"taskmanager/internal/dal/mapper"
 	"taskmanager/internal/models"
+	"taskmanager/internal/repo/mapper"
 	"taskmanager/pkg/logger"
 	"taskmanager/pkg/serializer"
 	//validator "github.com/go-playground/validator/v10"
@@ -71,6 +71,7 @@ func (ls *ListService) TagsList() (count int, rows interface{}, err error) {
 		tags      = &[]*models.Tag{}
 	)
 
+	ls.ValidDate()
 	count, err = tagMapper.Count(filter, ls.Sort, ls.Conditions, ls.Searches)
 	if err != nil {
 		logger.Error("查询标签总数失败: [%s]", err.Error())

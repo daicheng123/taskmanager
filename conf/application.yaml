@@ -10,6 +10,7 @@ database:
   dbPassword: "Dc@123"
 redis:
   address: "127.0.0.1:6379" # 集群以逗号隔开
+  isCluster: false
   usePassword: true
   password: "Dc!123"
   db: 1 # 默认DB

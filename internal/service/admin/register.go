@@ -2,8 +2,8 @@ package admin
 
 import (
 	"gopkg.in/errgo.v2/errors"
-	"taskmanager/internal/dal/mapper"
 	"taskmanager/internal/models"
+	"taskmanager/internal/repo/mapper"
 	"taskmanager/pkg/logger"
 	"taskmanager/pkg/serializer"
 	"taskmanager/utils"

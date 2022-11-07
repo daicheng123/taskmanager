@@ -28,3 +28,17 @@ func WriteFile(filePath string, contents string) error {
 	_, err = wr.WriteString(contents)
 	return err
 }
+
+func MustLoadFile(path string) []byte {
+	f, err := os.Open(path)
+	if err != nil {
+		return nil
+	}
+	defer f.Close()
+
+	b, err := ioutil.ReadAll(f)
+	if err != nil {
+		return nil
+	}
+	return b
+}

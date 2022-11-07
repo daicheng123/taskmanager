@@ -1,8 +1,8 @@
 package admin
 
 import (
-	"taskmanager/internal/dal/mapper"
 	"taskmanager/internal/models"
+	"taskmanager/internal/repo/mapper"
 	"taskmanager/internal/web/utils"
 	"taskmanager/pkg/logger"
 	"taskmanager/pkg/serializer"

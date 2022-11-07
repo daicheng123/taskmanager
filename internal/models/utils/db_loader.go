@@ -29,6 +29,8 @@ func autoMigrate() {
 			&models.Script{},
 			&models.DangerousCmd{},
 			&models.ScriptAudit{},
+			&models.Task{},
+			&models.TaskStep{},
 		)
 	if err != nil {
 		logger.Error(err.Error())

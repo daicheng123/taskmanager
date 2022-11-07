@@ -15,6 +15,7 @@ type ListService struct {
 	Sort       string
 	Conditions map[string]interface{} `form:"conditions"`
 	Searches   map[string]interface{} `form:"searches"`
+	IsNotPage  bool                   `form:"isNotPage" binding:"omitempty,eq=true|eq=false"`
 }
 
 func (ls *ListService) ValidDate() {
@@ -37,7 +38,6 @@ func (ls *ListService) ValidDate() {
 }
 
 func (ls *ListService) Lister(listFunc ListerFunc) *serializer.Response {
-	ls.ValidDate()
 	count, rows, err := listFunc()
 	if err != nil {
 		return serializer.DBErr("获取标签数据失败", err)

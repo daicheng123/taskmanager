@@ -7,8 +7,8 @@ import (
 	"taskmanager/internal/service/admin"
 	"taskmanager/internal/web"
 	webutils "taskmanager/internal/web/utils"
-	"taskmanager/pkg/logger"
 	"taskmanager/pkg/serializer"
+	"taskmanager/utils"
 )
 
 const (
@@ -38,14 +38,17 @@ func (uc *UserController) userRegister(ctx *gin.Context) {
 		ctx.JSON(http.StatusOK, webutils.ErrorResponse(err))
 	}
 	// 校验验证码是否过期
-	codeKey := service.UserEmail + ""
+	//codeKey := service.UserEmail + ""
+	//r := cache.NewStringOperation().Get(codeKey).UnwrapOrElse(func(err error) {
+	//	logger.Error("获取邮箱验证码失败: err:[%s]", err.Error())
+	//})
 
-	r := cache.NewStringOperation().Get(codeKey).UnwrapOrElse(func(err error) {
-		logger.Error("获取邮箱验证码失败: err:[%s]", err.Error())
-	})
+	// 校验验证码是否过期
+	r, _ := cache.NewRedisCache(ctx).Get(utils.BuilderStr(service.UserEmail, ""))
 
 	if r == nil {
 		ctx.JSON(http.StatusOK, serializer.Err(serializer.CodeServerInternalError, "获取邮箱验证码失败", nil))
+		return
 	}
 
 	rsp := service.AddUser()

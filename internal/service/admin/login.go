@@ -2,8 +2,8 @@ package admin
 
 import (
 	"github.com/gin-gonic/gin"
-	mapper2 "taskmanager/internal/dal/mapper"
 	"taskmanager/internal/models"
+	mapper2 "taskmanager/internal/repo/mapper"
 	"taskmanager/internal/service"
 	"taskmanager/pkg/logger"
 	"taskmanager/pkg/serializer"

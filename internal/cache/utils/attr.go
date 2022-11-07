@@ -23,6 +23,7 @@ func (as Attrs) Find(name string) interface{} {
 	}
 	return nil
 }
+
 func WithExpire(t time.Duration) *Attr {
 	return &Attr{
 		Name:  AttrExpire,

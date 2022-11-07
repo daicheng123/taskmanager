@@ -29,7 +29,7 @@ func NewStringOperation() *StringOperation {
 }
 
 // Exists key是否存在
-func (so StringOperation) Exists(key string) *utils.Result {
+func (so *StringOperation) Exists(key string) *utils.Result {
 	so.lock.RLock()
 	defer so.lock.RUnlock()
 
@@ -43,7 +43,7 @@ func (so StringOperation) Exists(key string) *utils.Result {
 }
 
 // Get 获取单值
-func (so StringOperation) Get(key string) *utils.Result {
+func (so *StringOperation) Get(key string) *utils.Result {
 	so.lock.RLock()
 	defer so.lock.RUnlock()
 
@@ -56,7 +56,7 @@ func (so StringOperation) Get(key string) *utils.Result {
 }
 
 // Set 设置单个值
-func (so StringOperation) Set(key string, value interface{}, attrs ...*utils.Attr) *utils.Result {
+func (so *StringOperation) Set(key string, value interface{}, attrs ...*utils.Attr) *utils.Result {
 	so.lock.Lock()
 	defer so.lock.Unlock()
 

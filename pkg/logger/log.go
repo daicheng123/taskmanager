@@ -13,21 +13,25 @@ const (
 	ManagerLog = iota // 服务日志
 	GinLog            // gin框架日志
 	TaskLog           // 任务日志
+	AsynqLog          // 任务调度日志
 )
 
 var (
 	managerLogger     *logrus.Logger
 	ginLogger         *logrus.Logger
 	taskLogger        *logrus.Logger
+	asynqLogger       *logrus.Logger
 	managerLumberjack *lumberjack.Logger
 	ginLumberjack     *lumberjack.Logger
 	taskLumberjack    *lumberjack.Logger
+	asynqLumberjack   *lumberjack.Logger
 )
 
 func init() {
 	managerLogger = logrus.New()
 	ginLogger = logrus.New()
 	taskLogger = logrus.New()
+	asynqLogger = logrus.New()
 
 	managerLumberjack = &lumberjack.Logger{
 		Filename:   conf.GetLogPath() + "manager.log",
@@ -47,6 +51,14 @@ func init() {
 		MaxSize:    500,
 		Compress:   true,
 	}
+
+	asynqLumberjack = &lumberjack.Logger{
+		Filename:   conf.GetLogPath() + "asynq.log",
+		MaxBackups: 5,
+		MaxSize:    500,
+		Compress:   true,
+	}
+
 }
 
 func InitLogger() {
@@ -71,6 +83,13 @@ func InitLogger() {
 		levels:   logrus.AllLevels,
 	})
 
+	AddHook(AsynqLog, &ManagerHook{
+		file:     false,
+		line:     false,
+		function: false,
+		levels:   logrus.AllLevels,
+	})
+
 	//设置日志格式化
 	SetFormatter(ManagerLog, &logrus.JSONFormatter{
 		TimestampFormat: time.RFC3339,
@@ -79,6 +98,9 @@ func InitLogger() {
 		TimestampFormat: time.RFC3339,
 	})
 	SetFormatter(GinLog, &logrus.JSONFormatter{
+		TimestampFormat: time.RFC3339,
+	})
+	SetFormatter(AsynqLog, &logrus.JSONFormatter{
 		TimestampFormat: time.RFC3339,
 	})
 
@@ -90,10 +112,12 @@ func InitLogger() {
 	SetLevel(ManagerLog, level)
 	SetLevel(TaskLog, level)
 	SetLevel(GinLog, level)
+	SetLevel(AsynqLog, level)
 
 	SetOutput(ManagerLog, managerLumberjack)
 	SetOutput(TaskLog, ginLumberjack)
 	SetOutput(GinLog, taskLumberjack)
+	SetOutput(AsynqLog, asynqLumberjack)
 }
 
 // SetFormatter sets the standard logger formatter.
@@ -106,6 +130,8 @@ func SetFormatter(logType int, formatter logrus.Formatter) {
 		std = taskLogger
 	case GinLog:
 		std = ginLogger
+	case AsynqLog:
+		std = asynqLogger
 	default:
 		panic("logger Type is not support")
 	}
@@ -121,6 +147,8 @@ func SetOutput(logType int, out io.Writer) {
 		std = taskLogger
 	case GinLog:
 		std = ginLogger
+	case AsynqLog:
+		std = asynqLogger
 	default:
 		panic("logger Type is not support")
 	}
@@ -136,6 +164,8 @@ func SetLevel(logType int, level logrus.Level) {
 		std = taskLogger
 	case GinLog:
 		std = ginLogger
+	case AsynqLog:
+		std = asynqLogger
 	default:
 		panic("logger Type is not support")
 	}
@@ -176,4 +206,8 @@ func GinInfo(format string, args ...interface{}) {
 
 func GinERROR(format string, args ...interface{}) {
 	ginLogger.Errorf(format, args...)
+}
+
+func GetAsynqLogger() *logrus.Logger {
+	return asynqLogger
 }

@@ -26,7 +26,7 @@ func (mc *MailController) checkEmailExist(ctx *gin.Context) {
 func (mc *MailController) genEmailCode(ctx *gin.Context) {
 	mailService := new(admin.MailService)
 	if err := ctx.ShouldBindJSON(mailService); err == nil {
-		res := mailService.GenMailCode()
+		res := mailService.GenMailCode(ctx)
 		ctx.JSON(http.StatusOK, res)
 	} else {
 		ctx.JSON(http.StatusOK, utils.ErrorResponse(err))

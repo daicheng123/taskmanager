@@ -5,8 +5,9 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
-	"taskmanager/internal/dal/mapper"
+	"taskmanager/internal/consts"
 	"taskmanager/internal/models"
+	"taskmanager/internal/repo/mapper"
 	"taskmanager/pkg/logger"
 	"taskmanager/pkg/serializer"
 	"taskmanager/utils"
@@ -54,11 +55,11 @@ func (ds *DebugScriptService) Debug(ctx context.Context) *serializer.Response {
 		return serializer.Err(serializer.CodeDecodePasswordErr, err.Error(), err)
 	}
 	uuid := utils.NewUuid()
-	if ds.ScriptType == utils.Python {
-		srcPath = "/tmp/" + uuid + ".py"
+	if ds.ScriptType == consts.Python {
+		srcPath = utils.BuilderStr("/tmp/", uuid, ".py")
 		command = "python3 "
-	} else if ds.ScriptType == utils.Shell {
-		srcPath = "/tmp/" + uuid + ".sh"
+	} else if ds.ScriptType == consts.Shell {
+		srcPath = utils.BuilderStr("/tmp/", uuid, ".sh")
 		command = "bash "
 	}
 	dstPath := filepath.Join(executor.ExecutePath, filepath.Base(srcPath))
@@ -111,9 +112,9 @@ func (ss *ScriptService) UpdateScript() *serializer.Response {
 	}
 
 	if needAudit {
-		ss.Script.Status = utils.NoAudit
+		ss.Script.Status = consts.NoAudit
 	} else {
-		ss.Script.Status = utils.PassAudit
+		ss.Script.Status = consts.PassAudit
 	}
 
 	err = mapper.GetScriptMapper().UpdateScript(ss.Script, ss.UserId)
@@ -140,9 +141,9 @@ func (ss *ScriptService) AddScript() *serializer.Response {
 	}
 
 	if !needAudit {
-		ss.Script.Status = utils.PassAudit
+		ss.Script.Status = consts.PassAudit
 	} else {
-		ss.Script.Status = utils.NoAudit
+		ss.Script.Status = consts.NoAudit
 
 		ss.Script.ScriptAudit = &models.ScriptAudit{
 			Reviewer: ss.Script.LastOperator,
@@ -216,6 +217,7 @@ func (ls *ListService) ScriptsList() (count int, rows interface{}, err error) {
 		scripts      = &[]*models.Script{}
 	)
 
+	ls.ValidDate()
 	count, err = scriptMapper.Count(filter, ls.Sort, ls.Conditions, ls.Searches)
 	if err != nil {
 		logger.Error("查询标签总数失败: [%s]", err.Error())

@@ -7,6 +7,7 @@ import (
 	"taskmanager/internal/web/controller"
 	"taskmanager/internal/web/middleware"
 	"taskmanager/pkg/logger"
+	"taskmanager/pkg/worker"
 	"taskmanager/utils"
 )
 
@@ -19,10 +20,7 @@ func init() {
 func main() {
 
 	// 初始化任务
-	//go func() {
-	//	tc := taskManager.GetDefaultTaskCenter()
-	//	tc.StartWorker(10)
-	//}()
+	worker.InitWorker()
 
 	// 初始化路由
 	web.InitRouterCenter().
@@ -31,7 +29,6 @@ func main() {
 			middleware.NewSessionMiddleWare(),
 			middleware.NewErrorMiddleWare(),
 			middleware.NewLoggerMiddleWare(),
-
 		).
 		// 邮件相关接口
 		Mount("api/", controller.NewMailController()).
@@ -47,6 +44,8 @@ func main() {
 		Mount("api/v1", controller.NewDangerCmdController()).
 		// websocket接口
 		Mount("api/v1", controller.NewWebSocketController()).
+		// 自动化接口
+		Mount("api/v1", controller.NewAutomationController()).
 		Launch()
 	utils.ServerNotify()
 

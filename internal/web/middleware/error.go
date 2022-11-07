@@ -4,6 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"taskmanager/pkg/logger"
+	"taskmanager/pkg/serializer"
 )
 
 /*
@@ -29,8 +30,9 @@ func (em *ErrorMiddleWare) OnRequest() gin.HandlerFunc {
 					logger.GinERROR("remote: %s, uri: %s: error: [%s]",
 						context.Request.RemoteAddr, context.Request.URL, errStr)
 				}
+				context.AbortWithStatusJSON(http.StatusOK,
+					serializer.Err(serializer.CodeServerInternalError, "服务器内部错误", nil))
 			}
-			context.AbortWithStatus(http.StatusBadRequest)
 		}()
 		context.Next()
 	}

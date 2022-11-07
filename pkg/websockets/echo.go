@@ -5,7 +5,6 @@ import (
 	"taskmanager/pkg/websockets/core"
 )
 
-// Echo 将升级为websocket后的客户端存入到本地内存的 ClientMap 中
 func Echo(w http.ResponseWriter, req *http.Request) (err error) {
 	conn, err := core.UpGrader.Upgrade(w, req, nil)
 	if err != nil {
@@ -16,4 +15,3 @@ func Echo(w http.ResponseWriter, req *http.Request) (err error) {
 	}
 	return
 }
-

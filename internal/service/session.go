@@ -1,7 +1,7 @@
 package service
 
 import (
-	"taskmanager/internal/dal/mapper"
+	"taskmanager/internal/repo/mapper"
 	"taskmanager/pkg/logger"
 	"taskmanager/utils"
 	"time"

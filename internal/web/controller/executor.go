@@ -3,8 +3,8 @@ package controller
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"taskmanager/internal/dal/mapper"
 	"taskmanager/internal/models"
+	"taskmanager/internal/repo/mapper"
 	"taskmanager/internal/service/admin"
 	"taskmanager/internal/web"
 	"taskmanager/internal/web/utils"
@@ -62,7 +62,16 @@ func (ec *ExecutorController) executorLists(ctx *gin.Context) {
 		ctx.JSON(http.StatusOK, utils.ErrorResponse(err))
 		return
 	}
-	ctx.JSON(http.StatusOK, srv.ExecutorList())
+	if srv.IsNotPage {
+		_, executors, err := srv.ExecutorList()
+		if err != nil {
+			ctx.JSON(http.StatusOK, serializer.DBErr(err.Error(), err))
+			return
+		}
+		ctx.JSON(http.StatusOK, &serializer.Response{Data: executors})
+		return
+	}
+	ctx.JSON(http.StatusOK, srv.Lister(srv.ExecutorList))
 }
 
 func (ec *ExecutorController) executorDelete(ctx *gin.Context) {
@@ -126,5 +135,4 @@ func (ec *ExecutorController) Build(rc *web.RouterCenter) {
 	execGroup.Handle(http.MethodPatch, "/refresh_status", ec.executorsRefresh)
 	execGroup.Handle(http.MethodPut, "/update_executor", ec.executorUpdate)
 	execGroup.Handle(http.MethodGet, "/option_executor", ec.executorOption)
-
 }
