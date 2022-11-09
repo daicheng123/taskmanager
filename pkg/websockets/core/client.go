@@ -11,6 +11,8 @@ var UpGrader websocket.Upgrader
 
 func init() {
 	UpGrader = websocket.Upgrader{
+		ReadBufferSize:  1024,
+		WriteBufferSize: 1024,
 		CheckOrigin: func(r *http.Request) bool {
 			// 可以检验是否允许跨域的来源ip
 			return true

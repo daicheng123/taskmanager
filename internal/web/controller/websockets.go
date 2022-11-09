@@ -29,7 +29,7 @@ func (wsc *WebSocketController) Connect(ctx *gin.Context) {
 		return
 	}
 
-	ctx.JSON(http.StatusOK, &serializer.Response{Message: "ok"})
+	//ctx.Writer.WriteString()
 }
 
 func (wsc *WebSocketController) Build(rc *web.RouterCenter) {

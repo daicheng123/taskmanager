@@ -50,9 +50,9 @@ func (ds *DebugScriptService) Debug(ctx context.Context) *serializer.Response {
 	if err != nil {
 		return serializer.DBErr("查询执行器出错", err)
 	}
-	password, err := utils.Decrypt(executor.Accounts.AccountPassword)
+	password, err := utils.Decrypt(executor.Account.AccountPassword)
 	if err != nil {
-		return serializer.Err(serializer.CodeDecodePasswordErr, err.Error(), err)
+		return serializer.Err(serializer.CodeHostPasswordDecodeErr, err.Error(), err)
 	}
 	uuid := utils.NewUuid()
 	if ds.ScriptType == consts.Python {
@@ -71,10 +71,10 @@ func (ds *DebugScriptService) Debug(ctx context.Context) *serializer.Response {
 	}
 
 	client := utils.NewSsh(
-		executor.Accounts.AccountName,
+		executor.Account.AccountName,
 		password,
 		executor.IPAddr,
-		executor.SHHPort)
+		executor.SSHPort)
 
 	err = client.TransferFile(srcPath, dstPath)
 	if err != nil {

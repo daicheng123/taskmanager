@@ -3,6 +3,7 @@ package mapper
 import (
 	"context"
 	"errors"
+	"fmt"
 	"gorm.io/gorm"
 	"sync"
 	"taskmanager/internal/models"
@@ -97,6 +98,7 @@ func (tm *TaskMapper) FindStepByExecutorAndTask(ipAddr string, taskName string) 
 	}
 	executor, err := GetExecutorMapper().FindOne(ef)
 	if err != nil {
+		fmt.Println("hahahahahahahahahahahahahahahahahahaha", err.Error())
 		return nil, err
 	}
 	sf := &models.TaskStep{

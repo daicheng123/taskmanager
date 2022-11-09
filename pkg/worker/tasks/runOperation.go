@@ -66,7 +66,7 @@ func RunAnsibleAdhoc() func(ctx context.Context, task *asynq.Task) error {
 
 			ansiCfg := ansible.NewConfig(
 				ansible.WithOvertime(payload.ScriptOverTime), ansible.WithTaskExecutor(e.ID),
-				ansible.WithTaskName(payload.TaskName), ansible.WithTaskUser(e.Accounts.AccountName))
+				ansible.WithTaskName(payload.TaskName), ansible.WithTaskUser(e.Account.AccountName))
 
 			ansiCfg.SetCallBack(func(taskName string) ansible.ResultCallback {
 				op := &ansible.OperationCallbackPayload{
@@ -103,6 +103,7 @@ func RunAnsibleAdhoc() func(ctx context.Context, task *asynq.Task) error {
 				timeCtx, cancelFunc := context.WithTimeout(ctx, time.Second*time.Duration(payload.ScriptOverTime))
 				defer cancelFunc()
 				if err = ansible.NewOperationTask(config).Execute(timeCtx); err != nil {
+
 					sf := &models.TaskStep{
 						TaskRefer:  payload.TaskName,
 						ExecutorID: config.Executor,

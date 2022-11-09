@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"taskmanager/internal/models"
 	"taskmanager/internal/repo/mapper"
+	"taskmanager/internal/schemas"
 	"taskmanager/internal/service/admin"
 	"taskmanager/internal/web"
 	"taskmanager/internal/web/utils"
@@ -17,41 +18,44 @@ const (
 )
 
 type ExecutorController struct {
+	*admin.ExecutorService
 }
 
 func NewExecutorController() *ExecutorController {
-	return &ExecutorController{}
+	return &ExecutorController{
+		ExecutorService: admin.NewExecutorService(),
+	}
 }
 
 // executorAdd 新增执行器
 func (ec *ExecutorController) executorAdd(ctx *gin.Context) {
-	srv := &admin.ExecutorService{}
-	err := ctx.ShouldBindJSON(srv)
+	executorInfo := &schemas.ExecutorInfo{}
+	err := ctx.ShouldBindJSON(executorInfo)
 	if err != nil {
 		ctx.JSON(http.StatusOK, utils.ErrorResponse(err))
 		return
 	}
-	ctx.JSON(http.StatusOK, srv.ExecutorAdd())
+	ctx.JSON(http.StatusOK, ec.ExecutorService.ExecutorAdd(ctx, executorInfo))
 }
 
 // distributeKey 分发管理主机密钥至执行器
 func (ec *ExecutorController) distributeKey(ctx *gin.Context) {
-	srv := &admin.ExecutorService{}
-	err := ctx.ShouldBindJSON(srv)
+	distribution := &schemas.DistributeReq{}
+	err := ctx.ShouldBindJSON(distribution)
 	if err != nil {
 		ctx.JSON(http.StatusOK, utils.ErrorResponse(err))
 		return
 	}
 	filter := &models.Executor{
-		BaseModel: models.BaseModel{ID: srv.ID},
+		BaseModel: models.BaseModel{ID: distribution.ID},
 	}
-	result, err := mapper.GetExecutorMapper().FindOne(filter)
+	result, err := mapper.GetExecutorMapper().PreLoadFindOne(filter)
 	if err != nil {
 		logger.Error("查询executor失败,err:[%s]", err.Error())
 		ctx.JSON(http.StatusOK, serializer.DBErr("获取executor失败", err))
 		return
 	}
-	ctx.JSON(http.StatusOK, srv.DistributeKey(result))
+	ctx.JSON(http.StatusOK, ec.ExecutorService.DistributeKey(ctx, result))
 }
 
 // executorLists
@@ -111,13 +115,13 @@ func (ec *ExecutorController) executorsRefresh(ctx *gin.Context) {
 }
 
 func (ec *ExecutorController) executorUpdate(ctx *gin.Context) {
-	srv := &admin.ExecutorService{}
-	err := ctx.ShouldBindJSON(srv)
+	executorInfo := &schemas.ExecutorInfo{}
+	err := ctx.ShouldBindJSON(executorInfo)
 	if err != nil {
 		ctx.JSON(http.StatusOK, utils.ErrorResponse(err))
 		return
 	}
-	ctx.JSON(http.StatusOK, srv.ExecutorUpdate())
+	ctx.JSON(http.StatusOK, ec.ExecutorService.ExecutorUpdate(ctx, executorInfo))
 }
 
 func (ec *ExecutorController) executorOption(ctx *gin.Context) {

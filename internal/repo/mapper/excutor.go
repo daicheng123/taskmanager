@@ -72,6 +72,19 @@ func (em *ExecutorMapper) PreLoadFindOne(filter *models.Executor) (executor *mod
 	return
 }
 
+//func (em *ExecutorMapper) FindByCondition() (*models.Executor, bool, error) {
+//
+//	if conditions == nil {
+//		return nil, false, errors.New("执行器查询条件不能为空")
+//	}
+//	var result = &models.Executor{}
+//
+//	_, err := store.Execute(func(db *gorm.DB) *gorm.DB {
+//		return db.Model(result).Find(conditions).First(result)
+//	})
+//	return result, errors.Is(err, gorm.ErrRecordNotFound), err
+//}
+
 func (em *ExecutorMapper) Updates(value *models.Executor) error {
 	_, err := em.BaseMapper.Updates(value)
 	return err
@@ -124,4 +137,12 @@ func (em *ExecutorMapper) FindWithRangeID(ids ...uint) (*[]models.Executor, erro
 	})
 	return executors, err
 	//models.
+}
+
+func (em *ExecutorMapper) ExistWithCondition(filter *models.Executor) (notExist bool, err error) {
+	executor, err := em.FindOne(filter)
+	if err == nil && executor == nil {
+		notExist = true
+	}
+	return
 }

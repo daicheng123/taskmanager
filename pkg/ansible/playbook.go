@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"context"
 	"errors"
+	"fmt"
 	"github.com/apenella/go-ansible/pkg/execute"
 	"github.com/apenella/go-ansible/pkg/execute/measure"
 	"github.com/apenella/go-ansible/pkg/options"
@@ -159,6 +160,7 @@ func (t *OperationTask) Execute(ctx context.Context) error {
 		User:          t.OperatorConfig.sshUser,
 		Connection:    SmartConnection,
 	}
+	fmt.Printf("executorId is: %#v", t.OperatorConfig.inventory)
 	ansiblePlaybookOptions := &playbook.AnsiblePlaybookOptions{
 		Inventory: t.OperatorConfig.inventory + ",",
 		Forks:     ForkNumber,

@@ -24,3 +24,6 @@ email:
   mailPort: 25
   userName: "13637235955@163.com"
   password: "CKXQRZXRXTKVDMJL"  # 授权码
+
+# id_rsa.pub
+secrets: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCswRfXSgkc7vgNnrWwcd3mmhFuxLRQj62Co3ObfrUTgHuDp/s9YgVWuD75D0bDKHb8PviZ2/vlGTQwyWIJpRjU51CQY3OVEzFtrxSKjdiUOVdlvELLS645Y+tqrU/bhzwk8Z5ntQcoff+z/ZFNtjYBHjrJ+tPXVzW+l7zdRcmVCrW5HjZPRAjlr0GzfuBSK62EDtHmATZRTxRvTr+M6nMhDe70rVp3u4ede4CeejPYdiHbrjn0WYndOfWzcV8Seg8YHyt2cZ9lhF57e79yWxxcyiH1wbcgBTvLytIeh5eVFOjR0HtKwfZEBf8JY87+vc0Yz6FM1to4dvu3bsze9FrN daicheng@daichengdeMacBook-Pro.local"

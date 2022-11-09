@@ -17,7 +17,7 @@ var NoAuthUri = []string{
 	"/users/login",
 	"/users/register",
 	"/users/user_code",
-	//"/users/user_info",
+	"/websockets/core",
 }
 
 func AllowUri(uri string) bool {

@@ -3194,3 +3194,278 @@
 {"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-05T18:20:22+08:00"}
 {"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-05T18:20:23+08:00"}
 {"file":"runOperation.go","function":"taskmanager/pkg/worker/tasks.RunAnsibleAdhoc.func1","level":"info","line":22,"msg":"start to execute task","time":"2022-11-05T18:20:28+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T09:55:33+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T09:55:33+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T09:55:33+08:00"}
+{"file":"runOperation.go","function":"taskmanager/pkg/worker/tasks.RunAnsibleAdhoc.func1","level":"info","line":22,"msg":"start to execute task","time":"2022-11-07T09:57:40+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T10:01:08+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T10:01:19+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T10:01:19+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T10:01:19+08:00"}
+{"file":"runOperation.go","function":"taskmanager/pkg/worker/tasks.RunAnsibleAdhoc.func1","level":"info","line":23,"msg":"start to execute task","time":"2022-11-07T10:01:43+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T10:17:54+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T10:18:01+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T10:18:01+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T10:18:01+08:00"}
+{"file":"runOperation.go","function":"taskmanager/pkg/worker/tasks.RunAnsibleAdhoc.func1","level":"info","line":23,"msg":"start to execute task","time":"2022-11-07T10:22:45+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T10:24:15+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T10:24:22+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T10:24:22+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T10:24:22+08:00"}
+{"file":"runOperation.go","function":"taskmanager/pkg/worker/tasks.RunAnsibleAdhoc.func1","level":"info","line":22,"msg":"start to execute task","time":"2022-11-07T10:28:43+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T11:46:52+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T11:47:02+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T11:47:02+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T11:47:02+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T12:49:34+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T12:49:43+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T12:49:43+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T12:49:43+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T12:49:55+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T12:49:58+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T12:49:58+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T12:49:58+08:00"}
+{"file":"runOperation.go","function":"taskmanager/pkg/worker/tasks.RunAnsibleAdhoc.func1","level":"info","line":22,"msg":"start to execute task","time":"2022-11-07T13:26:05+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T13:42:19+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T13:43:19+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T13:43:19+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T13:43:19+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T14:15:10+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T14:15:21+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T14:15:21+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T14:15:21+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T16:19:24+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T16:20:30+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T16:20:30+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T16:20:30+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T16:23:38+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T16:23:45+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T16:23:45+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T16:23:45+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExecutorService).ExecutorAdd","level":"error","line":99,"msg":"执行器新增失败, err:[Error 1364: Field 'shhPort' doesn't have a default value]","time":"2022-11-07T16:25:11+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T16:29:11+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T16:29:18+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T16:29:18+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T16:29:18+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T16:34:56+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T16:35:04+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T16:35:04+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T16:35:04+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T17:37:34+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T17:37:44+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T17:37:44+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T17:37:44+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T17:40:33+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T17:40:47+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T17:40:47+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T17:40:47+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T17:57:13+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T17:57:13+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T17:57:13+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T18:41:35+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T18:41:45+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T18:41:45+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T18:41:45+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T18:43:58+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T18:43:58+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T18:43:58+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T18:49:16+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T18:49:16+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T18:49:16+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T19:06:45+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T19:07:00+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T19:07:00+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T19:07:00+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T19:07:46+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T19:07:46+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T19:07:46+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T19:09:47+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T19:09:47+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T19:09:47+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T19:15:03+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T19:15:03+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T19:15:03+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T19:20:35+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T19:20:53+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T19:20:53+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T19:20:53+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T19:37:49+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T19:37:59+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T19:37:59+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T19:37:59+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T19:39:10+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T19:39:19+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T19:39:19+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T19:39:19+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T19:41:29+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T19:41:29+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T19:41:29+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T19:42:50+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T19:42:50+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T19:42:50+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T19:45:36+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T19:45:36+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T19:45:36+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T19:48:50+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T19:48:59+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T19:48:59+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T19:48:59+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T19:50:17+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T19:50:24+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T19:50:24+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T19:50:24+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExecutorService).ExecutorAdd","level":"error","line":99,"msg":"执行器新增失败, err:[Error 1062: Duplicate entry '172.31.176.42' for key 'idx_ip']","time":"2022-11-07T19:50:27+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T20:21:11+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T20:21:19+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T20:21:19+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T20:21:19+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T20:25:00+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T20:25:08+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T20:25:08+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T20:25:08+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T20:25:42+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T20:25:47+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T20:25:47+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T20:25:47+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/web/controller.(*ExecutorController).distributeKey","level":"error","line":54,"msg":"查询executor失败,err:[record not found]","time":"2022-11-07T20:25:50+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T20:26:34+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T20:26:42+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T20:26:42+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T20:26:42+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T20:29:03+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T20:29:03+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T20:29:03+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T20:33:19+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T20:33:27+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T20:33:27+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T20:33:27+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T20:37:07+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T20:37:13+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T20:37:13+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T20:37:13+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T20:48:51+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T20:48:51+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T20:48:51+08:00"}
+{"file":"sshclient.go","function":"taskmanager/utils.(*SSHClient).NewSSHClient","level":"error","line":62,"msg":"创建ssh会话失败, err: [ssh: handshake failed: ssh: unable to authenticate, attempted methods [none], no supported methods remain]","time":"2022-11-07T20:49:01+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T20:57:39+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T20:57:49+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T20:57:49+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T20:57:49+08:00"}
+{"file":"executor.go","function":"taskmanager/internal/service/admin.(*ExecutorService).ExecutorAdd","level":"error","line":99,"msg":"执行器新增失败, err:[Error 1062: Duplicate entry '172.31.176.42' for key 'idx_ip']","time":"2022-11-07T20:58:48+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T21:03:34+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T21:03:41+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T21:03:41+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T21:03:41+08:00"}
+{"file":"sshclient.go","function":"taskmanager/utils.(*SSHClient).NewSSHClient","level":"error","line":62,"msg":"创建ssh会话失败, err: [ssh: handshake failed: ssh: unable to authenticate, attempted methods [none password], no supported methods remain]","time":"2022-11-07T21:05:23+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T21:06:33+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T21:06:40+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T21:06:40+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T21:06:40+08:00"}
+{"file":"sshclient.go","function":"taskmanager/utils.(*SSHClient).DistributeKey","level":"error","line":74,"msg":"secret is: \"\"","time":"2022-11-07T21:06:43+08:00"}
+{"file":"sshclient.go","function":"taskmanager/utils.(*SSHClient).NewSSHClient","level":"error","line":62,"msg":"创建ssh会话失败, err: [ssh: handshake failed: ssh: unable to authenticate, attempted methods [none password], no supported methods remain]","time":"2022-11-07T21:06:46+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T21:08:06+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T21:08:16+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T21:08:16+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T21:08:16+08:00"}
+{"file":"sshclient.go","function":"taskmanager/utils.(*SSHClient).DistributeKey","level":"error","line":74,"msg":"secret is: \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCswRfXSgkc7vgNnrWwcd3m\\nmhFuxLRQj62Co3ObfrUTgHuDp/s9YgVWuD75D0bDKHb8PviZ2/vlGTQwyWIJp\\nRjU51CQY3OVEzFtrxSKjdiUOVdlvELLS645Y+tqrU/bhzwk8Z5ntQcoff+z/Z\\nFNtjYBHjrJ+tPXVzW+l7zdRcmVCrW5HjZPRAjlr0GzfuBSK62EDtHmATZRTxR\\nvTr+M6nMhDe70rVp3u4ede4CeejPYdiHbrjn0WYndOfWzcV8Seg8YHyt2cZ9l\\nhF57e79yWxxcyiH1wbcgBTvLytIeh5eVFOjR0HtKwfZEBf8JY87+vc0Yz6FM1\\nto4dvu3bsze9FrN daicheng@daichengdeMacBook-Pro.local\"","time":"2022-11-07T21:08:19+08:00"}
+{"file":"sshclient.go","function":"taskmanager/utils.(*SSHClient).NewSSHClient","level":"error","line":62,"msg":"创建ssh会话失败, err: [ssh: handshake failed: ssh: unable to authenticate, attempted methods [none password], no supported methods remain]","time":"2022-11-07T21:08:22+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T21:09:42+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T21:09:50+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T21:09:50+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T21:09:50+08:00"}
+{"file":"sshclient.go","function":"taskmanager/utils.(*SSHClient).DistributeKey","level":"error","line":74,"msg":"secret is: \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCswRfXSgkc7vgNnrWwcd3m mhFuxLRQj62Co3ObfrUTgHuDp/s9YgVWuD75D0bDKHb8PviZ2/vlGTQwyWIJp RjU51CQY3OVEzFtrxSKjdiUOVdlvELLS645Y+tqrU/bhzwk8Z5ntQcoff+z/Z FNtjYBHjrJ+tPXVzW+l7zdRcmVCrW5HjZPRAjlr0GzfuBSK62EDtHmATZRTxR vTr+M6nMhDe70rVp3u4ede4CeejPYdiHbrjn0WYndOfWzcV8Seg8YHyt2cZ9l hF57e79yWxxcyiH1wbcgBTvLytIeh5eVFOjR0HtKwfZEBf8JY87+vc0Yz6FM1 to4dvu3bsze9FrN daicheng@daichengdeMacBook-Pro.local\"","time":"2022-11-07T21:09:50+08:00"}
+{"file":"sshclient.go","function":"taskmanager/utils.(*SSHClient).NewSSHClient","level":"error","line":62,"msg":"创建ssh会话失败, err: [ssh: handshake failed: ssh: unable to authenticate, attempted methods [none password], no supported methods remain]","time":"2022-11-07T21:09:53+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T21:10:08+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T21:10:11+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T21:10:11+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T21:10:11+08:00"}
+{"file":"sshclient.go","function":"taskmanager/utils.(*SSHClient).DistributeKey","level":"error","line":74,"msg":"secret is: \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCswRfXSgkc7vgNnrWwcd3m mhFuxLRQj62Co3ObfrUTgHuDp/s9YgVWuD75D0bDKHb8PviZ2/vlGTQwyWIJp RjU51CQY3OVEzFtrxSKjdiUOVdlvELLS645Y+tqrU/bhzwk8Z5ntQcoff+z/Z FNtjYBHjrJ+tPXVzW+l7zdRcmVCrW5HjZPRAjlr0GzfuBSK62EDtHmATZRTxR vTr+M6nMhDe70rVp3u4ede4CeejPYdiHbrjn0WYndOfWzcV8Seg8YHyt2cZ9l hF57e79yWxxcyiH1wbcgBTvLytIeh5eVFOjR0HtKwfZEBf8JY87+vc0Yz6FM1 to4dvu3bsze9FrN daicheng@daichengdeMacBook-Pro.local\"","time":"2022-11-07T21:10:14+08:00"}
+{"file":"sshclient.go","function":"taskmanager/utils.(*SSHClient).NewSSHClient","level":"error","line":62,"msg":"创建ssh会话失败, err: [ssh: handshake failed: ssh: unable to authenticate, attempted methods [none password], no supported methods remain]","time":"2022-11-07T21:10:18+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T21:12:06+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T21:12:14+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T21:12:14+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T21:12:14+08:00"}
+{"file":"sshclient.go","function":"taskmanager/utils.(*SSHClient).DistributeKey","level":"error","line":74,"msg":"secret is: \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCswRfXSgkc7vgNnrWwcd3mmhFuxLRQj62Co3ObfrUTgHuDp/s9YgVWuD75D0bDKHb8PviZ2/vlGTQwyWIJpRjU51CQY3OVEzFtrxSKjdiUOVdlvELLS645Y+tqrU/bhzwk8Z5ntQcoff+z/ZFNtjYBHjrJ+tPXVzW+l7zdRcmVCrW5HjZPRAjlr0GzfuBSK62EDtHmATZRTxRvTr+M6nMhDe70rVp3u4ede4CeejPYdiHbrjn0WYndOfWzcV8Seg8YHyt2cZ9lhF57e79yWxxcyiH1wbcgBTvLytIeh5eVFOjR0HtKwfZEBf8JY87+vc0Yz6FM1to4dvu3bsze9FrN daicheng@daichengdeMacBook-Pro.local\"","time":"2022-11-07T21:12:17+08:00"}
+{"file":"sshclient.go","function":"taskmanager/utils.(*SSHClient).NewSSHClient","level":"error","line":62,"msg":"创建ssh会话失败, err: [ssh: handshake failed: ssh: unable to authenticate, attempted methods [none password], no supported methods remain]","time":"2022-11-07T21:12:20+08:00"}
+{"file":"sshclient.go","function":"taskmanager/utils.(*SSHClient).NewSSHClient","level":"error","line":62,"msg":"创建ssh会话失败, err: [ssh: handshake failed: ssh: unable to authenticate, attempted methods [none password], no supported methods remain]","time":"2022-11-07T21:52:36+08:00"}
+{"file":"sshclient.go","function":"taskmanager/utils.(*SSHClient).DistributeKey","level":"error","line":74,"msg":"secret is: \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCswRfXSgkc7vgNnrWwcd3mmhFuxLRQj62Co3ObfrUTgHuDp/s9YgVWuD75D0bDKHb8PviZ2/vlGTQwyWIJpRjU51CQY3OVEzFtrxSKjdiUOVdlvELLS645Y+tqrU/bhzwk8Z5ntQcoff+z/ZFNtjYBHjrJ+tPXVzW+l7zdRcmVCrW5HjZPRAjlr0GzfuBSK62EDtHmATZRTxRvTr+M6nMhDe70rVp3u4ede4CeejPYdiHbrjn0WYndOfWzcV8Seg8YHyt2cZ9lhF57e79yWxxcyiH1wbcgBTvLytIeh5eVFOjR0HtKwfZEBf8JY87+vc0Yz6FM1to4dvu3bsze9FrN daicheng@daichengdeMacBook-Pro.local\"","time":"2022-11-07T21:52:38+08:00"}
+{"file":"sshclient.go","function":"taskmanager/utils.(*SSHClient).NewSSHClient","level":"error","line":62,"msg":"创建ssh会话失败, err: [ssh: handshake failed: ssh: unable to authenticate, attempted methods [none password], no supported methods remain]","time":"2022-11-07T21:52:41+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T21:54:24+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T21:54:32+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T21:54:32+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T21:54:32+08:00"}
+{"file":"sshclient.go","function":"taskmanager/utils.(*SSHClient).NewSSHClient","level":"error","line":61,"msg":"创建ssh会话失败, err: [ssh: handshake failed: ssh: unable to authenticate, attempted methods [none password], no supported methods remain]","time":"2022-11-07T21:54:40+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T21:55:40+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T21:55:48+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T21:55:48+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T21:55:48+08:00"}
+{"file":"sshclient.go","function":"taskmanager/utils.(*SSHClient).NewSSHClient","level":"error","line":62,"msg":"创建ssh会话失败, err: [ssh: handshake failed: ssh: unable to authenticate, attempted methods [none], no supported methods remain]","time":"2022-11-07T22:00:49+08:00"}
+{"file":"sshclient.go","function":"taskmanager/utils.(*SSHClient).NewSSHClient","level":"error","line":62,"msg":"创建ssh会话失败, err: [ssh: handshake failed: ssh: unable to authenticate, attempted methods [none], no supported methods remain]","time":"2022-11-07T22:02:15+08:00"}
+{"file":"sshclient.go","function":"taskmanager/utils.(*SSHClient).NewSSHClient","level":"error","line":62,"msg":"创建ssh会话失败, err: [ssh: handshake failed: ssh: unable to authenticate, attempted methods [none], no supported methods remain]","time":"2022-11-07T22:02:27+08:00"}
+{"file":"sshclient.go","function":"taskmanager/utils.(*SSHClient).NewSSHClient","level":"error","line":62,"msg":"创建ssh会话失败, err: [ssh: handshake failed: ssh: unable to authenticate, attempted methods [none], no supported methods remain]","time":"2022-11-07T22:12:12+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T22:16:33+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T22:16:41+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T22:16:41+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T22:16:41+08:00"}
+{"file":"sshclient.go","function":"taskmanager/utils.(*SSHClient).NewSSHClient","level":"error","line":63,"msg":"创建ssh会话失败, err: [ssh: handshake failed: ssh: unable to authenticate, attempted methods [none], no supported methods remain]","time":"2022-11-07T22:16:49+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T22:17:01+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T22:17:05+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T22:17:05+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T22:17:05+08:00"}
+{"file":"sshclient.go","function":"taskmanager/utils.(*SSHClient).NewSSHClient","level":"error","line":63,"msg":"创建ssh会话失败, err: [ssh: handshake failed: ssh: unable to authenticate, attempted methods [none], no supported methods remain]","time":"2022-11-07T22:17:10+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T22:27:44+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T22:27:53+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T22:27:53+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T22:27:53+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T22:28:30+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T22:28:34+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T22:28:34+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T22:28:34+08:00"}
+{"file":"runOperation.go","function":"taskmanager/pkg/worker/tasks.RunAnsibleAdhoc.func1","level":"info","line":22,"msg":"start to execute task","time":"2022-11-07T22:28:50+08:00"}
+{"file":"result.go","function":"taskmanager/pkg/ansible.(*OperationCallback).RunnerOnSuccess","level":"error","line":103,"msg":"获取执行步骤失败, 任务: test2-1667831329000, ansible 任务：transfer scripts err: [invalid value, should be pointer to struct or slice]","time":"2022-11-07T22:29:01+08:00"}
+{"file":"result.go","function":"taskmanager/pkg/ansible.(*OperationCallback).RunnerOnSuccess","level":"error","line":103,"msg":"获取执行步骤失败, 任务: test2-1667831329000, ansible 任务：transfer scripts err: [invalid value, should be pointer to struct or slice]","time":"2022-11-07T22:29:14+08:00"}
+{"file":"result.go","function":"taskmanager/pkg/ansible.(*OperationCallback).RunnerOnSuccess","level":"error","line":103,"msg":"获取执行步骤失败, 任务: test2-1667831329000, ansible 任务：execute scripts err: [invalid value, should be pointer to struct or slice]","time":"2022-11-07T22:29:14+08:00"}
+{"file":"result.go","function":"taskmanager/pkg/ansible.(*OperationCallback).RunnerOnSuccess","level":"error","line":103,"msg":"获取执行步骤失败, 任务: test2-1667831329000, ansible 任务：delete scripts err: [invalid value, should be pointer to struct or slice]","time":"2022-11-07T22:29:14+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T22:34:25+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T22:34:32+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T22:34:32+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T22:34:32+08:00"}
+{"file":"runOperation.go","function":"taskmanager/pkg/worker/tasks.RunAnsibleAdhoc.func1","level":"info","line":22,"msg":"start to execute task","time":"2022-11-07T22:36:33+08:00"}
+{"file":"result.go","function":"taskmanager/pkg/ansible.(*OperationCallback).RunnerOnSuccess","level":"error","line":103,"msg":"获取执行步骤失败, 任务: test2-1667831792000, ansible 任务：transfer scripts err: [invalid value, should be pointer to struct or slice]","time":"2022-11-07T22:36:43+08:00"}
+{"file":"result.go","function":"taskmanager/pkg/ansible.(*OperationCallback).RunnerOnSuccess","level":"error","line":103,"msg":"获取执行步骤失败, 任务: test2-1667831792000, ansible 任务：transfer scripts err: [invalid value, should be pointer to struct or slice]","time":"2022-11-07T22:36:57+08:00"}
+{"file":"result.go","function":"taskmanager/pkg/ansible.(*OperationCallback).RunnerOnSuccess","level":"error","line":103,"msg":"获取执行步骤失败, 任务: test2-1667831792000, ansible 任务：execute scripts err: [invalid value, should be pointer to struct or slice]","time":"2022-11-07T22:36:57+08:00"}
+{"file":"result.go","function":"taskmanager/pkg/ansible.(*OperationCallback).RunnerOnSuccess","level":"error","line":103,"msg":"获取执行步骤失败, 任务: test2-1667831792000, ansible 任务：delete scripts err: [invalid value, should be pointer to struct or slice]","time":"2022-11-07T22:36:57+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-07T22:37:34+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-07T22:37:43+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-07T22:37:43+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-07T22:37:43+08:00"}
+{"file":"runOperation.go","function":"taskmanager/pkg/worker/tasks.RunAnsibleAdhoc.func1","level":"info","line":22,"msg":"start to execute task","time":"2022-11-07T22:37:46+08:00"}
+{"file":"runOperation.go","function":"taskmanager/pkg/worker/tasks.RunAnsibleAdhoc.func1","level":"info","line":22,"msg":"start to execute task","time":"2022-11-07T22:38:07+08:00"}
+{"file":"runOperation.go","function":"taskmanager/pkg/worker/tasks.RunAnsibleAdhoc.func1","level":"info","line":22,"msg":"start to execute task","time":"2022-11-08T09:19:57+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-08T09:33:07+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-08T09:33:16+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-08T09:33:16+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-08T09:33:16+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-08T09:37:44+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-08T09:37:50+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-08T09:37:50+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-08T09:37:50+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-08T09:40:57+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-08T09:41:05+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-08T09:41:05+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-08T09:41:05+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-08T09:47:07+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-08T09:47:13+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-08T09:47:13+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-08T09:47:13+08:00"}
+{"file":"echo.go","function":"taskmanager/pkg/websockets.Echo","level":"info","line":16,"msg":"【websocket】客户端 127.0.0.1:63976 已连接","time":"2022-11-08T09:49:58+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-08T09:51:11+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-08T09:51:17+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-08T09:51:17+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-08T09:51:17+08:00"}
+{"file":"echo.go","function":"taskmanager/pkg/websockets.Echo","level":"info","line":16,"msg":"【websocket】客户端 127.0.0.1:64322 已连接","time":"2022-11-08T09:51:21+08:00"}
+{"file":"shutdown.go","function":"taskmanager/utils.ServerNotify","level":"warning","line":26,"msg":"执行退出操作","time":"2022-11-08T11:01:27+08:00"}
+{"file":"redisQueue.go","function":"taskmanager/pkg/worker/client.NewDefaultQueue","level":"info","line":19,"msg":"启动任务中心 queue","time":"2022-11-08T11:01:37+08:00"}
+{"file":"consumer.go","function":"taskmanager/pkg/worker.(*Consumer).Start","level":"info","line":48,"msg":"启动任务中心 worker...","time":"2022-11-08T11:01:37+08:00"}
+{"file":"router.go","function":"taskmanager/internal/web.(*RouterCenter).Launch.func1","level":"info","line":64,"msg":"init server on 8000","time":"2022-11-08T11:01:37+08:00"}
+{"file":"echo.go","function":"taskmanager/pkg/websockets.Echo","level":"info","line":16,"msg":"【websocket】客户端 127.0.0.1:49160 已连接","time":"2022-11-08T11:01:44+08:00"}

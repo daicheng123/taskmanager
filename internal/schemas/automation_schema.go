@@ -44,3 +44,11 @@ type TaskInfoResp struct {
 	OvertimeServers []*TaskStepInfo   `json:"overtime_servers"`
 	AbortServers    []*TaskStepInfo   `json:"abort_servers"`
 }
+
+type DistributeReq struct {
+	ID              uint   `json:"id" binding:"required,gte=1"`
+	IPAddr          string `json:"ipAddr" binding:"required"`
+	SSHPort         uint   `json:"sshPort" binding:"required,min=1,max=65535"`
+	AccountName     string `json:"accountName" binding:"required"`
+	AccountPassword string `json:"accountPassword" binding:"required"`
+}

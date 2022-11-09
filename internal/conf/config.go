@@ -19,6 +19,7 @@ type Config struct {
 	Redis    *RedisConfig `yaml:"redis"`
 	Log      *LogConfig   `yaml:"log"`
 	Email    *MailConfig  `yaml:"email"`
+	Secrets  string       `yaml:"secrets"`
 }
 
 type WebConfig struct {
@@ -226,4 +227,11 @@ func GetMailPwd() string {
 		return ""
 	}
 	return defaultConfig.Email.Password
+}
+
+func GetSecrets() string {
+	if defaultConfig == nil {
+		return ""
+	}
+	return defaultConfig.Secrets
 }

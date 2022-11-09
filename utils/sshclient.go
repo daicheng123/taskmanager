@@ -7,6 +7,8 @@ import (
 	"github.com/pkg/sftp"
 	"golang.org/x/crypto/ssh"
 	"io/ioutil"
+	"taskmanager/internal/conf"
+	"taskmanager/pkg/logger"
 	"taskmanager/pkg/serializer"
 	"time"
 )
@@ -20,7 +22,6 @@ var (
 	ErrCreateSessionFailed = serializer.NewError(serializer.CodeHostUnreachable, "创建主机会话失败", nil)
 	ErrCommandExecFailed   = serializer.NewError(serializer.CodeHostCommandErr, "执行命令行错误", nil)
 	// ErrTransferFileFailed  = serializer.NewError(serializer.CodeHostCommandErr, "执行命令行错误", nil)
-
 )
 
 type SSHClient struct {
@@ -49,27 +50,23 @@ func (sc *SSHClient) NewSSHClient() (*ssh.Client, error) {
 	)
 	auth = make([]ssh.AuthMethod, 0)
 	auth = append(auth, ssh.Password(sc.UserPassword))
-
 	clientConfig = &ssh.ClientConfig{
 		User:            sc.UserName,
 		Auth:            auth,
 		Timeout:         30 * time.Second,
 		HostKeyCallback: ssh.InsecureIgnoreHostKey(),
 	}
+
 	addr = fmt.Sprintf("%s:%d", sc.HostAddr, sc.HostPort)
 	if client, err = ssh.Dial("tcp", addr, clientConfig); err != nil {
-		fmt.Printf("error: [%s]\n", err)
+		logger.Error("创建ssh会话失败, err: [%s]", err.Error())
 		return nil, ErrCreateSessionFailed.WithError(err)
 	}
 	return client, nil
 }
 
 func (sc *SSHClient) DistributeKey() (outStr string, err error) {
-	f, err := ReadFile("/Users/daicheng/.ssh/id_rsa.pub")
-	if err != nil {
-		return "", ErrGetSecretFileFailed.WithError(err)
-	}
-	cmd := fmt.Sprintf(keyCmd, f)
+	cmd := fmt.Sprintf(keyCmd, conf.GetSecrets())
 	return sc.RemoteCommand(cmd)
 }
 

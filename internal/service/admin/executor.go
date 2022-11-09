@@ -1,14 +1,15 @@
 package admin
 
 import (
+	"context"
 	"errors"
-	"fmt"
 	"net/http"
 	"strings"
 	"taskmanager/internal/consts"
 	"taskmanager/internal/models"
-	"taskmanager/internal/models/common"
 	"taskmanager/internal/repo/mapper"
+	"taskmanager/internal/schemas"
+	"taskmanager/internal/schemas/transfers"
 	"taskmanager/pkg/logger"
 	"taskmanager/pkg/serializer"
 	"taskmanager/utils"
@@ -20,19 +21,12 @@ type AccountService struct {
 }
 
 type ExecutorService struct {
-	ID              uint              `json:"id" uri:"id"  binding:"omitempty,gte=1"`
-	HostName        string            `json:"hostName" form:"hostName" binding:"omitempty"`
-	IPAddr          string            `json:"ipAddr"   form:"ipAddr" binding:"required"`
-	SSHPort         uint              `json:"sshPort"  form:"sshPort" binding:"required,min=1,max=65535"`
-	ExecutePath     string            `json:"executePath"`
-	ShouldDelivery  bool              `json:"shouldDelivery"`
-	SecretStatus    uint              `json:"secretStatus"`
-	Status          uint              `json:"status" binding:"omitempty,oneof=0 1 2"`
-	LastOperator    string            `json:"lastOperator"`
-	UpdatedAt       common.CustomTime `json:"updatedAt"`
-	*AccountService `json:",inline"  form:",inline" binding:"required"`
-	Remarks         string `json:"remarks"`
 }
+
+func NewExecutorService() *ExecutorService {
+	return &ExecutorService{}
+}
+
 type ExecutorDelService struct {
 	ID uint `uri:"id" binding:"omitempty,gte=1"`
 }
@@ -90,82 +84,80 @@ func (es *ExecutorService) ExecutorOptions() *serializer.Response {
 	if err != nil {
 		return serializer.DBErr("获取执行器失败", err)
 	}
-
-	for _, executor := range executors {
-		fmt.Printf("id:%dhahahahahaha\n", executor.ID)
-	}
 	return &serializer.Response{Data: executors}
 }
 
 // ExecutorAdd 创建执行器
-func (es *ExecutorService) ExecutorAdd() *serializer.Response {
-	em, err := ExecutorTransToModel(es)
+func (es *ExecutorService) ExecutorAdd(ctx context.Context, info *schemas.ExecutorInfo) *serializer.Response {
+	em, err := transfers.ExecutorData2Model(info)
 	if err != nil {
 		return serializer.Err(http.StatusInternalServerError, err.Error(), err)
 	}
+
 	err = mapper.GetExecutorMapper().Save(em)
 	if err != nil {
 		logger.Error("执行器新增失败, err:[%s]", err.Error())
 		return serializer.DBErr("执行器新增失败", err)
 	}
 
-	if es.ShouldDelivery {
-		return es.DistributeKey(em)
+	if info.ShouldDelivery {
+		return es.DistributeKey(ctx, em)
 	}
 	return &serializer.Response{Data: em}
 }
 
 // ExecutorUpdate 更新执行器
-func (es *ExecutorService) ExecutorUpdate() *serializer.Response {
+func (es *ExecutorService) ExecutorUpdate(ctx context.Context, executorInfo *schemas.ExecutorInfo) *serializer.Response {
 	filter := &models.Executor{
 		BaseModel: models.BaseModel{
-			ID: es.ID,
+			ID: executorInfo.ID,
 		},
 	}
 	exeObj, err := mapper.GetExecutorMapper().PreLoadFindOne(filter)
 	if err != nil {
-		logger.Error("查询执行器失败,ID: %d, err:[%s]", es.ID, err.Error())
+		logger.Error("查询执行器失败,ID: %d, err:[%s]", executorInfo.ID, err.Error())
 		return serializer.DBErr("查询执行器失败", err)
 	}
-	newPwd, err := utils.Encrypt(es.AccountPassword)
+	newPwd, err := utils.Encrypt(executorInfo.AccountPassword)
 	if err != nil {
 		return serializer.Err(http.StatusInternalServerError, "密码解析失败", err)
 	}
 
-	exeObj.HostName = es.HostName
-	exeObj.ExecutePath = es.ExecutePath
-	exeObj.Accounts.AccountPassword = newPwd
-	exeObj.Status = es.Status
-	exeObj.Remarks = es.Remarks
-	exeObj.LastOperator = es.LastOperator
+	exeObj.HostName = executorInfo.HostName
+	exeObj.ExecutePath = executorInfo.ExecutePath
+	exeObj.Account.AccountPassword = newPwd
+	exeObj.Status = executorInfo.Status
+	exeObj.Remarks = executorInfo.Remarks
+	exeObj.LastOperator = executorInfo.LastOperator
 	// 用户名/端口号变化后则主机密钥分发重置
-	if exeObj.Accounts.AccountName != es.AccountName || exeObj.SHHPort != es.SSHPort {
+	if exeObj.Account.AccountName != executorInfo.AccountName || exeObj.SSHPort != executorInfo.SSHPort {
 		//exeObj.SecretStatus = 1
 		exeObj.SecretStatus = consts.KeyUndistributed
 	}
-	exeObj.Accounts.AccountName = es.AccountName
-	exeObj.SHHPort = es.SSHPort
+	exeObj.Account.AccountName = executorInfo.AccountName
+	exeObj.SSHPort = executorInfo.SSHPort
 
 	err = mapper.GetExecutorMapper().Updates(exeObj)
 	if err != nil {
-		logger.Error("更新执行器失败,ID: %d, err:[%s]", es.ID, err.Error())
+		logger.Error("更新执行器失败,ID: %d, err:[%s]", executorInfo.ID, err.Error())
 		return serializer.DBErr("更新执行器失败", err)
 	}
 	return &serializer.Response{Data: exeObj, Message: "ok"}
 }
 
 // DistributeKey 分发主机密钥
-func (es *ExecutorService) DistributeKey(executor *models.Executor) *serializer.Response {
+func (es *ExecutorService) DistributeKey(ctx context.Context, executor *models.Executor) *serializer.Response {
 	executorMapper := mapper.GetExecutorMapper()
-	//executor.SecretStatus = 2
 	executor.SecretStatus = consts.KeyDistributing
 	if err := executorMapper.Updates(executor); err != nil {
 		return serializer.DBErr("更新执行器密钥状态失败", err)
 	}
-
-	sshCli := utils.NewSsh(es.AccountName, es.AccountPassword, es.IPAddr, es.SSHPort)
+	password, err := utils.Decrypt(executor.Account.AccountPassword)
+	if err != nil {
+		return serializer.Err(serializer.CodeHostPasswordDecodeErr, err.Error(), err)
+	}
+	sshCli := utils.NewSsh(executor.Account.AccountName, password, executor.IPAddr, executor.SSHPort)
 	if _, err := sshCli.DistributeKey(); err != nil {
-		//executor.SecretStatus = 4
 		executor.SecretStatus = consts.KeyDistributeFailed
 		go utils.RunSafeWithMsg(func() {
 			err = executorMapper.Updates(executor)
@@ -173,7 +165,7 @@ func (es *ExecutorService) DistributeKey(executor *models.Executor) *serializer.
 				logger.Error("未能将钥状态更新为分发失败状态, err:[%s]", err.Error())
 			}
 		}, "未能将钥状态更新为分发失败状态")
-		return serializer.Err(serializer.CodeServerInternalError, "", err)
+		return serializer.Err(serializer.CodeServerInternalError, err.Error(), err)
 	}
 
 	//executor.SecretStatus = 3
@@ -245,12 +237,21 @@ func (ls *ListService) ExecutorList() (count int, rows interface{}, err error) {
 	var (
 		executorMapper = mapper.GetExecutorMapper()
 		filter         = &models.Executor{}
-		executors      = &[]*models.Executor{}
+		executors      = make([]*models.Executor, 0)
 	)
 
 	if ls.IsNotPage {
-		err = executorMapper.FindAllWithPager(filter, executors, 0, 0, "", nil, ls.Searches)
-		return 0, executors, err
+		err = executorMapper.FindAllWithPager(filter, &executors, 0, 0, "", nil, ls.Searches)
+		var executorsInfo = make([]*schemas.ExecutorInfo, 0, len(executors))
+		for _, e := range executors {
+			ei, err := transfers.ExecutorModel2Data(e)
+			if err != nil {
+				return 0, nil, err
+			}
+			executorsInfo = append(executorsInfo, ei)
+		}
+
+		return 0, executorsInfo, err
 	}
 
 	ls.ValidDate()
@@ -259,14 +260,22 @@ func (ls *ListService) ExecutorList() (count int, rows interface{}, err error) {
 		logger.Error("查询执行器总数失败: [%s]", err.Error())
 		return count, executors, err
 	}
-	err = executorMapper.FindAllWithPager(filter, executors, ls.PageSize, ls.PageNo,
+	err = executorMapper.FindAllWithPager(filter, &executors, ls.PageSize, ls.PageNo,
 		ls.Sort, ls.Conditions, ls.Searches)
 
 	if err != nil {
 		logger.Error("查询执行器列表失败: [%s]", err.Error())
 		return count, executors, err
 	}
-	return count, executors, err
+	var executorsInfo = make([]*schemas.ExecutorInfo, 0, len(executors))
+	for _, e := range executors {
+		ei, err := transfers.ExecutorModel2Data(e)
+		if err != nil {
+			return 0, nil, err
+		}
+		executorsInfo = append(executorsInfo, ei)
+	}
+	return count, executorsInfo, err
 }
 
 func testNode(name, password, ip string, port uint) error {
@@ -282,53 +291,53 @@ func testNode(name, password, ip string, port uint) error {
 }
 
 // ExecutorTransToModel 执行器dto
-func ExecutorTransToModel(executor *ExecutorService) (*models.Executor, error) {
-	accountPwd, err := utils.Encrypt(executor.AccountPassword)
-	if err != nil {
-		logger.Error("主机密码解析错误, err:[%s]", err.Error())
-		return nil, serializer.NewError(serializer.CodeHostPasswordEncodeErr, "主机密码解析错误", err)
-	}
+//func ExecutorTransToModel(executor *ExecutorService) (*models.Executor, error) {
+//	accountPwd, err := utils.Encrypt(executor.AccountPassword)
+//	if err != nil {
+//		logger.Error("主机密码解析错误, err:[%s]", err.Error())
+//		return nil, serializer.NewError(serializer.CodeHostPasswordEncodeErr, "主机密码解析错误", err)
+//	}
+//
+//	accounts := &models.ExecutorAccount{
+//		AccountName:     executor.AccountName,
+//		AccountPassword: accountPwd,
+//	}
+//	return &models.Executor{
+//		HostName:     executor.HostName,
+//		IPAddr:       executor.IPAddr,
+//		SHHPort:      executor.SSHPort,
+//		LastOperator: executor.LastOperator,
+//		Status:       executor.Status,
+//		ExecutePath:  executor.ExecutePath,
+//		Account:      accounts,
+//	}, nil
+//}
 
-	accounts := &models.ExecutorAccount{
-		AccountName:     executor.AccountName,
-		AccountPassword: accountPwd,
-	}
-	return &models.Executor{
-		HostName:     executor.HostName,
-		IPAddr:       executor.IPAddr,
-		SHHPort:      executor.SSHPort,
-		LastOperator: executor.LastOperator,
-		Status:       executor.Status,
-		ExecutePath:  executor.ExecutePath,
-		Accounts:     accounts,
-	}, nil
-}
-
-func ExecutorTransServices(executors []*models.Executor) (services []*ExecutorService, err error) {
-	services = make([]*ExecutorService, 0)
-	for _, e := range executors {
-		password, err := utils.Decrypt(e.Accounts.AccountPassword)
-		if err != nil {
-			logger.Error("执行器:%s 密码解析错误,err:[%s]", e.HostName, err.Error())
-			break
-		}
-		es := &ExecutorService{
-			ID:           e.ID,
-			HostName:     e.HostName,
-			IPAddr:       e.IPAddr,
-			SSHPort:      e.SHHPort,
-			ExecutePath:  e.ExecutePath,
-			LastOperator: e.LastOperator,
-			Status:       e.Status,
-			SecretStatus: e.SecretStatus,
-			UpdatedAt:    e.UpdatedAt,
-			Remarks:      e.Remarks,
-			AccountService: &AccountService{
-				AccountName:     e.Accounts.AccountName,
-				AccountPassword: password,
-			},
-		}
-		services = append(services, es)
-	}
-	return services, err
-}
+//func ExecutorTransServices(executors []*models.Executor) (services []*ExecutorService, err error) {
+//	var executorsInfo = make([]*schemas.ExecutorInfo, 0)
+//	//for _, e := range executors {
+//	//	password, err := utils.Decrypt(e.Account.AccountPassword)
+//	//	if err != nil {
+//	//		logger.Error("执行器:%s 密码解析错误,err:[%s]", e.HostName, err.Error())
+//	//		break
+//	//	}
+//	//	es := &schemas.ExecutorInfo{
+//	//		ID:           e.ID,
+//	//		HostName:     e.HostName,
+//	//		IPAddr:       e.IPAddr,
+//	//		SSHPort:      e.SHHPort,
+//	//		ExecutePath:  e.ExecutePath,
+//	//		LastOperator: e.LastOperator,
+//	//		Status:       e.Status,
+//	//		SecretStatus: e.SecretStatus,
+//	//		UpdatedAt:    e.UpdatedAt,
+//	//		Remarks:      e.Remarks,
+//	//		AccountInfo: &schemas.AccountInfo{
+//	//			AccountName:     e.Account.AccountName,
+//	//			AccountPassword: password,
+//	//		},
+//	//	}
+//	//	services = append(services, es)
+//	//}
+//	return services, err
+//}

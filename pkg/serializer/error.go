@@ -118,17 +118,14 @@ const (
 	// CodeHostPasswordEncodeErr 主机执行器密码加密错误
 	CodeHostPasswordEncodeErr = 50005
 
+	// CodeHostPasswordDecodeErr 密码解密失败
+	CodeHostPasswordDecodeErr = 50006
+
 	// CodeHostSecretFileNotFound 主机密钥文件不存在
-	CodeHostSecretFileNotFound = 50006
-
-	// CodeEncodePasswordErr 密码加密失败
-	CodeEncodePasswordErr = 50007
-
-	// CodeDecodePasswordErr 密码解密失败
-	CodeDecodePasswordErr = 50008
+	CodeHostSecretFileNotFound = 50007
 
 	// CodeTestShellError  shell脚本校验失败
-	CodeTestShellError = 50009
+	CodeTestShellError = 50008
 
 	// CodeDangerCmdQueryError 查询危险命令出错
 	CodeDangerCmdQueryError = 50012

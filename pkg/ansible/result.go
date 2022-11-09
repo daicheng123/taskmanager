@@ -55,7 +55,6 @@ func (cb *CallbackBase) ParseResult(ctx context.Context, buff *bytes.Buffer) {
 
 	for _, play := range cb.Results.Plays {
 		for _, task := range play.Tasks {
-			//if task.Task.Name == consts.ExecuteScript || task.Task.Name == consts.TransferScript{
 			for hostAddr, hostInfo := range task.Hosts {
 				if cb.CheckTaskHostsItemResults(hostInfo) {
 					if hostInfo.Results[0].Failed {
@@ -69,7 +68,6 @@ func (cb *CallbackBase) ParseResult(ctx context.Context, buff *bytes.Buffer) {
 					cb.RunnerOnSuccess(ctx, task.Task.Name, hostAddr, hostInfo)
 				}
 			}
-			//}
 		}
 	}
 	return
@@ -106,7 +104,7 @@ func (ac *OperationCallback) RunnerOnSuccess(ctx context.Context, ansibleTask st
 			return
 		}
 
-		baseKey := utils.BuilderStr(ac.TaskName, ":", hostAddr)
+		baseKey := utils.BuilderStr(ac.TaskName, "-", hostAddr)
 		step.StepResultKey = baseKey
 
 		if ansibleTask == consts.TransferScript {
@@ -215,7 +213,7 @@ func (ac *OperationCallback) onFailed(ctx context.Context, ansibleTask string, h
 			step.TransferStatus = consts.TransferFailed
 		}
 
-		baseKey := utils.BuilderStr(ac.TaskName, ":", hostAddr)
+		baseKey := utils.BuilderStr(ac.TaskName, "-", hostAddr)
 		step.StepResultKey = baseKey
 		// 解析结果存入redis
 		go utils.RunSafeWithMsg(func() {

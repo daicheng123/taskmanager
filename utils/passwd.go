@@ -32,8 +32,8 @@ import (
 
 var (
 	cipherKey               = []byte("0qi1lerodnvcm09181*^LkqDv,!dP>1U")
-	ErrEncodePasswordFailed = serializer.NewError(serializer.CodeEncodePasswordErr, "密码编码失败", nil)
-	ErrDecodePasswordFailed = serializer.NewError(serializer.CodeDecodePasswordErr, "密码解码失败", nil)
+	ErrEncodePasswordFailed = serializer.NewError(serializer.CodeHostPasswordEncodeErr, "密码编码失败", nil)
+	ErrDecodePasswordFailed = serializer.NewError(serializer.CodeHostPasswordDecodeErr, "密码解码失败", nil)
 )
 
 func Encrypt(message string) (encoded string, err error) {
